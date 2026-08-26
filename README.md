@@ -27,14 +27,28 @@ npm run preview
 
 Каждый переиспользуемый компонент состоит из отдельного Handlebars-partial в `src/partials` и отдельного SCSS-файла в `src/styles/components`. Классы компонентов именуются по БЭМ; состояния оформляются модификаторами (`block--state`), а не глобальными `is-*` или `has-*` классами.
 
-Чтобы добавить страницу, создайте HTML-файл в `src` и добавьте ее данные в `pageData` внутри `vite.config.ts`. Все HTML-файлы верхнего уровня подключаются к production-сборке автоматически.
-
-Иконка `src/icons/example.svg` будет доступна в SVG-спрайте и подключается внутри БЭМ-компонента так:
+Кнопка по умолчанию использует серый фон и большой размер. Для белого, компактного и полноширинного вариантов передайте `variant="white"`, `size="small"` и `fullWidth=true`. Параметр `icon` принимает URL любой иконки и является необязательным:
 
 ```html
-<svg class="button__icon" aria-hidden="true">
-  <use href="#icon-example"></use>
-</svg>
+{{> button label="Смотреть все" icon="/icons/arrow-right.svg"}}
+{{> button variant="white" size="small" label="Связаться"}}
+{{> button variant="white" label="Связаться" fullWidth=true}}
+```
+
+Круглая кнопка со стрелкой использует иконку `arrow-right`, серый фон по умолчанию и вариант `white`. Она также принимает доступное имя, тип и состояние `disabled`:
+
+```html
+{{> arrow-button ariaLabel="Перейти далее"}}
+{{> arrow-button variant="white" ariaLabel="Перейти далее"}}
+{{> arrow-button type="submit" ariaLabel="Отправить" disabled=true}}
+```
+
+Чтобы добавить страницу, создайте HTML-файл в `src` и добавьте ее данные в `pageData` внутри `vite.config.ts`. Все HTML-файлы верхнего уровня подключаются к production-сборке автоматически.
+
+Иконка `src/icons/example.svg` доступна по пути `/icons/example.svg` и подключается внутри БЭМ-компонента так:
+
+```html
+<img class="component__icon" src="/icons/example.svg" width="24" height="24" alt="" aria-hidden="true" />
 ```
 
 ## Адаптив

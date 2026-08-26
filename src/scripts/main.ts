@@ -1,4 +1,3 @@
-import 'virtual:svg-sprite';
 import '../styles/main.scss';
 
 const page = document.body.dataset.page;
@@ -28,21 +27,6 @@ if (page === 'ui-kit') {
 
   sections.forEach((section) => sectionObserver.observe(section));
 
-  const feedback = document.querySelector<HTMLElement>('[data-copy-feedback]');
-
-  document.querySelectorAll<HTMLButtonElement>('[data-copy-token]').forEach((button) => {
-    button.addEventListener('click', async () => {
-      const token = button.dataset.copyToken;
-      if (!token) return;
-
-      try {
-        await navigator.clipboard.writeText(token);
-        if (feedback) feedback.textContent = `Скопировано: ${token}`;
-      } catch {
-        if (feedback) feedback.textContent = `Значение: ${token}`;
-      }
-    });
-  });
 }
 
 document.querySelectorAll<HTMLElement>('[data-file-upload]').forEach((upload) => {

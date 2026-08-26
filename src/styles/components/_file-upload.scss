@@ -56,7 +56,8 @@
   width: 2.4rem;
   height: 2.4rem;
   flex: 0 0 2.4rem;
-  fill: currentcolor;
+  color: var(--color-white);
+  fill: var(--color-white);
 }
 
 .file-upload__name {
@@ -84,7 +85,8 @@
 .file-upload__clear-icon {
   width: 1.3rem;
   height: 1.3rem;
-  fill: currentcolor;
+  color: var(--color-white);
+  fill: var(--color-white);
 }
 
 .file-upload__clear:hover .file-upload__clear-icon {

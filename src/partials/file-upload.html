@@ -3,14 +3,22 @@
   data-file-upload
   {{#if initialFile}}data-initial-file="{{initialFile}}"{{/if}}
 >
-  <input class="file-upload__input" type="file" data-file-upload-input />
+  <input
+    class="file-upload__input"
+    type="file"
+    {{#if name}}name="{{name}}"{{/if}}
+    {{#if accept}}accept="{{accept}}"{{/if}}
+    data-file-upload-input
+  />
   <button
     class="file-upload__trigger"
     type="button"
     data-file-upload-trigger
     aria-label="{{#if selected}}Заменить файл {{initialFile}}{{else}}Выберите файл{{/if}}"
   >
-    <svg class="file-upload__file-icon" aria-hidden="true"><use href="#icon-attachment"></use></svg>
+    <svg class="file-upload__file-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M14.8248 7.75398L9.16789 13.4108C8.77736 13.8013 8.77736 14.4345 9.16789 14.825C9.55841 15.2156 10.1916 15.2156 10.5821 14.825L16.239 9.16819C17.4105 7.99662 17.4105 6.09713 16.239 4.92555C15.0674 3.75398 13.1679 3.75398 11.9963 4.92555L6.33946 10.5824C4.38684 12.535 4.38684 15.7008 6.33946 17.6535C8.29208 19.6061 11.4579 19.6061 13.4105 17.6535L19.0674 11.9966L20.4816 13.4108L14.8248 19.0677C12.0911 21.8013 7.65892 21.8013 4.92525 19.0677C2.19158 16.334 2.19158 11.9019 4.92525 9.16819L10.5821 3.51134C12.5347 1.55872 15.7006 1.55872 17.6532 3.51134C19.6058 5.46396 19.6058 8.62978 17.6532 10.5824L11.9963 16.2393C10.8248 17.4108 8.92525 17.4108 7.75368 16.2393C6.5821 15.0677 6.5821 13.1682 7.75368 11.9966L13.4105 6.33977L14.8248 7.75398Z" />
+    </svg>
     <span class="file-upload__name" data-file-upload-name aria-live="polite">
       {{#if selected}}{{initialFile}}{{else}}Выберите файл{{/if}}
     </span>
@@ -22,6 +30,8 @@
     aria-label="Удалить выбранный файл"
     {{#unless selected}}hidden{{/unless}}
   >
-    <svg class="file-upload__clear-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+    <svg class="file-upload__clear-icon" viewBox="0 0 13 13" aria-hidden="true">
+      <path d="M12.707 0.707031L7.06055 6.35352L12.707 12L12 12.707L6.35352 7.06055L0.707031 12.707L0 12L5.64648 6.35352L0 0.707031L0.707031 0L6.35352 5.64648L12 0L12.707 0.707031Z" />
+    </svg>
   </button>
 </div>

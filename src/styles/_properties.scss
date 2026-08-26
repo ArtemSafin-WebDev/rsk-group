@@ -5,9 +5,7 @@
   --color-white: #ffffff;
   --color-lines: rgb(0 0 0 / 15%);
   --color-grey-back: #f6f6f6;
-  --color-grey-hover: #eaeaea;
   --color-black: #000000;
-  --color-charcoal: #252525;
   --background-cards: linear-gradient(118.92deg, #eeeeee 0%, #f7f7f7 100%);
 
   // Semantic colors
@@ -15,12 +13,7 @@
   --color-background: var(--color-white);
   --color-surface: var(--color-white);
   --color-text-muted: #6f6f6f;
-  --color-lines-strong: rgb(0 0 0 / 35%);
   --color-focus: #4a68ff;
-  --color-success: #247a4a;
-  --color-warning: #9a6500;
-  --color-error: #b52b2b;
-  --color-status-neutral: #575757;
 
   // Dark form controls
   --color-control-background: #1b1b1b;
@@ -111,6 +104,7 @@
   // Layout
   --container-max-width: 184rem;
   --container-padding-inline: 4rem;
+  --layout-grid-columns: repeat(4, minmax(0, 1fr));
 
   @include media.mobile {
     --container-padding-inline: 1.6rem;

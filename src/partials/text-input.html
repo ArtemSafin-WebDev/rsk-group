@@ -1,7 +1,24 @@
-<input
-  class="text-input{{#if state}} text-input--{{state}}{{/if}}"
-  type="text"
-  {{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
-  {{#if value}}value="{{value}}"{{/if}}
-  aria-label="{{ariaLabel}}"
-/>
+{{#if multiline}}
+  <textarea
+    class="text-input text-input--textarea{{#if state}} text-input--{{state}}{{/if}}"
+    {{#if id}}id="{{id}}"{{/if}}
+    {{#if name}}name="{{name}}"{{/if}}
+    {{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
+    {{#if required}}required{{/if}}
+    rows="5"
+    aria-label="{{ariaLabel}}"
+  >{{value}}</textarea>
+{{else}}
+  <input
+    class="text-input{{#if state}} text-input--{{state}}{{/if}}"
+    type="{{#if type}}{{type}}{{else}}text{{/if}}"
+    {{#if id}}id="{{id}}"{{/if}}
+    {{#if name}}name="{{name}}"{{/if}}
+    {{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
+    {{#if value}}value="{{value}}"{{/if}}
+    {{#if autocomplete}}autocomplete="{{autocomplete}}"{{/if}}
+    {{#if inputmode}}inputmode="{{inputmode}}"{{/if}}
+    {{#if required}}required{{/if}}
+    aria-label="{{ariaLabel}}"
+  />
+{{/if}}

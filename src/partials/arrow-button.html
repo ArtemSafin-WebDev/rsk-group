@@ -1,0 +1,15 @@
+<button
+  class="arrow-button arrow-button--{{#if variant}}{{variant}}{{else}}grey{{/if}}"
+  type="{{#if type}}{{type}}{{else}}button{{/if}}"
+  aria-label="{{#if ariaLabel}}{{ariaLabel}}{{else}}Перейти далее{{/if}}"
+  {{#if disabled}}disabled{{/if}}
+>
+  <img
+    class="arrow-button__icon"
+    src="/icons/arrow-right.svg"
+    width="24"
+    height="24"
+    alt=""
+    aria-hidden="true"
+  />
+</button>

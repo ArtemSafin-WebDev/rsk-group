@@ -7,9 +7,12 @@
     {{#if value}}value="{{value}}"{{/if}}
     {{#if checked}}checked{{/if}}
     {{#if disabled}}disabled{{/if}}
+    {{#if required}}required{{/if}}
   />
   <span class="checkbox__control" aria-hidden="true">
-    <svg class="checkbox__icon"><use href="#icon-check"></use></svg>
+    <svg class="checkbox__icon" viewBox="0 0 20 20">
+      <path d="M15.707 7.70703L9 14.4141L5.29297 10.707L6.70703 9.29297L9 11.5859L14.293 6.29297L15.707 7.70703Z" />
+    </svg>
   </span>
   <span class="checkbox__label">{{label}}</span>
 </label>

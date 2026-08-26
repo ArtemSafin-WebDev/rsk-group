@@ -1,33 +1,51 @@
-@use '../media';
-
 .button {
+  --button-background: var(--color-grey-back);
+
   display: inline-flex;
-  min-height: 5.6rem;
-  padding: 1.6rem 2.4rem;
-  border: 0.1rem solid transparent;
+  width: fit-content;
+  min-height: 6.4rem;
+  padding: 2rem 3rem;
+  border: 0;
+  border-radius: 4rem;
   align-items: center;
   justify-content: center;
-  gap: 2.4rem;
+  gap: 1rem;
   color: var(--color-black);
   font-size: var(--font-size-button);
   font-weight: var(--font-weight-button);
   line-height: var(--line-height-button);
   text-decoration: none;
-  background: transparent;
+  background-color: var(--button-background);
   cursor: pointer;
   transition:
-    color 180ms ease,
-    background-color 180ms ease,
-    border-color 180ms ease,
-    transform 180ms ease;
+    background-color 160ms ease,
+    opacity 160ms ease;
+}
+
+.button--grey {
+  --button-background: var(--color-grey-back);
+}
+
+.button--white {
+  --button-background: var(--color-white);
+}
+
+.button--small {
+  min-height: 4.4rem;
+  padding: 1rem 2rem;
+  border-radius: 999.9rem;
+}
+
+.button--full-width {
+  width: 100%;
 }
 
 .button:hover:not(:disabled) {
-  transform: translateY(-0.2rem);
+  background-color: color-mix(in srgb, var(--button-background), var(--color-black) 6%);
 }
 
 .button:active:not(:disabled) {
-  transform: translateY(0);
+  background-color: color-mix(in srgb, var(--button-background), var(--color-black) 10%);
 }
 
 .button:focus-visible {
@@ -40,45 +58,13 @@
   cursor: not-allowed;
 }
 
-.button--primary {
-  color: var(--color-white);
-  background: var(--color-black);
-}
-
-.button--primary:hover:not(:disabled) {
-  background: var(--color-charcoal);
-}
-
-.button--secondary {
-  border-color: var(--color-black);
-}
-
-.button--secondary:hover:not(:disabled) {
-  color: var(--color-white);
-  background: var(--color-black);
-}
-
-.button--ghost {
-  background: var(--color-grey-back);
-}
-
-.button--ghost:hover:not(:disabled) {
-  background: var(--color-grey-hover);
-}
-
 .button__icon {
-  width: 1.6rem;
-  height: 1.6rem;
-  fill: currentcolor;
-  transition: transform 180ms ease;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 2.4rem;
+  object-fit: contain;
 }
 
-.button:hover .button__icon {
-  transform: translateX(0.4rem);
-}
-
-@include media.mobile {
-  .button {
-    width: 100%;
-  }
+.button__label {
+  white-space: nowrap;
 }

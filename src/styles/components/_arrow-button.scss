@@ -1,0 +1,51 @@
+.arrow-button {
+  --arrow-button-background: var(--color-grey-back);
+
+  display: inline-flex;
+  width: 12rem;
+  height: 12rem;
+  padding: 2rem 3rem;
+  border: 0;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-black);
+  background-color: var(--arrow-button-background);
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    opacity 160ms ease;
+}
+
+.arrow-button--grey {
+  --arrow-button-background: var(--color-grey-back);
+}
+
+.arrow-button--white {
+  --arrow-button-background: var(--color-white);
+}
+
+.arrow-button:hover:not(:disabled) {
+  background-color: color-mix(in srgb, var(--arrow-button-background), var(--color-black) 6%);
+}
+
+.arrow-button:active:not(:disabled) {
+  background-color: color-mix(in srgb, var(--arrow-button-background), var(--color-black) 10%);
+}
+
+.arrow-button:focus-visible {
+  outline: 0.2rem solid var(--color-focus);
+  outline-offset: 0.3rem;
+}
+
+.arrow-button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.arrow-button__icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 2.4rem;
+  object-fit: contain;
+}

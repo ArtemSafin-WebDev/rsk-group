@@ -1,6 +1,10 @@
-<button class="button button--{{variant}}" type="{{type}}" {{#if disabled}}disabled{{/if}}>
-  {{label}}
+<button
+  class="button button--{{#if variant}}{{variant}}{{else}}grey{{/if}}{{#if size}} button--{{size}}{{/if}}{{#if fullWidth}} button--full-width{{/if}}"
+  type="{{#if type}}{{type}}{{else}}button{{/if}}"
+  {{#if disabled}}disabled{{/if}}
+>
   {{#if icon}}
-    <svg class="button__icon" aria-hidden="true"><use href="#icon-{{icon}}"></use></svg>
+    <img class="button__icon" src="{{icon}}" width="24" height="24" alt="" aria-hidden="true" />
   {{/if}}
+  <span class="button__label">{{label}}</span>
 </button>

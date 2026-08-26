@@ -1,5 +1,62 @@
-<footer class="footer">
-  <div class="container footer__inner">
-    <small class="footer__copyright">© RSK Group</small>
+<footer class="site-footer">
+  <div class="site-footer__grid">
+    <div class="site-footer__column site-footer__column--brand">
+      <div class="site-footer__brand">
+        <p class="site-footer__slogan">Несем свет<br />людям <sup>©</sup></p>
+        <p class="site-footer__about">Производитель светодиодного освещения и малых архитектурных форм для благоустройства</p>
+        <img
+          class="site-footer__logo"
+          src="/images/footer/rsk-group-logo.webp"
+          width="276"
+          height="50"
+          alt="РСК Групп — светотехническая компания"
+        />
+      </div>
+    </div>
+
+    <div class="site-footer__column site-footer__column--contacts">
+      <address class="site-footer__contacts">
+        <a href="tel:+79600796853">+7 960 079-68-53</a>
+        <a href="mailto:mail@rsc-groupp.ru">mail@rsc-groupp.ru</a>
+        <p>Казань, ул. Теплично-Комбинатская, 5В<br />420036, РТ</p>
+      </address>
+
+      <nav class="site-footer__nav" aria-label="Меню в подвале">
+        <p class="site-footer__nav-title">Меню</p>
+        <a href="{{catalogUrl}}">Каталог</a>
+      </nav>
+    </div>
+
+    <div class="site-footer__column site-footer__column--details">
+      <div class="site-footer__requisites">
+        <p>ИНН 1657223686</p>
+        <p>КПП 168301001</p>
+        <p>ОГРН 1161690093608</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <small class="site-footer__copyright">© 2026. Все права защищены. ООО&nbsp;«РСК&nbsp;Групп»</small>
+
+    <div class="site-footer__socials">
+      {{> social-networks
+        ariaLabel="РСК Групп в социальных сетях"
+        vkUrl=footerVkUrl
+        hhUrl=footerHhUrl
+        telegramUrl=footerTelegramUrl
+        maxUrl=footerMaxUrl
+      }}
+    </div>
+
+    <div class="site-footer__policies">
+      <a href="{{privacyPolicyUrl}}">Политика конфиденциальности</a>
+      <a href="{{personalDataPolicyUrl}}">Политика обработки персональных данных</a>
+    </div>
+
+    <a class="site-footer__credits" href="{{developerUrl}}">
+      <span>Разработка сайта —<br />Mark Weber</span>
+      <img src="/images/footer/mark-weber.png" width="38" height="55" alt="Mark Weber" />
+    </a>
   </div>
 </footer>

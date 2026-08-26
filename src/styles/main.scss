@@ -1,17 +1,14 @@
 @use 'fonts';
 @use 'properties';
 @use 'reset';
-@use 'typography';
+@use 'components/arrow-button';
 @use 'components/button';
 @use 'components/checkbox';
-@use 'components/content-feature';
 @use 'components/file-upload';
 @use 'components/footer';
-@use 'components/header';
-@use 'components/radio';
-@use 'components/status';
+@use 'components/request-footer';
+@use 'components/social-networks';
 @use 'components/text-input';
-@use 'components/text-link';
 @use 'ui-kit';
 
 body {
@@ -32,8 +29,21 @@ body {
 }
 
 .main {
-  min-height: calc(100vh - 14.4rem);
+  min-height: 100vh;
   padding-block: 8rem;
+}
+
+.link {
+  display: inline-flex;
+  gap: 0.8rem;
+  align-items: center;
+  color: var(--color-black);
+}
+
+.icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: currentcolor;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -4,17 +4,12 @@
     {{> head}}
   </head>
   <body data-page="{{page}}">
-    {{> header}}
-
     <main class="ui-kit">
       <div class="container">
         <header class="ui-kit__intro">
           <p class="ui-kit__eyebrow">RSK Group / Interface system</p>
           <h1 class="ui-kit__title">UI-kit</h1>
-          <p class="ui-kit__lead">
-            Рабочая витрина визуальных токенов и переиспользуемых компонентов проекта.
-          </p>
-          <p class="ui-kit__version">Версия 0.1 · 26 августа 2026</p>
+          <p class="ui-kit__lead">Токены и компоненты, подтверждённые для использования в проекте.</p>
         </header>
 
         <div class="ui-kit__layout">
@@ -24,9 +19,8 @@
               <a class="ui-kit-nav__link" href="#colors">02 Цвета</a>
               <a class="ui-kit-nav__link" href="#buttons">03 Кнопки</a>
               <a class="ui-kit-nav__link" href="#fields">04 Поля ввода</a>
-              <a class="ui-kit-nav__link" href="#selection">05 Выбор</a>
-              <a class="ui-kit-nav__link" href="#status">06 Статусы</a>
-              <a class="ui-kit-nav__link" href="#content">07 Контент</a>
+              <a class="ui-kit-nav__link" href="#checkbox">05 Checkbox</a>
+              <a class="ui-kit-nav__link" href="#social-networks">06 Социальные сети</a>
             </nav>
           </aside>
 
@@ -43,28 +37,28 @@
               <div class="type-specimens">
                 <div class="type-specimen">
                   <p class="type-specimen__meta">H1 · Regular · 110/99</p>
-                  <p class="heading-1">Создаём<br />пространство</p>
+                  <p class="type-specimen__sample type-specimen__sample--h1">Создаём<br />пространство</p>
                 </div>
                 <div class="type-specimen">
                   <p class="type-specimen__meta">H2 · Medium · 90/99</p>
-                  <p class="heading-2">Новый масштаб</p>
+                  <p class="type-specimen__sample type-specimen__sample--h2">Новый масштаб</p>
                 </div>
                 <div class="type-specimen">
                   <p class="type-specimen__meta">H3 · Medium · 70/77</p>
-                  <p class="heading-3">Системный подход</p>
+                  <p class="type-specimen__sample type-specimen__sample--h3">Системный подход</p>
                 </div>
-                <div class="type-specimen type-specimen--compact">
+                <div class="type-specimen">
                   <p class="type-specimen__meta">H4 · Medium · 50/55</p>
-                  <p class="heading-4">Точная архитектура</p>
+                  <p class="type-specimen__sample type-specimen__sample--h4">Точная архитектура</p>
                 </div>
                 <div class="type-specimen type-specimen--columns">
                   <div>
                     <p class="type-specimen__meta">P1 · Medium · 24/31</p>
-                    <p class="paragraph-1">Мы объединяем экспертизу, технологии и внимание к деталям в каждом проекте.</p>
+                    <p class="type-specimen__sample type-specimen__sample--p1">Мы объединяем экспертизу, технологии и внимание к деталям в каждом проекте.</p>
                   </div>
                   <div>
                     <p class="type-specimen__meta">P2 · Regular · 16/19</p>
-                    <p>Продуктовая команда использует единые правила, чтобы интерфейс оставался цельным.</p>
+                    <p class="type-specimen__sample type-specimen__sample--p2">Продуктовая команда использует единые правила, чтобы интерфейс оставался цельным.</p>
                   </div>
                 </div>
               </div>
@@ -75,50 +69,51 @@
                 <p class="ui-kit-section__number">02</p>
                 <div>
                   <h2>Цвета</h2>
-                  <p>Базовая монохромная палитра строит ясную и спокойную иерархию.</p>
+                  <p>Базовая палитра проекта.</p>
                 </div>
               </div>
 
               <div class="color-list">
-                <button class="color-token color-token--black" type="button" data-copy-token="#000000" aria-label="Скопировать цвет #000000">
-                  <span>Black</span><span>#000000</span>
-                </button>
-                <button class="color-token color-token--grey" type="button" data-copy-token="#F6F6F6" aria-label="Скопировать цвет #F6F6F6">
-                  <span>Grey back</span><span>#F6F6F6</span>
-                </button>
-                <button class="color-token color-token--white" type="button" data-copy-token="#FFFFFF" aria-label="Скопировать цвет #FFFFFF">
-                  <span>White</span><span>#FFFFFF</span>
-                </button>
-                <button class="color-token color-token--lines" type="button" data-copy-token="rgba(0, 0, 0, 0.15)" aria-label="Скопировать цвет линий">
-                  <span>Lines</span><span>15% Black</span>
-                </button>
+                <div class="color-token color-token--black"><span>Black</span><span>#000000</span></div>
+                <div class="color-token color-token--grey"><span>Grey back</span><span>#F6F6F6</span></div>
+                <div class="color-token color-token--white"><span>White</span><span>#FFFFFF</span></div>
+                <div class="color-token color-token--lines"><span>Lines</span><span>15% Black</span></div>
               </div>
-              <p class="ui-kit__hint" aria-live="polite" data-copy-feedback>Нажмите на образец, чтобы скопировать значение.</p>
             </section>
 
             <section class="ui-kit-section" id="buttons" data-ui-kit-section>
               <div class="ui-kit-section__head">
                 <p class="ui-kit-section__number">03</p>
                 <div>
-                  <h2>Кнопки и ссылки</h2>
-                  <p>Одна основная кнопка на контекст; вторичные действия не конкурируют с ней.</p>
+                  <h2>Кнопки</h2>
+                  <p>Светлый и серый варианты, с опциональной иконкой или без неё.</p>
                 </div>
               </div>
 
-              <div class="component-group">
-                <p class="component-group__label">Default</p>
-                <div class="component-row">
-                  {{> button variant="primary" type="button" label="Оставить заявку" icon="arrow-right"}}
-                  {{> button variant="secondary" type="button" label="Подробнее"}}
-                  {{> button variant="ghost" type="button" label="Смотреть проекты"}}
-                  {{> text-link href="#content" label="Все направления" icon="arrow-right"}}
+              <div class="button-showcase">
+                <div class="button-showcase__group">
+                  <p class="ui-kit-label">Round / grey</p>
+                  <div class="button-showcase__row">
+                    {{> arrow-button ariaLabel="Перейти далее"}}
+                  </div>
                 </div>
-              </div>
-              <div class="component-group">
-                <p class="component-group__label">Disabled</p>
-                <div class="component-row">
-                  {{> button variant="primary" type="button" label="Недоступно" disabled=true}}
-                  {{> button variant="secondary" type="button" label="Недоступно" disabled=true}}
+                <div class="button-showcase__group button-showcase__group--dark">
+                  <p class="ui-kit-label">Round / white</p>
+                  {{> arrow-button variant="white" ariaLabel="Перейти далее"}}
+                </div>
+                <div class="button-showcase__group">
+                  <p class="ui-kit-label">Grey back</p>
+                  <div class="button-showcase__row">
+                    {{> button label="Смотреть все" icon="/icons/arrow-right.svg"}}
+                    {{> button label="Подробнее"}}
+                    {{> button label="Прикрепить файл" icon="/icons/attachment.svg"}}
+                  </div>
+                </div>
+                <div class="button-showcase__group button-showcase__group--dark">
+                  <p class="ui-kit-label">White / full width</p>
+                  {{> button variant="white" label="Связаться" icon="/icons/arrow-right.svg" fullWidth=true}}
+                  <p class="ui-kit-label button-showcase__size-label">White / small</p>
+                  {{> button variant="white" size="small" label="Связаться"}}
                 </div>
               </div>
             </section>
@@ -128,13 +123,13 @@
                 <p class="ui-kit-section__number">04</p>
                 <div>
                   <h2>Поля ввода</h2>
-                  <p>Текстовое поле и загрузчик файлов в базовых интерактивных состояниях.</p>
+                  <p>Текстовое поле и загрузчик файлов в предусмотренных состояниях.</p>
                 </div>
               </div>
 
               <div class="control-showcase">
                 <div class="control-showcase__group">
-                  <p class="component-group__label">Текстовый input</p>
+                  <p class="ui-kit-label">Текстовый input</p>
                   <div class="control-showcase__row control-showcase__row--text">
                     <div class="control-specimen">
                       <span class="control-specimen__state">Default</span>
@@ -152,7 +147,7 @@
                 </div>
 
                 <div class="control-showcase__group">
-                  <p class="component-group__label">Загрузка файла</p>
+                  <p class="ui-kit-label">Загрузка файла</p>
                   <div class="control-showcase__row control-showcase__row--file">
                     <div class="control-specimen">
                       <span class="control-specimen__state">Default</span>
@@ -167,82 +162,58 @@
               </div>
             </section>
 
-            <section class="ui-kit-section" id="selection" data-ui-kit-section>
+            <section class="ui-kit-section" id="checkbox" data-ui-kit-section>
               <div class="ui-kit-section__head">
                 <p class="ui-kit-section__number">05</p>
                 <div>
-                  <h2>Элементы выбора</h2>
-                  <p>У всей интерактивной зоны единый крупный target и видимое focus-состояние.</p>
+                  <h2>Checkbox</h2>
+                  <p>Состояния согласия на обработку персональных данных.</p>
                 </div>
               </div>
 
-              <div class="selection-grid">
-                <fieldset class="selection-group selection-group--inverse">
-                  <legend>Checkbox</legend>
-                  {{> checkbox
-                    id="privacy-default"
-                    name="privacy-default"
-                    inverse=true
-                    label="Я даю Согласие на обработку персональных данных в соответствии с Политикой обработки персональных данных"
-                  }}
-                  {{> checkbox
-                    id="privacy-checked"
-                    name="privacy-checked"
-                    inverse=true
-                    checked=true
-                    label="Я даю Согласие на обработку персональных данных в соответствии с Политикой обработки персональных данных"
-                  }}
-                </fieldset>
-                <fieldset class="selection-group">
-                  <legend>Radio</legend>
-                  {{> radio id="contact-call" name="contact" value="call" label="Позвонить" checked=true}}
-                  {{> radio id="contact-write" name="contact" value="write" label="Написать"}}
-                  {{> radio id="contact-none" name="contact" value="none" label="Не связываться" disabled=true}}
-                </fieldset>
+              <div class="checkbox-showcase">
+                {{> checkbox
+                  id="privacy-default"
+                  name="privacy-default"
+                  inverse=true
+                  label="Я даю Согласие на обработку персональных данных в соответствии с Политикой обработки персональных данных"
+                }}
+                {{> checkbox
+                  id="privacy-checked"
+                  name="privacy-checked"
+                  inverse=true
+                  checked=true
+                  label="Я даю Согласие на обработку персональных данных в соответствии с Политикой обработки персональных данных"
+                }}
               </div>
             </section>
 
-            <section class="ui-kit-section" id="status" data-ui-kit-section>
+            <section class="ui-kit-section" id="social-networks" data-ui-kit-section>
               <div class="ui-kit-section__head">
                 <p class="ui-kit-section__number">06</p>
                 <div>
-                  <h2>Статусы</h2>
-                  <p>Короткие подписи помогают быстро считать состояние объекта или процесса.</p>
+                  <h2>Социальные сети</h2>
+                  <p>Ссылки на представительства компании в социальных сетях и сервисах.</p>
                 </div>
               </div>
 
-              <div class="component-row">
-                {{> status variant="neutral" label="В работе"}}
-                {{> status variant="success" label="Завершено"}}
-                {{> status variant="warning" label="Требует внимания"}}
-                {{> status variant="error" label="Ошибка"}}
+              <div class="social-networks-showcase">
+                {{> social-networks
+                  ariaLabel="RSK Group в социальных сетях"
+                  vkUrl="https://vk.com/"
+                  hhUrl="https://hh.ru/"
+                  telegramUrl="https://t.me/"
+                  maxUrl="https://max.ru/"
+                }}
               </div>
-            </section>
-
-            <section class="ui-kit-section" id="content" data-ui-kit-section>
-              <div class="ui-kit-section__head">
-                <p class="ui-kit-section__number">07</p>
-                <div>
-                  <h2>Контентный блок</h2>
-                  <p>Базовый паттерн для услуги, проекта или направления компании.</p>
-                </div>
-              </div>
-
-              {{> content-feature
-                index="01 / 04"
-                eyebrow="Направление"
-                title="Генеральное проектирование"
-                description="Разрабатываем согласованные решения от концепции до рабочей документации."
-                href="#typography"
-                linkLabel="Подробнее"
-              }}
             </section>
           </div>
         </div>
       </div>
     </main>
 
-    {{> footer}}
+    {{> request-footer}}
+
     <script type="module" src="/scripts/main.ts"></script>
   </body>
 </html>
