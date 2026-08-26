@@ -1,0 +1,26 @@
+.text-link {
+  display: inline-flex;
+  padding-block: 0.4rem;
+  border-bottom: 0.1rem solid currentcolor;
+  align-items: center;
+  gap: 1.2rem;
+  color: inherit;
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.text-link:focus-visible {
+  outline: 0.2rem solid var(--color-focus);
+  outline-offset: 0.3rem;
+}
+
+.text-link__icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: currentcolor;
+  transition: transform 180ms ease;
+}
+
+.text-link:hover .text-link__icon {
+  transform: translateX(0.4rem);
+}

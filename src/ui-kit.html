@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    {{> head}}
+  </head>
+  <body data-page="{{page}}">
+    {{> header}}
+
+    <main class="ui-kit">
+      <div class="container">
+        <header class="ui-kit__intro">
+          <p class="ui-kit__eyebrow">RSK Group / Interface system</p>
+          <h1 class="ui-kit__title">UI-kit</h1>
+          <p class="ui-kit__lead">
+            Рабочая витрина визуальных токенов и переиспользуемых компонентов проекта.
+          </p>
+          <p class="ui-kit__version">Версия 0.1 · 26 августа 2026</p>
+        </header>
+
+        <div class="ui-kit__layout">
+          <aside class="ui-kit__sidebar" aria-label="Разделы UI-kit">
+            <nav class="ui-kit-nav">
+              <a class="ui-kit-nav__link is-active" href="#typography">01 Типографика</a>
+              <a class="ui-kit-nav__link" href="#colors">02 Цвета</a>
+              <a class="ui-kit-nav__link" href="#buttons">03 Кнопки</a>
+              <a class="ui-kit-nav__link" href="#fields">04 Поля ввода</a>
+              <a class="ui-kit-nav__link" href="#selection">05 Выбор</a>
+              <a class="ui-kit-nav__link" href="#status">06 Статусы</a>
+              <a class="ui-kit-nav__link" href="#content">07 Контент</a>
+            </nav>
+          </aside>
+
+          <div class="ui-kit__content">
+            <section class="ui-kit-section" id="typography" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">01</p>
+                <div>
+                  <h2>Типографика</h2>
+                  <p>Vela Sans используется во всех интерфейсах и коммуникациях.</p>
+                </div>
+              </div>
+
+              <div class="type-specimens">
+                <div class="type-specimen">
+                  <p class="type-specimen__meta">H1 · Regular · 110/99</p>
+                  <p class="heading-1">Создаём<br />пространство</p>
+                </div>
+                <div class="type-specimen">
+                  <p class="type-specimen__meta">H2 · Medium · 90/99</p>
+                  <p class="heading-2">Новый масштаб</p>
+                </div>
+                <div class="type-specimen">
+                  <p class="type-specimen__meta">H3 · Medium · 70/77</p>
+                  <p class="heading-3">Системный подход</p>
+                </div>
+                <div class="type-specimen type-specimen--compact">
+                  <p class="type-specimen__meta">H4 · Medium · 50/55</p>
+                  <p class="heading-4">Точная архитектура</p>
+                </div>
+                <div class="type-specimen type-specimen--columns">
+                  <div>
+                    <p class="type-specimen__meta">P1 · Medium · 24/31</p>
+                    <p class="paragraph-1">Мы объединяем экспертизу, технологии и внимание к деталям в каждом проекте.</p>
+                  </div>
+                  <div>
+                    <p class="type-specimen__meta">P2 · Regular · 16/19</p>
+                    <p>Продуктовая команда использует единые правила, чтобы интерфейс оставался цельным.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="ui-kit-section" id="colors" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">02</p>
+                <div>
+                  <h2>Цвета</h2>
+                  <p>Базовая монохромная палитра строит ясную и спокойную иерархию.</p>
+                </div>
+              </div>
+
+              <div class="color-list">
+                <button class="color-token color-token--black" type="button" data-copy-token="#000000" aria-label="Скопировать цвет #000000">
+                  <span>Black</span><span>#000000</span>
+                </button>
+                <button class="color-token color-token--grey" type="button" data-copy-token="#F6F6F6" aria-label="Скопировать цвет #F6F6F6">
+                  <span>Grey back</span><span>#F6F6F6</span>
+                </button>
+                <button class="color-token color-token--white" type="button" data-copy-token="#FFFFFF" aria-label="Скопировать цвет #FFFFFF">
+                  <span>White</span><span>#FFFFFF</span>
+                </button>
+                <button class="color-token color-token--lines" type="button" data-copy-token="rgba(0, 0, 0, 0.15)" aria-label="Скопировать цвет линий">
+                  <span>Lines</span><span>15% Black</span>
+                </button>
+              </div>
+              <p class="ui-kit__hint" aria-live="polite" data-copy-feedback>Нажмите на образец, чтобы скопировать значение.</p>
+            </section>
+
+            <section class="ui-kit-section" id="buttons" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">03</p>
+                <div>
+                  <h2>Кнопки и ссылки</h2>
+                  <p>Одна основная кнопка на контекст; вторичные действия не конкурируют с ней.</p>
+                </div>
+              </div>
+
+              <div class="component-group">
+                <p class="component-group__label">Default</p>
+                <div class="component-row">
+                  {{> button variant="primary" type="button" label="Оставить заявку" icon="arrow-right"}}
+                  {{> button variant="secondary" type="button" label="Подробнее"}}
+                  {{> button variant="ghost" type="button" label="Смотреть проекты"}}
+                  {{> text-link href="#content" label="Все направления" icon="arrow-right"}}
+                </div>
+              </div>
+              <div class="component-group">
+                <p class="component-group__label">Disabled</p>
+                <div class="component-row">
+                  {{> button variant="primary" type="button" label="Недоступно" disabled=true}}
+                  {{> button variant="secondary" type="button" label="Недоступно" disabled=true}}
+                </div>
+              </div>
+            </section>
+
+            <section class="ui-kit-section" id="fields" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">04</p>
+                <div>
+                  <h2>Поля ввода</h2>
+                  <p>Текстовое поле и загрузчик файлов в базовых интерактивных состояниях.</p>
+                </div>
+              </div>
+
+              <div class="control-showcase">
+                <div class="control-showcase__group">
+                  <p class="component-group__label">Текстовый input</p>
+                  <div class="control-showcase__row control-showcase__row--text">
+                    <div class="control-specimen">
+                      <span class="control-specimen__state">Default</span>
+                      {{> text-input placeholder="Ваше имя" ariaLabel="Ваше имя, обычное состояние"}}
+                    </div>
+                    <div class="control-specimen">
+                      <span class="control-specimen__state">Hover</span>
+                      {{> text-input state="hovered" placeholder="Ваше имя" ariaLabel="Ваше имя, состояние наведения"}}
+                    </div>
+                    <div class="control-specimen">
+                      <span class="control-specimen__state">Focus / filled</span>
+                      {{> text-input state="focused" value="Влади" ariaLabel="Ваше имя, фокус и заполнение"}}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="control-showcase__group">
+                  <p class="component-group__label">Загрузка файла</p>
+                  <div class="control-showcase__row control-showcase__row--file">
+                    <div class="control-specimen">
+                      <span class="control-specimen__state">Default</span>
+                      {{> file-upload}}
+                    </div>
+                    <div class="control-specimen">
+                      <span class="control-specimen__state">Selected</span>
+                      {{> file-upload selected=true initialFile="Объект2 смета. pdf"}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="ui-kit-section" id="selection" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">05</p>
+                <div>
+                  <h2>Элементы выбора</h2>
+                  <p>У всей интерактивной зоны единый крупный target и видимое focus-состояние.</p>
+                </div>
+              </div>
+
+              <div class="selection-grid">
+                <fieldset class="selection-group selection-group--inverse">
+                  <legend>Checkbox</legend>
+                  {{> checkbox
+                    id="privacy-default"
+                    name="privacy-default"
+                    inverse=true
+                    label="Я даю Согласие на обработку персональных данных в соответствии с Политикой обработки персональных данных"
+                  }}
+                  {{> checkbox
+                    id="privacy-checked"
+                    name="privacy-checked"
+                    inverse=true
+                    checked=true
+                    label="Я даю Согласие на обработку персональных данных в соответствии с Политикой обработки персональных данных"
+                  }}
+                </fieldset>
+                <fieldset class="selection-group">
+                  <legend>Radio</legend>
+                  {{> radio id="contact-call" name="contact" value="call" label="Позвонить" checked=true}}
+                  {{> radio id="contact-write" name="contact" value="write" label="Написать"}}
+                  {{> radio id="contact-none" name="contact" value="none" label="Не связываться" disabled=true}}
+                </fieldset>
+              </div>
+            </section>
+
+            <section class="ui-kit-section" id="status" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">06</p>
+                <div>
+                  <h2>Статусы</h2>
+                  <p>Короткие подписи помогают быстро считать состояние объекта или процесса.</p>
+                </div>
+              </div>
+
+              <div class="component-row">
+                {{> status variant="neutral" label="В работе"}}
+                {{> status variant="success" label="Завершено"}}
+                {{> status variant="warning" label="Требует внимания"}}
+                {{> status variant="error" label="Ошибка"}}
+              </div>
+            </section>
+
+            <section class="ui-kit-section" id="content" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">07</p>
+                <div>
+                  <h2>Контентный блок</h2>
+                  <p>Базовый паттерн для услуги, проекта или направления компании.</p>
+                </div>
+              </div>
+
+              {{> content-feature
+                index="01 / 04"
+                eyebrow="Направление"
+                title="Генеральное проектирование"
+                description="Разрабатываем согласованные решения от концепции до рабочей документации."
+                href="#typography"
+                linkLabel="Подробнее"
+              }}
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    {{> footer}}
+    <script type="module" src="/scripts/main.ts"></script>
+  </body>
+</html>

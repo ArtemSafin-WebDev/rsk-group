@@ -1,0 +1,12 @@
+<label class="radio" for="{{id}}">
+  <input
+    class="radio__input"
+    id="{{id}}"
+    type="radio"
+    name="{{name}}"
+    {{#if value}}value="{{value}}"{{/if}}
+    {{#if checked}}checked{{/if}}
+    {{#if disabled}}disabled{{/if}}
+  />
+  <span class="radio__label">{{label}}</span>
+</label>

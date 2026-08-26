@@ -1,0 +1,118 @@
+@use 'media';
+
+:root {
+  // Colors
+  --color-white: #ffffff;
+  --color-lines: rgb(0 0 0 / 15%);
+  --color-grey-back: #f6f6f6;
+  --color-grey-hover: #eaeaea;
+  --color-black: #000000;
+  --color-charcoal: #252525;
+  --background-cards: linear-gradient(118.92deg, #eeeeee 0%, #f7f7f7 100%);
+
+  // Semantic colors
+  --color-text: var(--color-black);
+  --color-background: var(--color-white);
+  --color-surface: var(--color-white);
+  --color-text-muted: #6f6f6f;
+  --color-lines-strong: rgb(0 0 0 / 35%);
+  --color-focus: #4a68ff;
+  --color-success: #247a4a;
+  --color-warning: #9a6500;
+  --color-error: #b52b2b;
+  --color-status-neutral: #575757;
+
+  // Dark form controls
+  --color-control-background: #1b1b1b;
+  --color-control-background-hover: #1f1f1f;
+  --color-control-border: #414141;
+  --color-control-border-focus: #656565;
+
+  // Font family and weights
+  --font-family-base: 'Vela Sans', Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  // H1 Regular — 11rem / 90% / -5%
+  --font-size-h1: 11rem;
+  --font-weight-h1: var(--font-weight-regular);
+  --line-height-h1: 0.9;
+  --letter-spacing-h1: -0.55rem;
+
+  // H2 Medium — 9rem / 110% / -5%
+  --font-size-h2: 9rem;
+  --font-weight-h2: var(--font-weight-medium);
+  --line-height-h2: 1.1;
+  --letter-spacing-h2: -0.45rem;
+
+  // H3 Medium — 7rem / 110% / -5%
+  --font-size-h3: 7rem;
+  --font-weight-h3: var(--font-weight-medium);
+  --line-height-h3: 1.1;
+  --letter-spacing-h3: -0.35rem;
+
+  // H4 Medium — 5rem / 110% / -5%
+  --font-size-h4: 5rem;
+  --font-weight-h4: var(--font-weight-medium);
+  --line-height-h4: 1.1;
+  --letter-spacing-h4: -0.25rem;
+
+  // H5 SemiBold — 3rem / 120% / -4%
+  --font-size-h5-semibold: 3rem;
+  --font-weight-h5-semibold: var(--font-weight-semibold);
+  --line-height-h5-semibold: 1.2;
+  --letter-spacing-h5-semibold: -0.12rem;
+
+  // H5 Medium — 3rem / 110% / -4%
+  --font-size-h5-medium: 3rem;
+  --font-weight-h5-medium: var(--font-weight-medium);
+  --line-height-h5-medium: 1.1;
+  --letter-spacing-h5-medium: -0.12rem;
+
+  // P1 SemiBold — 2.4rem / 120% / -2%
+  --font-size-p1-semibold: 2.4rem;
+  --font-weight-p1-semibold: var(--font-weight-semibold);
+  --line-height-p1-semibold: 1.2;
+  --letter-spacing-p1-semibold: -0.048rem;
+
+  // P1 Medium — 2.4rem / 130% / -2%
+  --font-size-p1-medium: 2.4rem;
+  --font-weight-p1-medium: var(--font-weight-medium);
+  --line-height-p1-medium: 1.3;
+  --letter-spacing-p1-medium: -0.048rem;
+
+  // P2 Medium — 1.6rem / 120%
+  --font-size-p2-medium: 1.6rem;
+  --font-weight-p2-medium: var(--font-weight-medium);
+  --line-height-p2-medium: 1.2;
+
+  // P2 Regular — 1.6rem / 120%
+  --font-size-p2-regular: 1.6rem;
+  --font-weight-p2-regular: var(--font-weight-regular);
+  --line-height-p2-regular: 1.2;
+
+  // Button Bold — 1.6rem / 120%
+  --font-size-button: 1.6rem;
+  --font-weight-button: var(--font-weight-bold);
+  --line-height-button: 1.2;
+
+  // P3 Medium — 1.4rem / 120%
+  --font-size-p3: 1.4rem;
+  --font-weight-p3: var(--font-weight-medium);
+  --line-height-p3: 1.2;
+
+  // Description Medium — 1.2rem / 140%
+  --font-size-description: 1.2rem;
+  --font-weight-description: var(--font-weight-medium);
+  --line-height-description: 1.4;
+
+  // Layout
+  --container-max-width: 184rem;
+  --container-padding-inline: 4rem;
+
+  @include media.mobile {
+    --container-padding-inline: 1.6rem;
+  }
+}

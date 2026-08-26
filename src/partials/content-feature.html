@@ -1,0 +1,19 @@
+<article class="content-feature">
+  <p class="content-feature__index">{{index}}</p>
+  <div class="content-feature__body">
+    <p class="content-feature__eyebrow">{{eyebrow}}</p>
+    <h3 class="content-feature__title">{{title}}</h3>
+    <p class="content-feature__description">{{description}}</p>
+    {{> text-link
+      className="content-feature__link"
+      href=href
+      label=linkLabel
+      icon="arrow-right"
+    }}
+  </div>
+  <div class="content-feature__visual" aria-hidden="true">
+    <span class="content-feature__visual-line"></span>
+    <span class="content-feature__visual-line"></span>
+    <span class="content-feature__visual-line"></span>
+  </div>
+</article>

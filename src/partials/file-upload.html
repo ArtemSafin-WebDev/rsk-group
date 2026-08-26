@@ -1,0 +1,27 @@
+<div
+  class="file-upload{{#if selected}} file-upload--has-file{{/if}}"
+  data-file-upload
+  {{#if initialFile}}data-initial-file="{{initialFile}}"{{/if}}
+>
+  <input class="file-upload__input" type="file" data-file-upload-input />
+  <button
+    class="file-upload__trigger"
+    type="button"
+    data-file-upload-trigger
+    aria-label="{{#if selected}}Заменить файл {{initialFile}}{{else}}Выберите файл{{/if}}"
+  >
+    <svg class="file-upload__file-icon" aria-hidden="true"><use href="#icon-attachment"></use></svg>
+    <span class="file-upload__name" data-file-upload-name aria-live="polite">
+      {{#if selected}}{{initialFile}}{{else}}Выберите файл{{/if}}
+    </span>
+  </button>
+  <button
+    class="file-upload__clear"
+    type="button"
+    data-file-upload-clear
+    aria-label="Удалить выбранный файл"
+    {{#unless selected}}hidden{{/unless}}
+  >
+    <svg class="file-upload__clear-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+  </button>
+</div>

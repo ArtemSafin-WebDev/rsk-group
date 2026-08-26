@@ -1,0 +1,34 @@
+.status {
+  display: inline-flex;
+  padding: 0.8rem 1.2rem;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: var(--font-size-p3);
+  font-weight: var(--font-weight-p3);
+  line-height: var(--line-height-p3);
+  background: var(--color-grey-back);
+}
+
+.status::before {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  content: '';
+  background: currentcolor;
+}
+
+.status--neutral {
+  color: var(--color-status-neutral);
+}
+
+.status--success {
+  color: var(--color-success);
+}
+
+.status--warning {
+  color: var(--color-warning);
+}
+
+.status--error {
+  color: var(--color-error);
+}

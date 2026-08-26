@@ -1,0 +1,6 @@
+<button class="button button--{{variant}}" type="{{type}}" {{#if disabled}}disabled{{/if}}>
+  {{label}}
+  {{#if icon}}
+    <svg class="button__icon" aria-hidden="true"><use href="#icon-{{icon}}"></use></svg>
+  {{/if}}
+</button>

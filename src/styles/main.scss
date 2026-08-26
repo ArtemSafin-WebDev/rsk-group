@@ -1,0 +1,46 @@
+@use 'fonts';
+@use 'properties';
+@use 'reset';
+@use 'typography';
+@use 'components/button';
+@use 'components/checkbox';
+@use 'components/content-feature';
+@use 'components/file-upload';
+@use 'components/footer';
+@use 'components/header';
+@use 'components/radio';
+@use 'components/status';
+@use 'components/text-input';
+@use 'components/text-link';
+@use 'ui-kit';
+
+body {
+  min-width: 32rem;
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-p2-regular);
+  font-weight: var(--font-weight-p2-regular);
+  line-height: var(--line-height-p2-regular);
+  background: var(--color-background);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-inline);
+}
+
+.main {
+  min-height: calc(100vh - 14.4rem);
+  padding-block: 8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

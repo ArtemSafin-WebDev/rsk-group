@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    {{> head}}
+  </head>
+  <body data-page="{{page}}">
+    {{> header}}
+
+    <main class="main">
+      <div class="container">
+        <h1>Новый многостраничный проект</h1>
+        <p>Vite, TypeScript, SCSS, Handlebars и SVG-спрайт готовы к работе.</p>
+
+        {{> text-link href="/about.html" label="О компании" icon="arrow-right"}}
+      </div>
+    </main>
+
+    {{> footer}}
+    <script type="module" src="/scripts/main.ts"></script>
+  </body>
+</html>

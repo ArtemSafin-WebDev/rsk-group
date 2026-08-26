@@ -1,0 +1,12 @@
+@use '../media';
+
+.footer {
+  padding-block: 2.4rem;
+  background: var(--color-surface);
+}
+
+@include media.mobile {
+  .footer {
+    padding-block: 2rem;
+  }
+}

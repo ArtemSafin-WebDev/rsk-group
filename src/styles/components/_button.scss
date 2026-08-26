@@ -1,0 +1,84 @@
+@use '../media';
+
+.button {
+  display: inline-flex;
+  min-height: 5.6rem;
+  padding: 1.6rem 2.4rem;
+  border: 0.1rem solid transparent;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+  color: var(--color-black);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-button);
+  line-height: var(--line-height-button);
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-0.2rem);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.button:focus-visible {
+  outline: 0.2rem solid var(--color-focus);
+  outline-offset: 0.3rem;
+}
+
+.button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.button--primary {
+  color: var(--color-white);
+  background: var(--color-black);
+}
+
+.button--primary:hover:not(:disabled) {
+  background: var(--color-charcoal);
+}
+
+.button--secondary {
+  border-color: var(--color-black);
+}
+
+.button--secondary:hover:not(:disabled) {
+  color: var(--color-white);
+  background: var(--color-black);
+}
+
+.button--ghost {
+  background: var(--color-grey-back);
+}
+
+.button--ghost:hover:not(:disabled) {
+  background: var(--color-grey-hover);
+}
+
+.button__icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: currentcolor;
+  transition: transform 180ms ease;
+}
+
+.button:hover .button__icon {
+  transform: translateX(0.4rem);
+}
+
+@include media.mobile {
+  .button {
+    width: 100%;
+  }
+}
