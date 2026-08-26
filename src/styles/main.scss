@@ -6,6 +6,7 @@
 @use 'components/button';
 @use 'components/catalog-section';
 @use 'components/checkbox';
+@use 'components/company-intro-section';
 @use 'components/direction-card';
 @use 'components/file-upload';
 @use 'components/footer';
@@ -39,7 +40,6 @@ body {
 
 .main {
   min-height: 100vh;
-  padding-block: 8rem;
 }
 
 .main--home {
