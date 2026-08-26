@@ -1,0 +1,23 @@
+<a
+  class="solution-card{{#if className}} {{className}}{{/if}}{{#if hovered}} solution-card--hovered{{/if}}"
+  href="{{url}}"
+>
+  <img
+    class="solution-card__image"
+    src="{{imageSrc}}"
+    width="911"
+    height="610"
+    alt=""
+    aria-hidden="true"
+  />
+
+  <span class="solution-card__shade" aria-hidden="true"></span>
+
+  <h3 class="solution-card__title">
+    {{title}}{{#if titleSecondLine}}<br />{{titleSecondLine}}{{/if}}
+  </h3>
+
+  <span class="solution-card__action" aria-hidden="true">
+    {{> arrow-button decorative=true}}
+  </span>
+</a>

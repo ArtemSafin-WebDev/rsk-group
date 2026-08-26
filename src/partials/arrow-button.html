@@ -1,3 +1,18 @@
+{{#if decorative}}
+<span
+  class="arrow-button arrow-button--{{#if variant}}{{variant}}{{else}}grey{{/if}} arrow-button--decorative"
+  aria-hidden="true"
+>
+  <img
+    class="arrow-button__icon"
+    src="/icons/arrow-right.svg"
+    width="24"
+    height="24"
+    alt=""
+    aria-hidden="true"
+  />
+</span>
+{{else}}
 <button
   class="arrow-button arrow-button--{{#if variant}}{{variant}}{{else}}grey{{/if}}"
   type="{{#if type}}{{type}}{{else}}button{{/if}}"
@@ -13,3 +28,4 @@
     aria-hidden="true"
   />
 </button>
+{{/if}}

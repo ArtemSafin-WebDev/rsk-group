@@ -1,0 +1,95 @@
+@use '../media';
+
+.solutions-section {
+  margin-bottom: 24rem;
+}
+
+.solutions-section__header,
+.solutions-section__cards {
+  display: grid;
+  grid-template-columns: var(--layout-grid-columns);
+  column-gap: 2rem;
+}
+
+.solutions-section__header {
+  padding-top: 4rem;
+  border-top: 0.1rem solid var(--color-lines);
+  align-items: start;
+}
+
+.solutions-section__title,
+.solutions-section__description {
+  margin: 0;
+  text-box-edge: cap alphabetic;
+  text-box-trim: trim-both;
+}
+
+.solutions-section__title {
+  grid-column: span 2;
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-h2);
+  line-height: var(--line-height-h2);
+  letter-spacing: var(--letter-spacing-h2);
+}
+
+.solutions-section__description {
+  max-width: 35rem;
+  grid-column: 3;
+  font-size: var(--font-size-p1-medium);
+  font-weight: var(--font-weight-p1-medium);
+  line-height: var(--line-height-p1-medium);
+  letter-spacing: var(--letter-spacing-p1-medium);
+}
+
+.solutions-section__cards {
+  margin-top: 12rem;
+  row-gap: 2rem;
+}
+
+.solutions-section__cards > .solution-card {
+  grid-column: span 2;
+}
+
+.solutions-section__card--parks .solution-card__image {
+  inset: -3.28% auto auto -5.51%;
+  width: 125.2%;
+  height: 109.02%;
+  object-position: center;
+}
+
+.solutions-section__more {
+  display: flex;
+  margin-top: 12rem;
+  justify-content: center;
+}
+
+@include media.mobile {
+  .solutions-section {
+    margin-bottom: 16rem;
+  }
+
+  .solutions-section__header {
+    padding-top: 2.4rem;
+    row-gap: 2.4rem;
+  }
+
+  .solutions-section__title,
+  .solutions-section__description,
+  .solutions-section__cards > .solution-card {
+    grid-column: 1 / -1;
+  }
+
+  .solutions-section__title {
+    font-size: 4.8rem;
+    letter-spacing: -0.24rem;
+  }
+
+  .solutions-section__description {
+    max-width: none;
+  }
+
+  .solutions-section__cards,
+  .solutions-section__more {
+    margin-top: 6.4rem;
+  }
+}

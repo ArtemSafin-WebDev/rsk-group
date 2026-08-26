@@ -25,6 +25,10 @@
   --arrow-button-background: var(--color-white);
 }
 
+.arrow-button--decorative {
+  pointer-events: none;
+}
+
 .arrow-button:hover:not(:disabled) {
   background-color: color-mix(in srgb, var(--arrow-button-background), var(--color-black) 6%);
 }

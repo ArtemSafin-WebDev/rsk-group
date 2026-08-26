@@ -21,6 +21,8 @@
               <a class="ui-kit-nav__link" href="#fields">04 Поля ввода</a>
               <a class="ui-kit-nav__link" href="#checkbox">05 Checkbox</a>
               <a class="ui-kit-nav__link" href="#social-networks">06 Социальные сети</a>
+              <a class="ui-kit-nav__link" href="#direction-card">07 Карточка направления</a>
+              <a class="ui-kit-nav__link" href="#solution-card">08 Карточка решения</a>
             </nav>
           </aside>
 
@@ -204,6 +206,46 @@
                   hhUrl="https://hh.ru/"
                   telegramUrl="https://t.me/"
                   maxUrl="https://max.ru/"
+                }}
+              </div>
+            </section>
+
+            <section class="ui-kit-section" id="direction-card" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">07</p>
+                <div>
+                  <h2>Карточка направления</h2>
+                  <p>Вся карточка ведёт в направление; при наведении появляются другое изображение и ссылки на подкатегории.</p>
+                </div>
+              </div>
+
+              <div class="direction-card-showcase">
+                {{> direction-card
+                  title="Архитектурное"
+                  titleSecondLine="освещение"
+                  url="#architectural-lighting"
+                  defaultImageSrc="/images/direction-card/architectural-lighting-default.png"
+                  hoverImageSrc="/images/direction-card/architectural-lighting-hover.png"
+                  subcategories=directionCardSubcategories
+                  subcategoriesAriaLabel="Подкатегории архитектурного освещения"
+                }}
+              </div>
+            </section>
+
+            <section class="ui-kit-section" id="solution-card" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">08</p>
+                <div>
+                  <h2>Карточка решения</h2>
+                  <p>На наведении изображение затемняется, а в центре появляется круглая кнопка со стрелкой.</p>
+                </div>
+              </div>
+
+              <div class="solution-card-showcase">
+                {{> solution-card
+                  title="Улицы и дороги"
+                  url="#streets-and-roads"
+                  imageSrc="/images/solution-card/streets-and-roads.jpg"
                 }}
               </div>
             </section>

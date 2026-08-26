@@ -56,6 +56,30 @@ npm run preview
 }}
 ```
 
+Карточка направления сохраняет пропорцию 910 × 587 через grid stack. Основная ссылка кликабельна по всей площади, а `subcategories` передаётся массивом `{ label, url }` из контекста страницы:
+
+```html
+{{> direction-card
+  title="Архитектурное"
+  titleSecondLine="освещение"
+  url="/directions/architectural-lighting.html"
+  defaultImageSrc="/images/direction-card/outdoor-lighting.png"
+  hoverImageSrc="/images/direction-card/architectural-lighting.png"
+  subcategories=directionCardSubcategories
+  subcategoriesAriaLabel="Подкатегории архитектурного освещения"
+}}
+```
+
+Карточка решения сохраняет пропорцию 910,5 × 610 через `aspect-ratio`. При наведении или фокусе изображение затемняется и появляется круглая кнопка со стрелкой:
+
+```html
+{{> solution-card
+  title="Улицы и дороги"
+  url="/solutions/streets-and-roads.html"
+  imageSrc="/images/solution-card/streets-and-roads.jpg"
+}}
+```
+
 Чтобы добавить страницу, создайте HTML-файл в `src` и добавьте ее данные в `pageData` внутри `vite.config.ts`. Все HTML-файлы верхнего уровня подключаются к production-сборке автоматически.
 
 Иконка `src/icons/example.svg` доступна по пути `/icons/example.svg` и подключается внутри БЭМ-компонента так:

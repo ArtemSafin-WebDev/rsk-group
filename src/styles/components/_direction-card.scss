@@ -1,0 +1,182 @@
+@use '../media';
+
+.direction-card {
+  position: relative;
+  display: grid;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--color-black);
+  background: var(--color-grey-back);
+  transition: color 360ms ease;
+
+  // The card's 910 × 587 Figma proportion is kept by an in-flow grid spacer.
+  &::before {
+    display: block;
+    padding-bottom: 64.505%;
+    grid-area: 1 / 1;
+    content: '';
+  }
+
+  &:hover,
+  &:focus-within,
+  &--hovered {
+    color: var(--color-white);
+
+    .direction-card__media::before,
+    .direction-card__hover-media {
+      opacity: 1;
+    }
+
+    .direction-card__image--default {
+      opacity: 0;
+    }
+
+    .direction-card__subcategories {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+      transition-delay: 90ms, 90ms, 0ms, 0ms;
+    }
+  }
+}
+
+.direction-card__media {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  &::before {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    content: '';
+    opacity: 0;
+    background: var(--background-direction-card-hover);
+    transition: opacity 360ms ease;
+  }
+}
+
+.direction-card__image,
+.direction-card__hover-media {
+  position: absolute;
+  max-width: none;
+}
+
+.direction-card__image {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.direction-card__image--default {
+  z-index: 2;
+  transition: opacity 360ms ease;
+}
+
+.direction-card__hover-media {
+  z-index: 3;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.direction-card__image--hover {
+  z-index: 1;
+}
+
+.direction-card__main-link {
+  z-index: 1;
+  display: block;
+  min-width: 0;
+  min-height: 0;
+  padding: 4rem;
+  grid-area: 1 / 1;
+  color: inherit;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-focus) !important;
+    outline-offset: -0.4rem;
+  }
+}
+
+.direction-card__title {
+  margin: 0;
+  font-size: var(--font-size-h5-medium);
+  font-weight: var(--font-weight-h5-medium);
+  line-height: var(--line-height-h5-medium);
+  letter-spacing: var(--letter-spacing-h5-medium);
+}
+
+.direction-card__subcategories {
+  z-index: 2;
+  width: fit-content;
+  margin: 4rem;
+  grid-area: 1 / 1;
+  align-self: end;
+  justify-self: start;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition:
+    opacity 220ms ease,
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 280ms,
+    color 360ms ease;
+}
+
+.direction-card__subcategories-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.direction-card__subcategory-link {
+  display: block;
+  width: fit-content;
+  color: inherit;
+  font-size: var(--font-size-p2-medium);
+  font-weight: var(--font-weight-p2-medium);
+  line-height: var(--line-height-p2-medium);
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.1rem;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 0.1rem;
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-focus) !important;
+    outline-offset: 0.3rem;
+  }
+}
+
+@include media.mobile {
+  .direction-card__main-link {
+    padding: 1.6rem;
+  }
+
+  .direction-card__title {
+    font-size: 2.4rem;
+    letter-spacing: -0.096rem;
+  }
+
+  .direction-card__subcategories-list {
+    gap: 0.6rem;
+  }
+
+  .direction-card__subcategories {
+    margin: 1.6rem;
+  }
+
+  .direction-card__subcategory-link {
+    font-size: var(--font-size-description);
+    line-height: var(--line-height-description);
+  }
+}

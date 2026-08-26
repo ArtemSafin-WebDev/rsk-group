@@ -3,7 +3,9 @@
 @use 'reset';
 @use 'components/arrow-button';
 @use 'components/button';
+@use 'components/catalog-section';
 @use 'components/checkbox';
+@use 'components/direction-card';
 @use 'components/file-upload';
 @use 'components/footer';
 @use 'components/material-card';
@@ -11,6 +13,8 @@
 @use 'components/partners-marquee';
 @use 'components/request-footer';
 @use 'components/social-networks';
+@use 'components/solution-card';
+@use 'components/solutions-section';
 @use 'components/text-input';
 @use 'ui-kit';
 

@@ -1,0 +1,38 @@
+<article class="direction-card{{#if hovered}} direction-card--hovered{{/if}}">
+  <div class="direction-card__media" aria-hidden="true">
+    <img
+      class="direction-card__image direction-card__image--default"
+      src="{{defaultImageSrc}}"
+      width="919"
+      height="587"
+      alt=""
+    />
+    <div class="direction-card__hover-media">
+      <img
+        class="direction-card__image direction-card__image--hover"
+        src="{{hoverImageSrc}}"
+        width="920"
+        height="588"
+        alt=""
+      />
+    </div>
+  </div>
+
+  <a class="direction-card__main-link" href="{{url}}">
+    <h3 class="direction-card__title">
+      {{title}}{{#if titleSecondLine}}<br />{{titleSecondLine}}{{/if}}
+    </h3>
+  </a>
+
+  {{#if subcategories}}
+    <nav class="direction-card__subcategories" aria-label="{{subcategoriesAriaLabel}}">
+      <ul class="direction-card__subcategories-list">
+        {{#each subcategories}}
+          <li class="direction-card__subcategory">
+            <a class="direction-card__subcategory-link" href="{{url}}">{{label}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </nav>
+  {{/if}}
+</article>

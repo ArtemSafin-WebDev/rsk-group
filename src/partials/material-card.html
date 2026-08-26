@@ -1,4 +1,9 @@
-<article class="material-card{{#if hovered}} material-card--hovered{{/if}}">
+<a
+  class="material-card{{#if hovered}} material-card--hovered{{/if}}"
+  href="{{downloadUrl}}"
+  download
+  aria-label="Скачать {{title}}, формат {{fileType}}, размер {{fileSize}}"
+>
   <h3 class="material-card__title">{{title}}</h3>
 
   <div class="material-card__media">
@@ -12,11 +17,11 @@
   </div>
 
   <div class="material-card__footer">
-    <a class="material-card__download" href="{{downloadUrl}}" download>Скачать</a>
+    <span class="material-card__download">Скачать</span>
 
     <div class="material-card__file-info" aria-label="Формат {{fileType}}, размер {{fileSize}}">
       <span>{{fileType}}</span>
       <span>{{fileSize}}</span>
     </div>
   </div>
-</article>
+</a>

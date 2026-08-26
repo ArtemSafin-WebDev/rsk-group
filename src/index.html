@@ -5,6 +5,62 @@
   </head>
   <body data-page="{{page}}">
     <main class="main main--home">
+      <section class="solutions-section" aria-labelledby="solutions-title">
+        <div class="container">
+          <header class="solutions-section__header">
+            <h2 class="solutions-section__title" id="solutions-title">Решения</h2>
+            <p class="solutions-section__description">
+              Гид по применению светильников и опор освещения
+            </p>
+          </header>
+
+          <div class="solutions-section__cards">
+            {{> solution-card
+              className="solutions-section__card solutions-section__card--parks"
+              title="Парки и скверы"
+              url="#parks-and-squares"
+              imageSrc="/images/solution-card/parks.jpg"
+            }}
+            {{> solution-card
+              className="solutions-section__card"
+              title="Улицы и дороги"
+              url="#streets-and-roads"
+              imageSrc="/images/solution-card/streets-and-roads.jpg"
+            }}
+            {{> solution-card
+              className="solutions-section__card solutions-section__card--facades"
+              title="Фасады"
+              url="#facades"
+              imageSrc="/images/solution-card/facades.jpg"
+            }}
+            {{> solution-card
+              className="solutions-section__card solutions-section__card--sports"
+              title="Спортивные"
+              titleSecondLine="площадки"
+              url="#sports-grounds"
+              imageSrc="/images/solution-card/sports.jpg"
+            }}
+            {{> solution-card
+              className="solutions-section__card solutions-section__card--public-spaces"
+              title="Общественные"
+              titleSecondLine="пространства"
+              url="#public-spaces"
+              imageSrc="/images/solution-card/public-spaces.jpg"
+            }}
+            {{> solution-card
+              className="solutions-section__card solutions-section__card--residential"
+              title="Жилые комплексы"
+              url="#residential-complexes"
+              imageSrc="/images/solution-card/residential.jpg"
+            }}
+          </div>
+
+          <div class="solutions-section__more">
+            {{> arrow-button ariaLabel="Показать больше решений"}}
+          </div>
+        </div>
+      </section>
+
       <div class="container">
         <h1>Новый многостраничный проект</h1>
         <p>Vite, TypeScript, SCSS, Handlebars и SVG-спрайт готовы к работе.</p>
@@ -16,6 +72,67 @@
           </svg>
         </a>
       </div>
+
+      <section class="catalog-section" aria-labelledby="catalog-title">
+        <div class="container">
+          <header class="catalog-section__header">
+            <h2 class="catalog-section__title" id="catalog-title">Каталог</h2>
+            <p class="catalog-section__description">
+              C учётом объекта, проекта,<br />
+              городской среды
+            </p>
+            <div class="catalog-section__catalog-button">
+              {{> button
+                label="Перейти в каталог"
+                icon="/icons/arrow-right.svg"
+              }}
+            </div>
+          </header>
+
+          <div class="catalog-section__cards">
+            {{> direction-card
+              title="Наружное"
+              titleSecondLine="освещение"
+              url="#outdoor-lighting"
+              defaultImageSrc="/images/direction-card/outdoor-lighting.png"
+              hoverImageSrc="/images/direction-card/outdoor-lighting.png"
+              subcategories=catalogSubcategories
+              subcategoriesAriaLabel="Категории наружного освещения"
+            }}
+            {{> direction-card
+              title="Архитектурное"
+              titleSecondLine="освещение"
+              url="#architectural-lighting"
+              defaultImageSrc="/images/direction-card/architectural-lighting-default.png"
+              hoverImageSrc="/images/direction-card/architectural-lighting-hover.png"
+              subcategories=catalogSubcategories
+              subcategoriesAriaLabel="Категории архитектурного освещения"
+            }}
+            {{> direction-card
+              title="Световые"
+              titleSecondLine="инсталляции"
+              url="#lighting-installations"
+              defaultImageSrc="/images/direction-card/lighting-installations.png"
+              hoverImageSrc="/images/direction-card/lighting-installations.png"
+              subcategories=catalogSubcategories
+              subcategoriesAriaLabel="Категории световых инсталляций"
+            }}
+            {{> direction-card
+              title="Металло-"
+              titleSecondLine="конструкции"
+              url="#metal-constructions"
+              defaultImageSrc="/images/direction-card/metal-constructions.png"
+              hoverImageSrc="/images/direction-card/metal-constructions.png"
+              subcategories=catalogSubcategories
+              subcategoriesAriaLabel="Категории металлоконструкций"
+            }}
+          </div>
+
+          <div class="catalog-section__more">
+            {{> arrow-button ariaLabel="Показать больше направлений"}}
+          </div>
+        </div>
+      </section>
 
       {{> partners-marquee}}
 

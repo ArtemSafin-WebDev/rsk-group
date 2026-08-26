@@ -15,6 +15,13 @@ const pageData: Record<string, Record<string, unknown>> = {
     title: 'Главная',
     description: 'Главная страница проекта',
     page: 'home',
+    catalogSubcategories: [
+      { label: 'Линейные', url: '#linear' },
+      { label: 'Прожекторы', url: '#floodlights' },
+      { label: 'Акцентные', url: '#accent' },
+      { label: 'Гибкий неон', url: '#flexible-neon' },
+      { label: 'Грунтовые', url: '#ground' },
+    ],
   },
   '/about.html': {
     title: 'О компании',
@@ -25,6 +32,13 @@ const pageData: Record<string, Record<string, unknown>> = {
     title: 'UI-kit — RSK Group',
     description: 'Визуальные токены и переиспользуемые компоненты RSK Group',
     page: 'ui-kit',
+    directionCardSubcategories: [
+      { label: 'Линейные', url: '#linear' },
+      { label: 'Прожекторы', url: '#floodlights' },
+      { label: 'Акцентные', url: '#accent' },
+      { label: 'Гибкий неон', url: '#flexible-neon' },
+      { label: 'Грунтовые', url: '#ground' },
+    ],
   },
 };
 

@@ -324,6 +324,11 @@
   align-items: center;
 }
 
+.direction-card-showcase,
+.solution-card-showcase {
+  width: min(100%, 91rem);
+}
+
 @include media.mobile {
   .ui-kit {
     padding-bottom: 8rem;

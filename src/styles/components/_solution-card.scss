@@ -1,0 +1,97 @@
+@use '../media';
+
+.solution-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 910.5 / 610;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible,
+  &--hovered {
+    .solution-card__shade {
+      opacity: 1;
+    }
+
+    .solution-card__action {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--color-focus) !important;
+    outline-offset: 0.3rem;
+  }
+}
+
+.solution-card__image {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.solution-card__shade {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0;
+  background:
+    linear-gradient(142.253deg, rgb(0 0 0 / 20%) 0.171%, rgb(0 0 0 / 0%) 100%),
+    rgb(0 0 0 / 50%);
+  transition: opacity 300ms ease;
+}
+
+.solution-card__title {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  margin: 0;
+  white-space: nowrap;
+  font-size: var(--font-size-h5-medium);
+  font-weight: var(--font-weight-h5-medium);
+  line-height: var(--line-height-h5-medium);
+  letter-spacing: var(--letter-spacing-h5-medium);
+  text-box-edge: cap alphabetic;
+  text-box-trim: trim-both;
+}
+
+.solution-card__action {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition:
+    opacity 220ms ease,
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 300ms;
+}
+
+.solution-card:hover .solution-card__action,
+.solution-card:focus-visible .solution-card__action,
+.solution-card--hovered .solution-card__action {
+  transition-delay: 60ms, 0ms, 0ms;
+}
+
+@include media.mobile {
+  .solution-card__title {
+    top: 1.6rem;
+    left: 1.6rem;
+    font-size: 2.4rem;
+    letter-spacing: -0.096rem;
+  }
+}

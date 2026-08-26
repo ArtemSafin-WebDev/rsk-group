@@ -9,13 +9,18 @@
   grid-template-rows: auto minmax(0, 1fr) auto;
   color: var(--color-black);
   background-color: var(--color-grey-back);
+  text-decoration: none;
   transition: background-color 180ms ease;
 }
 
 .material-card:hover,
-.material-card:focus-within,
 .material-card--hovered {
   background-color: var(--color-grey-hover);
+}
+
+.material-card:focus-visible {
+  outline: 0.2rem solid var(--color-focus);
+  outline-offset: 0.3rem;
 }
 
 .material-card__title {
@@ -68,11 +73,6 @@
   text-decoration-thickness: 0.1rem;
   text-decoration-skip-ink: none;
   text-underline-offset: 0.1rem;
-}
-
-.material-card__download:focus-visible {
-  outline: 0.2rem solid var(--color-focus) !important;
-  outline-offset: 0.3rem;
 }
 
 .material-card__file-info {
