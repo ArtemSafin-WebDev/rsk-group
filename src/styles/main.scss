@@ -7,6 +7,7 @@
 @use 'components/file-upload';
 @use 'components/footer';
 @use 'components/material-card';
+@use 'components/materials-section';
 @use 'components/request-footer';
 @use 'components/social-networks';
 @use 'components/text-input';
@@ -23,7 +24,8 @@ body {
 }
 
 .container {
-  width: 100%;
+  box-sizing: content-box;
+  width: calc(100% - 2 * var(--container-padding-inline));
   max-width: var(--container-max-width);
   margin-inline: auto;
   padding-inline: var(--container-padding-inline);
@@ -32,6 +34,10 @@ body {
 .main {
   min-height: 100vh;
   padding-block: 8rem;
+}
+
+.main--home {
+  padding-bottom: 0;
 }
 
 .link {

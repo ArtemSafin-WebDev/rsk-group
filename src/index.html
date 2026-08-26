@@ -4,7 +4,7 @@
     {{> head}}
   </head>
   <body data-page="{{page}}">
-    <main class="main">
+    <main class="main main--home">
       <div class="container">
         <h1>Новый многостраничный проект</h1>
         <p>Vite, TypeScript, SCSS, Handlebars и SVG-спрайт готовы к работе.</p>
@@ -16,6 +16,50 @@
           </svg>
         </a>
       </div>
+
+      <section class="materials-section" aria-labelledby="materials-title">
+        <div class="container">
+          <div class="materials-section__header">
+            <h2 class="materials-section__title" id="materials-title">Материалы</h2>
+            <p class="materials-section__description">Для проектировщиков<br />и&nbsp;заказчиков</p>
+          </div>
+
+          <div class="materials-section__list">
+            {{> material-card
+              title="Каталог"
+              imageSrc="/images/material-card/catalog.png"
+              imageAlt="Обложка каталога РСК Групп 2026"
+              downloadUrl="/files/catalog.pdf"
+              fileType="PDF"
+              fileSize="2,2 Мб"
+            }}
+            {{> material-card
+              title="DWG-чертежи светильников"
+              imageSrc="/images/material-card/dwg-drawings.png"
+              imageAlt="Обложка DWG-чертежей светильников РСК Групп"
+              downloadUrl="/files/dwg-drawings.pdf"
+              fileType="PDF"
+              fileSize="2,2 Мб"
+            }}
+            {{> material-card
+              title="3Д модели светильников"
+              imageSrc="/images/material-card/3d-models.png"
+              imageAlt="Обложка материала «3Д модели светильников»"
+              downloadUrl="/files/3d-models.pdf"
+              fileType="PDF"
+              fileSize="2,2 Мб"
+            }}
+            {{> material-card
+              title="Фотометрические данные"
+              imageSrc="/images/material-card/photometric-data.png"
+              imageAlt="Обложка фотометрических данных РСК Групп"
+              downloadUrl="/files/photometric-data.pdf"
+              fileType="PDF"
+              fileSize="2,2 Мб"
+            }}
+          </div>
+        </div>
+      </section>
     </main>
 
     {{> request-footer}}
