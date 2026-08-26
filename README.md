@@ -43,6 +43,19 @@ npm run preview
 {{> arrow-button type="submit" ariaLabel="Отправить" disabled=true}}
 ```
 
+Карточка материала принимает заголовок, обложку, ссылку и метаданные файла:
+
+```html
+{{> material-card
+  title="3Д модели светильников"
+  imageSrc="/images/material-card/3d-models.png"
+  imageAlt="Обложка материала «3Д модели светильников»"
+  downloadUrl="/files/3d-models.pdf"
+  fileType="PDF"
+  fileSize="2,2 Мб"
+}}
+```
+
 Чтобы добавить страницу, создайте HTML-файл в `src` и добавьте ее данные в `pageData` внутри `vite.config.ts`. Все HTML-файлы верхнего уровня подключаются к production-сборке автоматически.
 
 Иконка `src/icons/example.svg` доступна по пути `/icons/example.svg` и подключается внутри БЭМ-компонента так:

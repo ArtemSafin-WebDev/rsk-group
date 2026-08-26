@@ -1,0 +1,22 @@
+<article class="material-card{{#if hovered}} material-card--hovered{{/if}}">
+  <h3 class="material-card__title">{{title}}</h3>
+
+  <div class="material-card__media">
+    <img
+      class="material-card__image"
+      src="{{imageSrc}}"
+      width="220"
+      height="280"
+      alt="{{imageAlt}}"
+    />
+  </div>
+
+  <div class="material-card__footer">
+    <a class="material-card__download" href="{{downloadUrl}}" download>Скачать</a>
+
+    <div class="material-card__file-info" aria-label="Формат {{fileType}}, размер {{fileSize}}">
+      <span>{{fileType}}</span>
+      <span>{{fileSize}}</span>
+    </div>
+  </div>
+</article>
