@@ -1,0 +1,57 @@
+.slider-navigation {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slider-navigation__button {
+  display: inline-flex;
+  width: 6.4rem;
+  height: 6.4rem;
+  padding: 2rem;
+  border: 0;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 6.4rem;
+  color: var(--color-black);
+  background-color: var(--color-grey-back);
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.slider-navigation__icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 2.4rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .slider-navigation__button:hover:not(:disabled):not(.swiper-button-disabled) {
+    background-color: var(--color-grey-hover);
+  }
+}
+
+.slider-navigation__button:active:not(:disabled):not(.swiper-button-disabled) {
+  transform: scale(0.96);
+}
+
+.slider-navigation__button:focus-visible {
+  box-shadow: 0 0 0 0.2rem var(--color-focus);
+}
+
+.slider-navigation__button:disabled,
+.slider-navigation__button[aria-disabled='true'],
+.slider-navigation__button.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+.slider-navigation__button.swiper-button-lock {
+  display: none;
+}

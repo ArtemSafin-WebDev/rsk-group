@@ -4,11 +4,13 @@
 @use "components/advantages-section";
 @use "components/arrow-button";
 @use "components/button";
+@use "components/catalog-hero";
 @use "components/catalog-section";
 @use "components/checkbox";
 @use "components/company-intro-section";
 @use "components/custom-select";
 @use "components/direction-card";
+@use "components/download-card";
 @use "components/file-upload";
 @use "components/footer";
 @use "components/header";
@@ -21,6 +23,7 @@
 @use "components/social-networks";
 @use "components/solution-card";
 @use "components/solutions-section";
+@use "components/slider-navigation";
 @use "components/text-input";
 @use "ui-kit";
 
@@ -54,6 +57,10 @@ body {
 
 .main--home {
   padding-bottom: 0;
+}
+
+.main--catalog {
+  min-height: 0;
 }
 
 .link {

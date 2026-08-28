@@ -337,6 +337,10 @@
   width: min(100%, 91rem);
 }
 
+.download-card-showcase {
+  width: min(100%, 46rem);
+}
+
 @media (max-width: 576px) {
   .ui-kit {
     padding-bottom: 6rem;
@@ -426,5 +430,9 @@
 
   .social-networks-showcase {
     padding: 2rem;
+  }
+
+  .download-card-showcase {
+    width: 100%;
   }
 }

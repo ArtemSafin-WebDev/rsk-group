@@ -1,0 +1,30 @@
+<section class="catalog-hero" id="catalog" aria-labelledby="catalog-page-title">
+  <picture class="catalog-hero__background" aria-hidden="true">
+    <source media="(max-width: 576px)" srcset="/images/catalog/hero-mobile.webp" />
+    <img
+      src="/images/catalog/hero-desktop.webp"
+      width="3840"
+      height="1200"
+      alt=""
+    />
+  </picture>
+
+  <div class="container catalog-hero__grid">
+    <h1 class="catalog-hero__title" id="catalog-page-title">Каталог</h1>
+
+    <p class="catalog-hero__description">
+      Более 3000 решений для наружного<span class="catalog-hero__mobile-break"><br /></span>
+      и внутреннего освещения, благоустройства<span class="catalog-hero__mobile-break"><br /></span>
+      и городской среды собственного производства
+    </p>
+
+    <div class="catalog-hero__download">
+      {{> download-card
+        title="Скачать полный каталог в PDF"
+        downloadUrl="/files/catalog.pdf"
+        fileSize="2,2 Мб"
+        ariaLabel="Скачать полный каталог в PDF, размер 2,2 Мб"
+      }}
+    </div>
+  </div>
+</section>

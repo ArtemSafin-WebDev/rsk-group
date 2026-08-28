@@ -45,6 +45,37 @@ npm run preview
 {{> arrow-button type="submit" ariaLabel="Отправить" disabled=true}}
 ```
 
+Парные стрелки слайдера соответствуют макету 64 × 64 px и содержат готовые data-атрибуты для Swiper Navigation:
+
+```html
+{{> slider-navigation
+  ariaLabel="Навигация по проектам"
+  prevAriaLabel="Предыдущий проект"
+  nextAriaLabel="Следующий проект"
+}}
+```
+
+Передавайте элементы кнопок в настройки конкретного экземпляра Swiper. Такой способ безопасен для страницы с несколькими слайдерами и не требует глобальных селекторов:
+
+```ts
+const section = document.querySelector<HTMLElement>('[data-projects-slider]');
+
+if (section) {
+  const swiperElement = section.querySelector<HTMLElement>('.swiper');
+  const prevEl = section.querySelector<HTMLButtonElement>('[data-swiper-button-prev]');
+  const nextEl = section.querySelector<HTMLButtonElement>('[data-swiper-button-next]');
+
+  if (swiperElement && prevEl && nextEl) {
+    new Swiper(swiperElement, {
+      modules: [Navigation],
+      navigation: { prevEl, nextEl },
+    });
+  }
+}
+```
+
+Компонент поддерживает добавляемые Swiper классы `swiper-button-disabled` и `swiper-button-lock`, а также нативные состояния `disabled` и `aria-disabled`.
+
 Карточка материала принимает заголовок, обложку, ссылку и метаданные файла:
 
 ```html
@@ -79,6 +110,17 @@ npm run preview
   title="Улицы и дороги"
   url="/solutions/streets-and-roads.html"
   imageSrc="/images/solution-card/streets-and-roads.webp"
+}}
+```
+
+Карточка скачивания принимает название файла или действия, размер и URL:
+
+```html
+{{> download-card
+  title="Скачать полный каталог в PDF"
+  fileSize="2,2 Мб"
+  downloadUrl="/files/catalog.pdf"
+  ariaLabel="Скачать полный каталог в PDF, размер 2,2 Мб"
 }}
 ```
 

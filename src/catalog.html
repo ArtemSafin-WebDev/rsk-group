@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    {{> head}}
+  </head>
+  <body data-page="{{page}}">
+    <div class="page">
+      {{> header}}
+
+      <main class="main main--catalog">
+        {{> catalog-hero-section}}
+      </main>
+
+      {{> request-footer}}
+    </div>
+
+    <script type="module" src="/scripts/main.ts"></script>
+  </body>
+</html>

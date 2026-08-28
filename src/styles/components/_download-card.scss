@@ -1,0 +1,106 @@
+.download-card {
+  display: grid;
+  width: 100%;
+  max-width: 46rem;
+  min-height: 21rem;
+  grid-template-columns: minmax(0, 34rem) 12rem;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  text-decoration: none;
+}
+
+.download-card:focus-visible {
+  box-shadow: 0 0 0 0.2rem var(--color-focus);
+}
+
+.download-card__content {
+  display: flex;
+  min-width: 0;
+  padding: 2.7rem 3rem 2.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.download-card__title,
+.download-card__meta {
+  margin: 0;
+  font-weight: var(--font-weight-p1-medium);
+}
+
+.download-card__title {
+  max-width: 25.1rem;
+  font-size: var(--font-size-p1-medium);
+  line-height: var(--line-height-p1-medium);
+  letter-spacing: var(--letter-spacing-p1-medium);
+}
+
+.download-card__meta {
+  font-size: var(--font-size-p2-medium);
+  line-height: var(--line-height-p2-medium);
+  opacity: 0.6;
+}
+
+.download-card__button {
+  display: grid;
+  padding-bottom: 3rem;
+  border-left: 0.1rem solid var(--color-lines);
+  color: inherit;
+  place-items: end center;
+  text-decoration: none;
+}
+
+.download-card__button::before {
+  width: 6rem;
+  height: 6rem;
+  border: 0.1rem solid var(--color-lines);
+  border-radius: 50%;
+  content: '';
+  grid-area: 1 / 1;
+}
+
+.download-card__icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-bottom: 1.8rem;
+  align-self: end;
+  grid-area: 1 / 1;
+}
+
+@media (max-width: 576px) {
+  .download-card {
+    max-width: none;
+    min-height: 10rem;
+    grid-template-columns: minmax(0, 1fr) 6.4rem;
+  }
+
+  .download-card__content {
+    padding: 1.5rem;
+  }
+
+  .download-card__title {
+    max-width: 15.1rem;
+    font-size: var(--font-size-p3);
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+
+  .download-card__meta {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .download-card__button {
+    padding-bottom: 1.5rem;
+  }
+
+  .download-card__button::before {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+
+  .download-card__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-bottom: 0.9rem;
+  }
+}

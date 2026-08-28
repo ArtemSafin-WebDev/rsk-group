@@ -35,6 +35,11 @@ const pageData: Record<string, Record<string, unknown>> = {
     description: 'Информация о компании',
     page: 'about',
   },
+  '/catalog.html': {
+    title: 'Каталог — РСК Групп',
+    description: 'Каталог решений РСК Групп для освещения, благоустройства и городской среды',
+    page: 'catalog',
+  },
   '/ui-kit.html': {
     title: 'UI-kit — RSK Group',
     description: 'Визуальные токены и переиспользуемые компоненты RSK Group',

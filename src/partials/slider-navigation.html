@@ -1,0 +1,37 @@
+<div
+  class="slider-navigation"
+  role="group"
+  aria-label="{{#if ariaLabel}}{{ariaLabel}}{{else}}Навигация по слайдеру{{/if}}"
+>
+  <button
+    class="slider-navigation__button slider-navigation__button--prev"
+    type="button"
+    aria-label="{{#if prevAriaLabel}}{{prevAriaLabel}}{{else}}Предыдущий слайд{{/if}}"
+    data-swiper-button-prev
+  >
+    <img
+      class="slider-navigation__icon"
+      src="/icons/slider-arrow-left.svg"
+      width="24"
+      height="24"
+      alt=""
+      aria-hidden="true"
+    />
+  </button>
+
+  <button
+    class="slider-navigation__button slider-navigation__button--next"
+    type="button"
+    aria-label="{{#if nextAriaLabel}}{{nextAriaLabel}}{{else}}Следующий слайд{{/if}}"
+    data-swiper-button-next
+  >
+    <img
+      class="slider-navigation__icon"
+      src="/icons/slider-arrow-right.svg"
+      width="24"
+      height="24"
+      alt=""
+      aria-hidden="true"
+    />
+  </button>
+</div>

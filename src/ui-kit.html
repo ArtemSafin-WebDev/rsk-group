@@ -24,6 +24,7 @@
               <a class="ui-kit-nav__link" href="#social-networks">06 Социальные сети</a>
               <a class="ui-kit-nav__link" href="#direction-card">07 Карточка направления</a>
               <a class="ui-kit-nav__link" href="#solution-card">08 Карточка решения</a>
+              <a class="ui-kit-nav__link" href="#download-card">09 Карточка скачивания</a>
             </nav>
           </aside>
 
@@ -99,6 +100,10 @@
                   <div class="button-showcase__row">
                     {{> arrow-button ariaLabel="Перейти далее"}}
                   </div>
+                </div>
+                <div class="button-showcase__group">
+                  <p class="ui-kit-label">Slider navigation / grey</p>
+                  {{> slider-navigation}}
                 </div>
                 <div class="button-showcase__group button-showcase__group--dark">
                   <p class="ui-kit-label">Round / white</p>
@@ -278,6 +283,25 @@
                   title="Улицы и дороги"
                   url="#streets-and-roads"
                   imageSrc="/images/solution-card/streets-and-roads.webp"
+                }}
+              </div>
+            </section>
+
+            <section class="ui-kit-section" id="download-card" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">09</p>
+                <div>
+                  <h2>Карточка скачивания</h2>
+                  <p>Компактный блок для скачивания каталога или другого файла.</p>
+                </div>
+              </div>
+
+              <div class="download-card-showcase">
+                {{> download-card
+                  title="Скачать полный каталог в PDF"
+                  fileSize="2,2 Мб"
+                  downloadUrl="#catalog-pdf"
+                  ariaLabel="Скачать полный каталог в PDF, размер 2,2 Мб"
                 }}
               </div>
             </section>
