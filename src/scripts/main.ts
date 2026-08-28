@@ -1,5 +1,6 @@
 import '../styles/main.scss';
 import { CustomSelect } from './components/CustomSelect';
+import { SiteMenu } from './components/SiteMenu';
 
 const page = document.body.dataset.page;
 
@@ -8,6 +9,7 @@ if (page) {
 }
 
 CustomSelect.initAll();
+SiteMenu.initAll();
 
 document.querySelectorAll<HTMLElement>('.site-header').forEach((header) => {
   let frameId = 0;

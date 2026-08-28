@@ -42,8 +42,18 @@
               <img src="/icons/file-list.svg" width="20" height="20" alt="" aria-hidden="true" />
             </a>
 
-            <button class="site-header__icon-button" type="button" aria-label="Открыть меню">
-              <img src="/icons/menu.svg" width="20" height="20" alt="" aria-hidden="true" />
+            <button
+              class="site-header__icon-button site-header__menu-toggle"
+              type="button"
+              aria-label="Открыть меню"
+              aria-controls="site-menu"
+              aria-expanded="false"
+              data-menu-toggle
+            >
+              <span class="site-header__menu-glyph" aria-hidden="true">
+                <span class="site-header__menu-line site-header__menu-line--top"></span>
+                <span class="site-header__menu-line site-header__menu-line--bottom"></span>
+              </span>
             </button>
 
             <a class="site-header__contact-button" href="#project-request">Связаться</a>
@@ -53,3 +63,5 @@
     </div>
   </div>
 </header>
+
+{{> navigation-menu}}

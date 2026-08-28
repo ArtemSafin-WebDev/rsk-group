@@ -29,6 +29,16 @@
   --button-background: var(--color-white);
 }
 
+.button--dark {
+  --button-background: var(--color-black);
+
+  color: var(--color-white);
+}
+
+.button--dark .button__icon {
+  filter: brightness(0) invert(1);
+}
+
 .button--small {
   padding: 1.24rem 2rem;
   border-radius: 999.9rem;
@@ -42,10 +52,18 @@
   .button:hover:not(:disabled) {
     background-color: color-mix(in srgb, var(--button-background), var(--color-black) 6%);
   }
+
+  .button--dark:hover:not(:disabled) {
+    background-color: color-mix(in srgb, var(--button-background), var(--color-white) 12%);
+  }
 }
 
 .button:active:not(:disabled) {
   background-color: color-mix(in srgb, var(--button-background), var(--color-black) 10%);
+}
+
+.button--dark:active:not(:disabled) {
+  background-color: color-mix(in srgb, var(--button-background), var(--color-white) 18%);
 }
 
 .button:focus-visible {
