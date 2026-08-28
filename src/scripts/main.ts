@@ -9,6 +9,24 @@ if (page) {
 
 CustomSelect.initAll();
 
+document.querySelectorAll<HTMLElement>('.site-header').forEach((header) => {
+  let frameId = 0;
+
+  const updateHeader = () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 0);
+    frameId = 0;
+  };
+
+  const requestHeaderUpdate = () => {
+    if (frameId) return;
+
+    frameId = window.requestAnimationFrame(updateHeader);
+  };
+
+  updateHeader();
+  window.addEventListener('scroll', requestHeaderUpdate, { passive: true });
+});
+
 if (page === 'ui-kit') {
   const sections = [...document.querySelectorAll<HTMLElement>('[data-ui-kit-section]')];
   const links = [...document.querySelectorAll<HTMLAnchorElement>('.ui-kit-nav__link')];
