@@ -15,7 +15,7 @@
 
 .site-header.is-menu-open {
   color: var(--color-black);
-  background: transparent;
+  background: var(--color-white);
 }
 
 .site-header.is-scrolled {
@@ -298,21 +298,6 @@
 @media (max-width: 576px) {
   .site-header {
     height: 5.2rem;
-  }
-
-  .site-header.is-menu-open {
-    isolation: isolate;
-  }
-
-  .site-header.is-menu-open::before {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 7.7rem;
-    background: var(--color-white);
-    content: '';
   }
 
   .site-header__grid {

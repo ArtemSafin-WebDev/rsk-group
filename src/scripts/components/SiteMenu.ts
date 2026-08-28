@@ -52,6 +52,7 @@ export class SiteMenu {
   private open(trigger: HTMLElement) {
     this.scrollPosition = window.scrollY;
     this.lastFocusedElement = trigger;
+    this.syncAccordions();
 
     document.body.style.top = `-${this.scrollPosition}px`;
     document.documentElement.classList.add('is-menu-open');
