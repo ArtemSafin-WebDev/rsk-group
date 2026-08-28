@@ -20,7 +20,15 @@
       </a>
 
       <div class="site-header__navigation">
-        <a class="site-header__catalog" href="#catalog">Каталог</a>
+        <nav class="site-header__menu" aria-label="Основная навигация">
+          <ul class="site-header__menu-list">
+            {{#each headerNavigationItems}}
+              <li class="site-header__menu-item">
+                <a class="site-header__menu-link" href="{{url}}">{{label}}</a>
+              </li>
+            {{/each}}
+          </ul>
+        </nav>
 
         <div class="site-header__contacts">
           <a class="site-header__phone" href="tel:+79600796853">+ 7 960 079 68 53</a>

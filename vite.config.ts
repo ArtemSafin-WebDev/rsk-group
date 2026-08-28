@@ -10,6 +10,7 @@ const requestSubjects = [
   { label: 'Заказать проект', value: 'project' },
   { label: 'Другое', value: 'other' },
 ];
+const headerNavigationItems = [{ label: 'Каталог', url: '#catalog' }];
 const pages = Object.fromEntries(
   readdirSync(root)
     .filter((file) => file.endsWith('.html'))
@@ -55,7 +56,7 @@ export default defineConfig({
     handlebars({
       partialDirectory: resolve(root, 'partials'),
       context(pagePath) {
-        return { requestSubjects, ...(pageData[pagePath] ?? {}) };
+        return { requestSubjects, headerNavigationItems, ...(pageData[pagePath] ?? {}) };
       },
     }),
   ],
