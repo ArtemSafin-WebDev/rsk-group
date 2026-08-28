@@ -4,7 +4,8 @@
     {{> head}}
   </head>
   <body data-page="{{page}}">
-    <main class="ui-kit">
+    <div class="page">
+      <main class="ui-kit">
       <div class="container">
         <header class="ui-kit__intro">
           <p class="ui-kit__eyebrow">RSK Group / Interface system</p>
@@ -125,7 +126,7 @@
                 <p class="ui-kit-section__number">04</p>
                 <div>
                   <h2>Поля ввода</h2>
-                  <p>Текстовое поле и загрузчик файлов в предусмотренных состояниях.</p>
+                  <p>Текстовое поле, custom select и загрузчик файлов в предусмотренных состояниях.</p>
                 </div>
               </div>
 
@@ -158,6 +159,33 @@
                     <div class="control-specimen">
                       <span class="control-specimen__state">Selected</span>
                       {{> file-upload selected=true initialFile="Объект2 смета. pdf"}}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="control-showcase__group">
+                  <p class="ui-kit-label">Custom select</p>
+                  <div class="control-showcase__row control-showcase__row--select">
+                    <div class="control-specimen">
+                      <span class="control-specimen__state">Default</span>
+                      {{> custom-select
+                        id="subject-select-default"
+                        name="subject-select-default"
+                        placeholder="Выберите тему заявки"
+                        ariaLabel="Тема заявки, обычное состояние"
+                        options=requestSubjects
+                      }}
+                    </div>
+                    <div class="control-specimen">
+                      <span class="control-specimen__state">Open</span>
+                      {{> custom-select
+                        id="subject-select-open"
+                        name="subject-select-open"
+                        placeholder="Выберите тему заявки"
+                        ariaLabel="Тема заявки, раскрытое состояние"
+                        options=requestSubjects
+                        initialOpen=true
+                      }}
                     </div>
                   </div>
                 </div>
@@ -224,8 +252,8 @@
                   title="Архитектурное"
                   titleSecondLine="освещение"
                   url="#architectural-lighting"
-                  defaultImageSrc="/images/direction-card/architectural-lighting-default.png"
-                  hoverImageSrc="/images/direction-card/architectural-lighting-hover.png"
+                  defaultImageSrc="/images/direction-card/architectural-lighting-default.webp"
+                  hoverImageSrc="/images/direction-card/architectural-lighting-hover.webp"
                   subcategories=directionCardSubcategories
                   subcategoriesAriaLabel="Подкатегории архитектурного освещения"
                 }}
@@ -245,14 +273,15 @@
                 {{> solution-card
                   title="Улицы и дороги"
                   url="#streets-and-roads"
-                  imageSrc="/images/solution-card/streets-and-roads.jpg"
+                  imageSrc="/images/solution-card/streets-and-roads.webp"
                 }}
               </div>
             </section>
           </div>
         </div>
       </div>
-    </main>
+      </main>
+    </div>
 
     <script type="module" src="/scripts/main.ts"></script>
   </body>

@@ -1,12 +1,20 @@
 <section class="hero-section" aria-labelledby="hero-title">
-  <img
-    class="hero-section__background"
-    src="/images/hero/background.webp"
-    width="3840"
-    height="2400"
-    alt=""
-    aria-hidden="true"
-  />
+  <picture class="hero-section__picture" aria-hidden="true">
+    <source
+      media="(max-width: 576px)"
+      srcset="/images/hero/background-mobile.webp"
+      type="image/webp"
+      width="720"
+      height="1440"
+    />
+    <img
+      class="hero-section__background"
+      src="/images/hero/background.webp"
+      width="3840"
+      height="2400"
+      alt=""
+    />
+  </picture>
 
   <div class="container">
     <div class="hero-section__grid">
@@ -25,8 +33,10 @@
       </div>
 
       <p class="hero-section__description">
-        Производим световые продукты для российских условий эксплуатации — надёжные
-        и&nbsp;эстетичные
+        Производим световые продукты для российских условий эксплуатации —<br
+          class="hero-section__description-mobile-break"
+        />
+        надёжные и&nbsp;эстетичные
       </p>
 
       <p class="hero-section__copyright">© 2016—2026</p>

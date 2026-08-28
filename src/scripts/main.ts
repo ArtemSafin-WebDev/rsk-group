@@ -1,10 +1,13 @@
 import '../styles/main.scss';
+import { CustomSelect } from './components/CustomSelect';
 
 const page = document.body.dataset.page;
 
 if (page) {
   document.documentElement.dataset.page = page;
 }
+
+CustomSelect.initAll();
 
 if (page === 'ui-kit') {
   const sections = [...document.querySelectorAll<HTMLElement>('[data-ui-kit-section]')];
@@ -60,4 +63,41 @@ document.querySelectorAll<HTMLElement>('[data-file-upload]').forEach((upload) =>
   });
 
   setFileName(input.files?.[0]?.name || upload.dataset.initialFile);
+});
+
+document.querySelectorAll<HTMLElement>('.advantages-section').forEach((section) => {
+  const items = [...section.querySelectorAll<HTMLElement>('.advantages-section__item')];
+  const mobileMedia = window.matchMedia('(max-width: 576px)');
+
+  const closeAllItems = () => {
+    items.forEach((item) => {
+      item.classList.remove('is-open');
+      item
+        .querySelector<HTMLButtonElement>('.advantages-section__trigger')
+        ?.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  items.forEach((item) => {
+    const trigger = item.querySelector<HTMLButtonElement>('.advantages-section__trigger');
+
+    if (!trigger) return;
+
+    trigger.addEventListener('click', () => {
+      if (!mobileMedia.matches) return;
+
+      const willOpen = !item.classList.contains('is-open');
+
+      closeAllItems();
+
+      if (willOpen) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  mobileMedia.addEventListener('change', (event) => {
+    if (!event.matches) closeAllItems();
+  });
 });

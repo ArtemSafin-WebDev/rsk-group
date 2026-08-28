@@ -1,25 +1,27 @@
-@use 'fonts';
-@use 'properties';
-@use 'reset';
-@use 'components/advantages-section';
-@use 'components/arrow-button';
-@use 'components/button';
-@use 'components/catalog-section';
-@use 'components/checkbox';
-@use 'components/company-intro-section';
-@use 'components/direction-card';
-@use 'components/file-upload';
-@use 'components/footer';
-@use 'components/hero-section';
-@use 'components/material-card';
-@use 'components/materials-section';
-@use 'components/partners-marquee';
-@use 'components/request-footer';
-@use 'components/social-networks';
-@use 'components/solution-card';
-@use 'components/solutions-section';
-@use 'components/text-input';
-@use 'ui-kit';
+@use "fonts";
+@use "properties";
+@use "reset";
+@use "components/advantages-section";
+@use "components/arrow-button";
+@use "components/button";
+@use "components/catalog-section";
+@use "components/checkbox";
+@use "components/company-intro-section";
+@use "components/custom-select";
+@use "components/direction-card";
+@use "components/file-upload";
+@use "components/footer";
+@use "components/header";
+@use "components/hero-section";
+@use "components/material-card";
+@use "components/materials-section";
+@use "components/partners-marquee";
+@use "components/request-footer";
+@use "components/social-networks";
+@use "components/solution-card";
+@use "components/solutions-section";
+@use "components/text-input";
+@use "ui-kit";
 
 body {
   min-width: 32rem;
@@ -31,10 +33,16 @@ body {
   background: var(--color-background);
 }
 
+.page {
+  overflow-x: clip;
+}
+
 .container {
-  box-sizing: content-box;
-  width: calc(100% - 2 * var(--container-padding-inline));
-  max-width: var(--container-max-width);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: calc(
+    var(--container-max-width) + 2 * var(--container-padding-inline)
+  );
   margin-inline: auto;
   padding-inline: var(--container-padding-inline);
 }

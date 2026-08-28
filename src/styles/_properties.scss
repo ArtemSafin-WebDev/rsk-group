@@ -1,5 +1,3 @@
-@use 'media';
-
 :root {
   // Colors
   --color-white: #ffffff;
@@ -107,8 +105,10 @@
   --container-max-width: 184rem;
   --container-padding-inline: 4rem;
   --layout-grid-columns: repeat(4, minmax(0, 1fr));
+}
 
-  @include media.mobile {
-    --container-padding-inline: 1.6rem;
+@media (max-width: 576px) {
+  :root {
+    --container-padding-inline: 1.5rem;
   }
 }

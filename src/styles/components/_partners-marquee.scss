@@ -46,6 +46,26 @@
   }
 }
 
+@media (max-width: 576px) {
+  .partners-marquee {
+    margin-bottom: 4rem;
+  }
+
+  .partners-marquee__viewport {
+    height: 14rem;
+  }
+
+  .partners-marquee__group {
+    gap: 4rem;
+    padding-right: 4rem;
+  }
+
+  .partners-marquee__item {
+    width: 14.0708rem;
+    aspect-ratio: 140.708 / 78.171;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .partners-marquee__track {
     animation: none;

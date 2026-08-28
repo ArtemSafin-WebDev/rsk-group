@@ -1,0 +1,56 @@
+<div
+  class="custom-select{{#if initialOpen}} is-open{{/if}}"
+  data-custom-select
+  {{#if initialOpen}}data-initial-open="true"{{/if}}
+>
+  <select
+    class="custom-select__native"
+    id="{{id}}"
+    {{#if name}}name="{{name}}"{{/if}}
+    {{#if required}}required{{/if}}
+    tabindex="-1"
+    aria-hidden="true"
+    data-custom-select-native
+  >
+    <option value="">{{placeholder}}</option>
+    {{#each options}}
+      <option value="{{value}}">{{label}}</option>
+    {{/each}}
+  </select>
+
+  <button
+    class="custom-select__trigger"
+    id="{{id}}-trigger"
+    type="button"
+    role="combobox"
+    aria-label="{{ariaLabel}}"
+    aria-haspopup="listbox"
+    aria-controls="{{id}}-listbox"
+    aria-expanded="{{#if initialOpen}}true{{else}}false{{/if}}"
+    data-custom-select-trigger
+  >
+    <span class="custom-select__value" data-custom-select-value>{{placeholder}}</span>
+    <img class="custom-select__chevron" src="/icons/chevron-down.svg" width="11" height="7" alt="" />
+  </button>
+
+  <ul
+    class="custom-select__listbox"
+    id="{{id}}-listbox"
+    role="listbox"
+    aria-labelledby="{{id}}-trigger"
+    data-custom-select-listbox
+    {{#unless initialOpen}}hidden{{/unless}}
+  >
+    {{#each options}}
+      <li
+        class="custom-select__option"
+        id="{{../id}}-option-{{@index}}"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        data-custom-select-option
+        data-value="{{value}}"
+      >{{label}}</li>
+    {{/each}}
+  </ul>
+</div>

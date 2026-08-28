@@ -3,8 +3,7 @@
 
   display: inline-flex;
   width: fit-content;
-  min-height: 6.4rem;
-  padding: 2rem 3rem;
+  padding: 2.24rem 3rem;
   border: 0;
   border-radius: 4rem;
   align-items: center;
@@ -31,8 +30,7 @@
 }
 
 .button--small {
-  min-height: 4.4rem;
-  padding: 1rem 2rem;
+  padding: 1.24rem 2rem;
   border-radius: 999.9rem;
 }
 
@@ -40,8 +38,10 @@
   width: 100%;
 }
 
-.button:hover:not(:disabled) {
-  background-color: color-mix(in srgb, var(--button-background), var(--color-black) 6%);
+@media (hover: hover) and (pointer: fine) {
+  .button:hover:not(:disabled) {
+    background-color: color-mix(in srgb, var(--button-background), var(--color-black) 6%);
+  }
 }
 
 .button:active:not(:disabled) {
@@ -67,4 +67,21 @@
 
 .button__label {
   white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  .button {
+    padding: 1.76rem 2.4rem;
+    font-size: 1.4rem;
+  }
+
+  .button--small {
+    padding: 1.36rem 2rem;
+  }
+
+  .button__icon {
+    width: 2rem;
+    height: 2rem;
+    flex-basis: 2rem;
+  }
 }

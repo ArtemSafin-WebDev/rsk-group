@@ -23,9 +23,11 @@
     transform 140ms ease;
 }
 
-.social-networks__link:hover {
-  opacity: 0.78;
-  transform: translateY(-0.2rem);
+@media (hover: hover) and (pointer: fine) {
+  .social-networks__link:hover {
+    opacity: 0.78;
+    transform: translateY(-0.2rem);
+  }
 }
 
 .social-networks__link:active {

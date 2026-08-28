@@ -4,7 +4,10 @@
     {{> head}}
   </head>
   <body data-page="{{page}}">
-    <main class="main main--home">
+    <div class="page">
+      {{> header}}
+
+      <main class="main main--home">
       {{> hero-section}}
 
       {{> company-intro-section}}
@@ -25,49 +28,54 @@
               className="solutions-section__card solutions-section__card--parks"
               title="Парки и скверы"
               url="#parks-and-squares"
-              imageSrc="/images/solution-card/parks.jpg"
+              imageSrc="/images/solution-card/parks.webp"
             }}
             {{> solution-card
               className="solutions-section__card"
               title="Улицы и дороги"
               url="#streets-and-roads"
-              imageSrc="/images/solution-card/streets-and-roads.jpg"
+              imageSrc="/images/solution-card/streets-and-roads.webp"
             }}
             {{> solution-card
               className="solutions-section__card solutions-section__card--facades"
               title="Фасады"
               url="#facades"
-              imageSrc="/images/solution-card/facades.jpg"
+              imageSrc="/images/solution-card/facades.webp"
             }}
             {{> solution-card
               className="solutions-section__card solutions-section__card--sports"
               title="Спортивные"
               titleSecondLine="площадки"
               url="#sports-grounds"
-              imageSrc="/images/solution-card/sports.jpg"
+              imageSrc="/images/solution-card/sports.webp"
             }}
             {{> solution-card
               className="solutions-section__card solutions-section__card--public-spaces"
               title="Общественные"
               titleSecondLine="пространства"
               url="#public-spaces"
-              imageSrc="/images/solution-card/public-spaces.jpg"
+              imageSrc="/images/solution-card/public-spaces.webp"
             }}
             {{> solution-card
               className="solutions-section__card solutions-section__card--residential"
               title="Жилые комплексы"
               url="#residential-complexes"
-              imageSrc="/images/solution-card/residential.jpg"
+              imageSrc="/images/solution-card/residential.webp"
             }}
           </div>
 
           <div class="solutions-section__more">
             {{> arrow-button ariaLabel="Показать больше решений"}}
+            {{> button
+              label="Смотреть все"
+              icon="/icons/arrow-right.svg"
+              fullWidth=true
+            }}
           </div>
         </div>
       </section>
 
-      <section class="catalog-section" aria-labelledby="catalog-title">
+      <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
         <div class="container">
           <header class="catalog-section__header">
             <h2 class="catalog-section__title" id="catalog-title">Каталог</h2>
@@ -88,8 +96,8 @@
               title="Наружное"
               titleSecondLine="освещение"
               url="#outdoor-lighting"
-              defaultImageSrc="/images/direction-card/outdoor-lighting.png"
-              hoverImageSrc="/images/direction-card/outdoor-lighting.png"
+              defaultImageSrc="/images/direction-card/outdoor-lighting.webp"
+              hoverImageSrc="/images/direction-card/outdoor-lighting.webp"
               subcategories=catalogSubcategories
               subcategoriesAriaLabel="Категории наружного освещения"
             }}
@@ -97,8 +105,8 @@
               title="Архитектурное"
               titleSecondLine="освещение"
               url="#architectural-lighting"
-              defaultImageSrc="/images/direction-card/architectural-lighting-default.png"
-              hoverImageSrc="/images/direction-card/architectural-lighting-hover.png"
+              defaultImageSrc="/images/direction-card/architectural-lighting-default.webp"
+              hoverImageSrc="/images/direction-card/architectural-lighting-hover.webp"
               subcategories=catalogSubcategories
               subcategoriesAriaLabel="Категории архитектурного освещения"
             }}
@@ -106,8 +114,8 @@
               title="Световые"
               titleSecondLine="инсталляции"
               url="#lighting-installations"
-              defaultImageSrc="/images/direction-card/lighting-installations.png"
-              hoverImageSrc="/images/direction-card/lighting-installations.png"
+              defaultImageSrc="/images/direction-card/lighting-installations.webp"
+              hoverImageSrc="/images/direction-card/lighting-installations.webp"
               subcategories=catalogSubcategories
               subcategoriesAriaLabel="Категории световых инсталляций"
             }}
@@ -115,8 +123,8 @@
               title="Металло-"
               titleSecondLine="конструкции"
               url="#metal-constructions"
-              defaultImageSrc="/images/direction-card/metal-constructions.png"
-              hoverImageSrc="/images/direction-card/metal-constructions.png"
+              defaultImageSrc="/images/direction-card/metal-constructions.webp"
+              hoverImageSrc="/images/direction-card/metal-constructions.webp"
               subcategories=catalogSubcategories
               subcategoriesAriaLabel="Категории металлоконструкций"
             }}
@@ -130,7 +138,7 @@
 
       {{> partners-marquee}}
 
-      <section class="materials-section" aria-labelledby="materials-title">
+      <section class="materials-section" id="materials" aria-labelledby="materials-title">
         <div class="container">
           <div class="materials-section__header">
             <h2 class="materials-section__title" id="materials-title">Материалы</h2>
@@ -140,7 +148,7 @@
           <div class="materials-section__list">
             {{> material-card
               title="Каталог"
-              imageSrc="/images/material-card/catalog.png"
+              imageSrc="/images/material-card/catalog.webp"
               imageAlt="Обложка каталога РСК Групп 2026"
               downloadUrl="/files/catalog.pdf"
               fileType="PDF"
@@ -148,7 +156,7 @@
             }}
             {{> material-card
               title="DWG-чертежи светильников"
-              imageSrc="/images/material-card/dwg-drawings.png"
+              imageSrc="/images/material-card/dwg-drawings.webp"
               imageAlt="Обложка DWG-чертежей светильников РСК Групп"
               downloadUrl="/files/dwg-drawings.pdf"
               fileType="PDF"
@@ -156,7 +164,7 @@
             }}
             {{> material-card
               title="3Д модели светильников"
-              imageSrc="/images/material-card/3d-models.png"
+              imageSrc="/images/material-card/3d-models.webp"
               imageAlt="Обложка материала «3Д модели светильников»"
               downloadUrl="/files/3d-models.pdf"
               fileType="PDF"
@@ -164,7 +172,7 @@
             }}
             {{> material-card
               title="Фотометрические данные"
-              imageSrc="/images/material-card/photometric-data.png"
+              imageSrc="/images/material-card/photometric-data.webp"
               imageAlt="Обложка фотометрических данных РСК Групп"
               downloadUrl="/files/photometric-data.pdf"
               fileType="PDF"
@@ -173,9 +181,10 @@
           </div>
         </div>
       </section>
-    </main>
+      </main>
 
-    {{> request-footer}}
+      {{> request-footer}}
+    </div>
 
     <script type="module" src="/scripts/main.ts"></script>
   </body>

@@ -73,11 +73,38 @@
   outline-offset: 0.3rem;
 }
 
-.checkbox:hover .checkbox__control {
-  opacity: 0.78;
+@media (hover: hover) and (pointer: fine) {
+  .checkbox:hover .checkbox__control {
+    opacity: 0.78;
+  }
 }
 
 .checkbox:has(.checkbox__input:disabled) {
   opacity: 0.35;
   cursor: not-allowed;
+}
+
+@media (max-width: 576px) {
+  .checkbox {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: 1.8rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .checkbox__input,
+  .checkbox__control {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .checkbox__icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .checkbox__label {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
 }

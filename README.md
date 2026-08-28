@@ -48,7 +48,7 @@ npm run preview
 ```html
 {{> material-card
   title="3Д модели светильников"
-  imageSrc="/images/material-card/3d-models.png"
+  imageSrc="/images/material-card/3d-models.webp"
   imageAlt="Обложка материала «3Д модели светильников»"
   downloadUrl="/files/3d-models.pdf"
   fileType="PDF"
@@ -63,8 +63,8 @@ npm run preview
   title="Архитектурное"
   titleSecondLine="освещение"
   url="/directions/architectural-lighting.html"
-  defaultImageSrc="/images/direction-card/outdoor-lighting.png"
-  hoverImageSrc="/images/direction-card/architectural-lighting.png"
+  defaultImageSrc="/images/direction-card/outdoor-lighting.webp"
+  hoverImageSrc="/images/direction-card/architectural-lighting.webp"
   subcategories=directionCardSubcategories
   subcategoriesAriaLabel="Подкатегории архитектурного освещения"
 }}
@@ -76,7 +76,7 @@ npm run preview
 {{> solution-card
   title="Улицы и дороги"
   url="/solutions/streets-and-roads.html"
-  imageSrc="/images/solution-card/streets-and-roads.jpg"
+  imageSrc="/images/solution-card/streets-and-roads.webp"
 }}
 ```
 

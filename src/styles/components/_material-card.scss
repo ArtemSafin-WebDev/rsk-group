@@ -1,5 +1,3 @@
-@use "../media";
-
 .material-card {
   display: grid;
   width: 100%;
@@ -13,9 +11,14 @@
   transition: background-color 180ms ease;
 }
 
-.material-card:hover,
 .material-card--hovered {
   background-color: var(--color-grey-hover);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .material-card:hover {
+    background-color: var(--color-grey-hover);
+  }
 }
 
 .material-card:focus-visible {
@@ -82,9 +85,47 @@
   opacity: 0.5;
 }
 
-@include media.mobile {
+@media (max-width: 576px) {
   .material-card {
-    min-height: 44.8rem;
-    padding: 2.4rem;
+    max-width: 28rem;
+    min-height: 39rem;
+    padding: 2rem;
+    grid-template-rows: 3.5rem minmax(0, 1fr) 3.5rem;
+  }
+
+  .material-card__title {
+    font-size: 1.8rem;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.2;
+    letter-spacing: -0.036rem;
+  }
+
+  .material-card__media {
+    width: 17.2rem;
+    height: 22rem;
+    margin-top: 0;
+    border-width: 0.5rem;
+    border-radius: 0.4rem;
+  }
+
+  .material-card__image {
+    width: 17.2857rem;
+    height: 22rem;
+    margin: -0.5rem;
+  }
+
+  .material-card__download,
+  .material-card__file-info {
+    font-size: 1.4rem;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.2;
+  }
+
+  .material-card__download {
+    text-decoration: none;
+  }
+
+  .material-card__file-info {
+    gap: 0.5rem;
   }
 }

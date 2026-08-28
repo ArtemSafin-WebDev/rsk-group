@@ -4,6 +4,12 @@ import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 
 const root = resolve(import.meta.dirname, 'src');
+const requestSubjects = [
+  { label: 'Заказать оборудование', value: 'equipment' },
+  { label: 'Пригласить в тендер', value: 'tender' },
+  { label: 'Заказать проект', value: 'project' },
+  { label: 'Другое', value: 'other' },
+];
 const pages = Object.fromEntries(
   readdirSync(root)
     .filter((file) => file.endsWith('.html'))
@@ -49,7 +55,7 @@ export default defineConfig({
     handlebars({
       partialDirectory: resolve(root, 'partials'),
       context(pagePath) {
-        return pageData[pagePath] ?? {};
+        return { requestSubjects, ...(pageData[pagePath] ?? {}) };
       },
     }),
   ],

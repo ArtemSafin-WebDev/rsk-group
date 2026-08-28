@@ -4,15 +4,17 @@
     {{> head}}
   </head>
   <body data-page="{{page}}">
-    <main class="main">
-      <div class="container">
-        <h1>О компании</h1>
-        <p>Это пример второй страницы с общими шаблонами шапки и подвала.</p>
-        <a class="link" href="/">Вернуться на главную</a>
-      </div>
-    </main>
+    <div class="page">
+      <main class="main">
+        <div class="container">
+          <h1>О компании</h1>
+          <p>Это пример второй страницы с общими шаблонами шапки и подвала.</p>
+          <a class="link" href="/">Вернуться на главную</a>
+        </div>
+      </main>
 
-    {{> request-footer}}
+      {{> request-footer}}
+    </div>
 
     <script type="module" src="/scripts/main.ts"></script>
   </body>

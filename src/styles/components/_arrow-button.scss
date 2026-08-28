@@ -29,8 +29,10 @@
   pointer-events: none;
 }
 
-.arrow-button:hover:not(:disabled) {
-  background-color: color-mix(in srgb, var(--arrow-button-background), var(--color-black) 6%);
+@media (hover: hover) and (pointer: fine) {
+  .arrow-button:hover:not(:disabled) {
+    background-color: color-mix(in srgb, var(--arrow-button-background), var(--color-black) 6%);
+  }
 }
 
 .arrow-button:active:not(:disabled) {

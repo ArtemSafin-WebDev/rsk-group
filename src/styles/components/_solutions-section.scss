@@ -1,5 +1,3 @@
-@use '../media';
-
 .solutions-section {
   margin-bottom: 24rem;
 }
@@ -63,33 +61,60 @@
   justify-content: center;
 }
 
-@include media.mobile {
+.solutions-section__more > .button {
+  display: none;
+}
+
+@media (max-width: 576px) {
   .solutions-section {
-    margin-bottom: 16rem;
+    margin-bottom: 8rem;
   }
 
   .solutions-section__header {
-    padding-top: 2.4rem;
-    row-gap: 2.4rem;
-  }
-
-  .solutions-section__title,
-  .solutions-section__description,
-  .solutions-section__cards > .solution-card {
-    grid-column: 1 / -1;
+    display: flex;
+    padding-top: 1.5rem;
+    gap: 2.5rem;
+    flex-direction: column;
   }
 
   .solutions-section__title {
-    font-size: 4.8rem;
-    letter-spacing: -0.24rem;
+    font-size: var(--font-size-h5-medium);
+    font-weight: var(--font-weight-h5-medium);
+    line-height: var(--line-height-h5-medium);
+    letter-spacing: var(--letter-spacing-h5-medium);
   }
 
   .solutions-section__description {
-    max-width: none;
+    width: 24rem;
+    max-width: 100%;
+    font-size: var(--font-size-p3);
+    font-weight: var(--font-weight-p3);
+    line-height: var(--line-height-p3);
+    letter-spacing: 0;
   }
 
-  .solutions-section__cards,
+  .solutions-section__cards {
+    display: flex;
+    margin-top: 4rem;
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .solutions-section__cards > .solution-card:nth-child(n + 5) {
+    display: none;
+  }
+
   .solutions-section__more {
-    margin-top: 6.4rem;
+    margin-top: 2rem;
+  }
+
+  .solutions-section__more > .arrow-button {
+    display: none;
+  }
+
+  .solutions-section__more > .button {
+    display: inline-flex;
+    height: 5.2rem;
+    padding-block: 0;
   }
 }

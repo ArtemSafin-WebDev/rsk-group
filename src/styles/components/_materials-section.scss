@@ -1,7 +1,5 @@
-@use '../media';
-
 .materials-section {
-  margin-block: 12rem 24rem;
+  margin-block: 0 24rem;
 }
 
 .materials-section__header {
@@ -41,45 +39,58 @@
   gap: 2rem;
 }
 
-@media (max-width: 1100px) {
-  .materials-section__list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .materials-section .material-card {
-    max-width: none;
-  }
-}
-
-@include media.mobile {
+@media (max-width: 576px) {
   .materials-section {
-    margin-top: 8rem;
+    margin-block: 0 8rem;
   }
 
   .materials-section__header {
+    display: flex;
     height: auto;
-    padding-top: 2.4rem;
-    grid-template-columns: 1fr;
-    row-gap: 2.4rem;
-  }
-
-  .materials-section__title,
-  .materials-section__description {
-    grid-column: auto;
+    padding-top: 1.5rem;
+    gap: 2.5rem;
+    flex-direction: column;
   }
 
   .materials-section__title {
-    font-size: 4rem;
-    letter-spacing: -0.2rem;
+    font-size: var(--font-size-h5-medium);
+    font-weight: var(--font-weight-h5-medium);
+    line-height: var(--line-height-h5-medium);
+    letter-spacing: var(--letter-spacing-h5-medium);
   }
 
   .materials-section__description {
-    font-size: 2rem;
-    letter-spacing: -0.04rem;
+    width: 24rem;
+    max-width: 100%;
+    font-size: var(--font-size-p3);
+    font-weight: var(--font-weight-p3);
+    line-height: var(--line-height-p3);
+    letter-spacing: 0;
   }
 
   .materials-section__list {
-    margin-top: 6.4rem;
-    grid-template-columns: 1fr;
+    display: flex;
+    width: calc(
+      100% + var(--container-padding-inline) + var(--container-padding-inline)
+    );
+    margin: 4rem calc(0rem - var(--container-padding-inline)) 0;
+    padding-inline: var(--container-padding-inline);
+    gap: 0.5rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: var(--container-padding-inline);
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .materials-section__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .materials-section__list > .material-card {
+    flex: 0 0 28rem;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 }
