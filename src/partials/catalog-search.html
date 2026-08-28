@@ -1,0 +1,109 @@
+<section class="catalog-search-section" aria-label="Поиск по каталогу">
+  <div class="container">
+    <form
+      class="catalog-search"
+      action="/catalog.html"
+      method="get"
+      role="search"
+      data-catalog-search
+    >
+      <div class="catalog-search__dropdown">
+        <label class="catalog-search__field" for="catalog-search-input">
+          <img
+            class="catalog-search__icon"
+            src="/icons/catalog-search.svg"
+            width="18"
+            height="18"
+            alt=""
+            aria-hidden="true"
+          />
+          <input
+            class="catalog-search__input"
+            id="catalog-search-input"
+            type="search"
+            name="query"
+            placeholder="Поиск по названию, серии или артикулу"
+            autocomplete="off"
+            aria-label="Поиск по названию, серии или артикулу"
+            aria-controls="catalog-search-results"
+          />
+        </label>
+
+        <div class="catalog-search__body" id="catalog-search-results">
+          <ul class="catalog-search__results">
+          <li class="catalog-search__result">
+            <a class="catalog-search__result-link" href="#product-a-150">
+              <span class="catalog-search__image">
+                <img src="/images/catalog/search-product-a.png" alt="" />
+              </span>
+              <span class="catalog-search__result-content">
+                <span class="catalog-search__result-title">Светильник уличный А-150</span>
+                <span class="catalog-search__result-power">54 Вт</span>
+                <span class="catalog-search__result-temperature">2700–6500К</span>
+                <span class="catalog-search__result-action">Перейти</span>
+              </span>
+            </a>
+          </li>
+          <li class="catalog-search__result">
+            <a class="catalog-search__result-link" href="#product-comfort-24-1860">
+              <span class="catalog-search__image">
+                <img src="/images/catalog/search-product-b.png" alt="" />
+              </span>
+              <span class="catalog-search__result-content">
+                <span class="catalog-search__result-title">Светодиодный светильник RSC COMFORT 24-1860</span>
+                <span class="catalog-search__result-power">54 Вт</span>
+                <span class="catalog-search__result-temperature">2700–6500К</span>
+                <span class="catalog-search__result-action">Перейти</span>
+              </span>
+            </a>
+          </li>
+          <li class="catalog-search__result">
+            <a class="catalog-search__result-link" href="#product-24-1860">
+              <span class="catalog-search__image">
+                <img src="/images/catalog/search-product-a.png" alt="" />
+              </span>
+              <span class="catalog-search__result-content">
+                <span class="catalog-search__result-title">Светодиодный светильник 24-1860</span>
+                <span class="catalog-search__result-power">54 Вт</span>
+                <span class="catalog-search__result-temperature">2700–6500К</span>
+                <span class="catalog-search__result-action">Перейти</span>
+              </span>
+            </a>
+          </li>
+          <li class="catalog-search__result">
+            <a class="catalog-search__result-link" href="#product-comfort-1860">
+              <span class="catalog-search__image">
+                <img src="/images/catalog/search-product-b.png" alt="" />
+              </span>
+              <span class="catalog-search__result-content">
+                <span class="catalog-search__result-title">Светодиодный светильник COMFORT 1860</span>
+                <span class="catalog-search__result-power">54 Вт</span>
+                <span class="catalog-search__result-temperature">2700–6500К</span>
+                <span class="catalog-search__result-action">Перейти</span>
+              </span>
+            </a>
+          </li>
+          <li class="catalog-search__result">
+            <a class="catalog-search__result-link" href="#product-a-150-2">
+              <span class="catalog-search__image">
+                <img src="/images/catalog/search-product-a.png" alt="" />
+              </span>
+              <span class="catalog-search__result-content">
+                <span class="catalog-search__result-title">Светильник уличный А-150</span>
+                <span class="catalog-search__result-power">54 Вт</span>
+                <span class="catalog-search__result-temperature">2700–6500К</span>
+                <span class="catalog-search__result-action">Перейти</span>
+              </span>
+            </a>
+          </li>
+          </ul>
+
+          <p class="catalog-search__empty" aria-live="polite">
+            По вашему запросу ничего<span class="catalog-search__empty-mobile-break"><br /></span>
+            не найдено
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
