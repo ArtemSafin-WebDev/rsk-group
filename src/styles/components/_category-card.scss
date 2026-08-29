@@ -53,13 +53,9 @@
 .category-card__media {
   display: grid;
   width: 100%;
-  aspect-ratio: 452 / 460;
+  height: 46rem;
   overflow: hidden;
   pointer-events: none;
-}
-
-.category-card--wide .category-card__media {
-  aspect-ratio: 915 / 460;
 }
 
 .category-card__image-frame {
@@ -173,6 +169,7 @@
 
   .category-card__media,
   .category-card--wide .category-card__media {
+    height: auto;
     aspect-ratio: 330 / 140;
   }
 

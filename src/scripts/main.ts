@@ -3,6 +3,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import '../styles/main.scss';
 import { CustomSelect } from './components/CustomSelect';
+import { HeroVideo } from './components/HeroVideo';
 import { SiteMenu } from './components/SiteMenu';
 
 const page = document.body.dataset.page;
@@ -12,6 +13,7 @@ if (page) {
 }
 
 CustomSelect.initAll();
+HeroVideo.initAll();
 SiteMenu.initAll();
 
 document.querySelectorAll<HTMLElement>('[data-electronic-catalogs-slider]').forEach((section) => {

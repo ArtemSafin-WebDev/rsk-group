@@ -1,20 +1,33 @@
-<section class="hero-section" aria-labelledby="hero-title">
-  <picture class="hero-section__picture" aria-hidden="true">
-    <source
-      media="(max-width: 576px)"
-      srcset="/images/hero/background-mobile.webp"
-      type="image/webp"
-      width="720"
-      height="1440"
-    />
-    <img
-      class="hero-section__background"
-      src="/images/hero/background.webp"
-      width="3840"
-      height="2400"
-      alt=""
-    />
-  </picture>
+<section class="hero-section" aria-labelledby="hero-title" data-hero-video>
+  <div class="hero-section__media" aria-hidden="true">
+    <picture class="hero-section__picture">
+      <source
+        media="(max-width: 576px)"
+        srcset="/images/hero/background-mobile.webp"
+        type="image/webp"
+        width="720"
+        height="1440"
+      />
+      <img
+        class="hero-section__background"
+        src="/images/hero/background-video-poster.webp"
+        width="1920"
+        height="1080"
+        alt=""
+      />
+    </picture>
+
+    <video
+      class="hero-section__video"
+      muted
+      playsinline
+      preload="none"
+      tabindex="-1"
+      data-hero-video-element
+    >
+      <source src="/videos/hero/day-night-scrub.mp4" type="video/mp4" />
+    </video>
+  </div>
 
   <div class="container">
     <div class="hero-section__grid">

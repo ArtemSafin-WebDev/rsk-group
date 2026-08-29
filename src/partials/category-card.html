@@ -15,14 +15,14 @@
     </span>
   </span>
 
-  <span class="category-card__content">
-    <span class="category-card__title">{{title}}</span>
+  <div class="category-card__content">
+    <h3 class="category-card__title">{{title}}</h3>
 
-    <span class="category-card__count">
+    <p class="category-card__count">
       <span>{{count}}</span>
       <span>{{#if countLabel}}{{countLabel}}{{else}}позиций{{/if}}</span>
-    </span>
-  </span>
+    </p>
+  </div>
 
   <span class="category-card__action" aria-hidden="true">
     {{> arrow-button decorative=true}}
