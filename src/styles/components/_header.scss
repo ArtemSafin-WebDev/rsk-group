@@ -23,6 +23,12 @@
   background: var(--color-white);
 }
 
+@media (min-width: 577px) {
+  .site-header.is-menu-open {
+    background: transparent;
+  }
+}
+
 .site-header[data-initial-theme="dark"]:not(.is-scrolled) {
   color: var(--color-black);
 }

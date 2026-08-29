@@ -24,7 +24,6 @@ document.querySelectorAll<HTMLElement>('[data-electronic-catalogs-slider]').forE
   new Swiper(swiperElement, {
     modules: [Navigation],
     slidesPerView: 'auto',
-    rewind: true,
     watchOverflow: false,
     navigation: { prevEl, nextEl },
   });
@@ -45,7 +44,6 @@ document.querySelectorAll<HTMLElement>('[data-popular-series-slider]').forEach((
       swiper = new Swiper(swiperElement, {
         modules: [Navigation],
         slidesPerView: 'auto',
-        rewind: true,
         watchOverflow: false,
         navigation: { prevEl, nextEl },
       });
