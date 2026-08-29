@@ -26,7 +26,9 @@
               <a class="ui-kit-nav__link" href="#solution-card">08 Карточка решения</a>
               <a class="ui-kit-nav__link" href="#series-card">09 Карточка серии</a>
               <a class="ui-kit-nav__link" href="#category-card">10 Карточка категории</a>
-              <a class="ui-kit-nav__link" href="#download-card">11 Карточка скачивания</a>
+              <a class="ui-kit-nav__link" href="#product-card">11 Карточка товара</a>
+              <a class="ui-kit-nav__link" href="#download-card">12 Карточка скачивания</a>
+              <a class="ui-kit-nav__link" href="#pagination">13 Пагинация</a>
             </nav>
           </aside>
 
@@ -345,9 +347,31 @@
               </div>
             </section>
 
-            <section class="ui-kit-section" id="download-card" data-ui-kit-section>
+            <section class="ui-kit-section" id="product-card" data-ui-kit-section>
               <div class="ui-kit-section__head">
                 <p class="ui-kit-section__number">11</p>
+                <div>
+                  <h2>Карточка товара</h2>
+                  <p>Контент, изображение и hover-кнопка собраны через grid stack; пропорции карточки меняются на мобильном.</p>
+                </div>
+              </div>
+
+              <div class="product-card-showcase">
+                {{> product-card
+                  title="Светодиодный светильник"
+                  titleTail="RSC COMFORT 24-1860"
+                  primaryTag="Хит"
+                  secondaryTag="Новинка"
+                  url="#rsc-comfort-24-1860"
+                  ariaLabel="Светодиодный светильник RSC COMFORT 24-1860"
+                  imageSrc="/images/product-card/rsc-comfort-24-1860.png"
+                }}
+              </div>
+            </section>
+
+            <section class="ui-kit-section" id="download-card" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">12</p>
                 <div>
                   <h2>Карточка скачивания</h2>
                   <p>Компактный блок для скачивания каталога или другого файла.</p>
@@ -360,6 +384,23 @@
                   fileSize="2,2 Мб"
                   downloadUrl="#catalog-pdf"
                   ariaLabel="Скачать полный каталог в PDF, размер 2,2 Мб"
+                }}
+              </div>
+            </section>
+
+            <section class="ui-kit-section" id="pagination" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">13</p>
+                <div>
+                  <h2>Пагинация</h2>
+                  <p>Переиспользуемая навигация по страницам. В примере активна первая страница.</p>
+                </div>
+              </div>
+
+              <div class="pagination-showcase">
+                {{> pagination
+                  pages=paginationPages
+                  ariaLabel="Страницы каталога"
                 }}
               </div>
             </section>

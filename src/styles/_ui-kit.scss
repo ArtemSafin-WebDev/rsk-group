@@ -349,8 +349,17 @@
   gap: 2rem;
 }
 
+.product-card-showcase {
+  width: min(100%, 45.3rem);
+}
+
 .download-card-showcase {
   width: min(100%, 46rem);
+}
+
+.pagination-showcase {
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 576px) {

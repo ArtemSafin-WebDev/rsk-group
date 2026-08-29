@@ -4,6 +4,7 @@ import 'swiper/css';
 import '../styles/main.scss';
 import { CustomSelect } from './components/CustomSelect';
 import { HeroVideo } from './components/HeroVideo';
+import { ProductionStories } from './components/ProductionStories';
 import { SiteMenu } from './components/SiteMenu';
 
 const page = document.body.dataset.page;
@@ -14,6 +15,7 @@ if (page) {
 
 CustomSelect.initAll();
 HeroVideo.initAll();
+ProductionStories.initAll();
 SiteMenu.initAll();
 
 document.querySelectorAll<HTMLElement>('[data-electronic-catalogs-slider]').forEach((section) => {

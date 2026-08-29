@@ -1,0 +1,19 @@
+<nav
+  class="pagination"
+  aria-label="{{#if ariaLabel}}{{ariaLabel}}{{else}}Навигация по страницам{{/if}}"
+>
+  <ol class="pagination__list">
+    {{#each pages}}
+      <li class="pagination__item">
+        <a
+          class="pagination__link{{#if isCurrent}} pagination__link--active{{/if}}"
+          href="{{url}}"
+          aria-label="Страница {{label}}{{#if isCurrent}}, текущая{{/if}}"
+          {{#if isCurrent}}aria-current="page"{{/if}}
+        >
+          {{label}}
+        </a>
+      </li>
+    {{/each}}
+  </ol>
+</nav>

@@ -1,5 +1,5 @@
 <div
-  class="slider-navigation"
+  class="slider-navigation{{#if variant}} slider-navigation--{{variant}}{{/if}}{{#if className}} {{className}}{{/if}}"
   role="group"
   aria-label="{{#if ariaLabel}}{{ariaLabel}}{{else}}Навигация по слайдеру{{/if}}"
 >

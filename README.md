@@ -126,6 +126,19 @@ if (section) {
 }}
 ```
 
+Карточка товара сохраняет адаптивные пропорции через grid stack. На hover и `focus-visible` фон меняет цвет, а в центре появляется круглая кнопка со стрелкой:
+
+```html
+{{> product-card
+  title="Светодиодный светильник"
+  titleTail="RSC COMFORT 24-1860"
+  primaryTag="Хит"
+  secondaryTag="Новинка"
+  url="/catalog/rsc-comfort-24-1860.html"
+  imageSrc="/images/product-card/rsc-comfort-24-1860.png"
+}}
+```
+
 Карточка скачивания принимает название файла или действия, размер и URL:
 
 ```html
@@ -134,6 +147,15 @@ if (section) {
   fileSize="2,2 Мб"
   downloadUrl="/files/catalog.pdf"
   ariaLabel="Скачать полный каталог в PDF, размер 2,2 Мб"
+}}
+```
+
+Пагинация принимает массив `pages` из объектов `{ label, url, isCurrent }`. Текущая страница отмечается `isCurrent: true`; компонент сам добавляет активный БЭМ-модификатор и `aria-current="page"`:
+
+```html
+{{> pagination
+  pages=paginationPages
+  ariaLabel="Страницы каталога"
 }}
 ```
 

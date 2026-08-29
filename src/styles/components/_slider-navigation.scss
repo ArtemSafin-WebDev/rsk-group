@@ -30,9 +30,23 @@
   flex: 0 0 2.4rem;
 }
 
+.slider-navigation--on-dark .slider-navigation__button {
+  color: var(--color-white);
+  background-color: rgb(255 255 255 / 30%);
+}
+
+.slider-navigation--on-dark .slider-navigation__icon {
+  filter: brightness(0) invert(1);
+}
+
 @media (hover: hover) and (pointer: fine) {
   .slider-navigation__button:hover:not(:disabled):not(.swiper-button-disabled) {
     background-color: var(--color-grey-hover);
+  }
+
+  .slider-navigation--on-dark
+    .slider-navigation__button:hover:not(:disabled):not(.swiper-button-disabled) {
+    background-color: rgb(255 255 255 / 45%);
   }
 }
 
@@ -42,6 +56,10 @@
 
 .slider-navigation__button:focus-visible {
   box-shadow: 0 0 0 0.2rem var(--color-focus);
+}
+
+.slider-navigation--on-dark .slider-navigation__button:focus-visible {
+  box-shadow: 0 0 0 0.2rem var(--color-white);
 }
 
 .slider-navigation__button:disabled,

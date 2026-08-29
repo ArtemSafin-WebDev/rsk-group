@@ -1,0 +1,62 @@
+<a
+  class="product-card{{#if className}} {{className}}{{/if}}{{#if hovered}} product-card--hovered{{/if}}"
+  href="{{url}}"
+  {{#if ariaLabel}}aria-label="{{ariaLabel}}"{{/if}}
+>
+  <span class="product-card__media" aria-hidden="true">
+    <span class="product-card__image-frame">
+      {{#if mobileImageSrc}}
+        <img
+          class="product-card__image product-card__image--desktop{{#if imageModifier}} product-card__image--{{imageModifier}}{{/if}}"
+          src="{{imageSrc}}"
+          width="{{#if imageWidth}}{{imageWidth}}{{else}}1000{{/if}}"
+          height="{{#if imageHeight}}{{imageHeight}}{{else}}1000{{/if}}"
+          alt=""
+        />
+        <img
+          class="product-card__image product-card__image--mobile{{#if mobileImageModifier}} product-card__image--{{mobileImageModifier}}{{/if}}"
+          src="{{mobileImageSrc}}"
+          width="{{#if mobileImageWidth}}{{mobileImageWidth}}{{else}}1000{{/if}}"
+          height="{{#if mobileImageHeight}}{{mobileImageHeight}}{{else}}1000{{/if}}"
+          alt=""
+        />
+      {{else}}
+        <img
+          class="product-card__image{{#if imageModifier}} product-card__image--{{imageModifier}}{{/if}}"
+          src="{{imageSrc}}"
+          width="{{#if imageWidth}}{{imageWidth}}{{else}}1000{{/if}}"
+          height="{{#if imageHeight}}{{imageHeight}}{{else}}1000{{/if}}"
+          alt=""
+        />
+      {{/if}}
+    </span>
+  </span>
+
+  <div class="product-card__content">
+    <h3 class="product-card__title">
+      {{title}}{{#if titleTail}}<br />{{titleTail}}{{/if}}
+    </h3>
+
+    {{#if primaryTag}}
+      <div class="product-card__tags{{#if mobilePrimaryTag}} product-card__tags--desktop{{/if}}">
+        <span class="product-card__tag">{{primaryTag}}</span>
+        {{#if secondaryTag}}
+          <span class="product-card__tag product-card__tag--secondary">{{secondaryTag}}</span>
+        {{/if}}
+      </div>
+    {{/if}}
+
+    {{#if mobilePrimaryTag}}
+      <div class="product-card__tags product-card__tags--mobile">
+        <span class="product-card__tag">{{mobilePrimaryTag}}</span>
+        {{#if mobileSecondaryTag}}
+          <span class="product-card__tag product-card__tag--secondary">{{mobileSecondaryTag}}</span>
+        {{/if}}
+      </div>
+    {{/if}}
+  </div>
+
+  <span class="product-card__action" aria-hidden="true">
+    {{> arrow-button decorative=true}}
+  </span>
+</a>

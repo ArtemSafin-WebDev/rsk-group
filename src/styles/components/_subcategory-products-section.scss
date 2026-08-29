@@ -1,0 +1,121 @@
+.subcategory-products {
+  padding-top: 14.4rem;
+  margin-bottom: 27.2rem;
+}
+
+.subcategory-products__title,
+.subcategory-products__summary {
+  margin: 0;
+}
+
+.subcategory-products__title {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-h1);
+  line-height: var(--line-height-h1);
+  letter-spacing: var(--letter-spacing-h1);
+}
+
+.subcategory-products__summary {
+  margin-top: 12rem;
+  font-size: var(--font-size-p2-regular);
+  font-weight: var(--font-weight-p2-regular);
+  line-height: var(--line-height-p2-regular);
+}
+
+.subcategory-products__summary-count {
+  color: rgb(0 0 0 / 50%);
+}
+
+.subcategory-products__summary-mobile {
+  display: none;
+}
+
+.subcategory-products__grid {
+  display: grid;
+  margin-top: 2.5rem;
+  grid-template-columns: var(--layout-grid-columns);
+  gap: 1rem;
+}
+
+.subcategory-products__grid .product-card__media {
+  aspect-ratio: 181 / 232;
+}
+
+.subcategory-products__controls {
+  display: grid;
+  margin-top: 4.3rem;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.subcategory-products__more {
+  min-width: 20.5rem;
+  grid-column: 2;
+}
+
+.subcategory-products__pagination {
+  display: flex;
+  grid-column: 3;
+  justify-self: end;
+}
+
+@media (max-width: 576px) {
+  .subcategory-products {
+    padding-top: 8.7rem;
+    padding-bottom: 5rem;
+    margin-bottom: 0;
+  }
+
+  .subcategory-products__title {
+    font-size: 4.2rem;
+    line-height: 0.9;
+    letter-spacing: -0.21rem;
+  }
+
+  .subcategory-products__summary {
+    margin-top: 5.5rem;
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  .subcategory-products__summary-desktop {
+    display: none;
+  }
+
+  .subcategory-products__summary-mobile {
+    display: inline;
+  }
+
+  .subcategory-products__grid {
+    margin-top: 1.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+
+  .subcategory-products__grid > .product-card:nth-child(n + 13) {
+    display: none;
+  }
+
+  .subcategory-products__grid .product-card__media {
+    aspect-ratio: 330 / 424;
+  }
+
+  .subcategory-products__controls {
+    margin-top: 2.5rem;
+  }
+
+  .subcategory-products__more {
+    width: 100%;
+    min-width: 0;
+    grid-column: 1 / -1;
+  }
+
+  .subcategory-products__more .button {
+    height: 5.2rem;
+    padding-block: 0;
+  }
+
+  .subcategory-products__pagination {
+    display: none;
+  }
+}

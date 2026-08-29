@@ -1,0 +1,27 @@
+<section class="subcategory-products" aria-labelledby="subcategory-title">
+  <div class="container">
+    <h1 class="subcategory-products__title" id="subcategory-title">{{subcategoryTitle}}</h1>
+
+    <p class="subcategory-products__summary">
+      <span class="subcategory-products__summary-desktop">По вашему запросу найдено: </span>
+      <span class="subcategory-products__summary-mobile">Найдено: </span>
+      <span class="subcategory-products__summary-count">{{subcategoryCount}} позиций</span>
+    </p>
+
+    <div class="subcategory-products__grid">
+      {{#each subcategoryProducts}}
+        {{> product-card}}
+      {{/each}}
+    </div>
+
+    <div class="subcategory-products__controls">
+      <div class="subcategory-products__more">
+        {{> button label="Показать еще" icon="/icons/show-more.svg" fullWidth=true}}
+      </div>
+
+      <div class="subcategory-products__pagination">
+        {{> pagination pages=subcategoryPagination ariaLabel="Страницы каталога"}}
+      </div>
+    </div>
+  </div>
+</section>

@@ -11,6 +11,85 @@ const requestSubjects = [
   { label: 'Другое', value: 'other' },
 ];
 const headerNavigationItems = [{ label: 'Каталог', url: '#catalog' }];
+const productBase = {
+  title: 'Светодиодный светильник',
+  titleTail: 'RSC COMFORT 24-1860',
+  ariaLabel: 'Светодиодный светильник RSC COMFORT 24-1860',
+};
+const productImages = {
+  pole: '/images/product-card/rsc-comfort-24-1860.png',
+  pendant: '/images/product-card/rsc-comfort-pendant.png',
+  bollard: '/images/product-card/rsc-comfort-bollard.png',
+  lantern: '/images/product-card/rsc-comfort-lantern.png',
+  ground: '/images/product-card/rsc-comfort-ground.png',
+  round: '/images/product-card/rsc-comfort-round.png',
+  wall: '/images/product-card/rsc-comfort-wall.png',
+};
+const subcategoryProductVariants = [
+  { imageSrc: productImages.pole, primaryTag: 'Хит', secondaryTag: 'Новинка' },
+  {
+    imageSrc: productImages.pendant,
+    imageModifier: 'pendant',
+    mobileImageSrc: productImages.pole,
+    primaryTag: 'Новинка',
+  },
+  { imageSrc: productImages.bollard, imageModifier: 'contain', primaryTag: 'Новинка' },
+  { imageSrc: productImages.lantern, imageModifier: 'contain' },
+  {
+    imageSrc: productImages.ground,
+    imageModifier: 'cover',
+    mobileImageSrc: productImages.pole,
+    primaryTag: 'Хит',
+  },
+  {
+    imageSrc: productImages.round,
+    imageModifier: 'cover',
+    mobileImageSrc: productImages.pole,
+  },
+  {
+    imageSrc: productImages.wall,
+    imageModifier: 'fill',
+    mobileImageSrc: productImages.bollard,
+    mobileImageModifier: 'contain',
+    primaryTag: 'Хит',
+  },
+  {
+    imageSrc: productImages.pole,
+    mobileImageSrc: productImages.lantern,
+    mobileImageModifier: 'contain',
+  },
+  { imageSrc: productImages.pole, primaryTag: 'Хит' },
+  {
+    imageSrc: productImages.pendant,
+    imageModifier: 'pendant',
+    mobileImageSrc: productImages.pole,
+  },
+  { imageSrc: productImages.bollard, imageModifier: 'contain' },
+  { imageSrc: productImages.lantern, imageModifier: 'contain' },
+  { imageSrc: productImages.ground, imageModifier: 'cover', primaryTag: 'Хит' },
+  { imageSrc: productImages.round, imageModifier: 'cover' },
+  { imageSrc: productImages.wall, imageModifier: 'fill', primaryTag: 'Хит' },
+  { imageSrc: productImages.pole },
+  { imageSrc: productImages.pole, primaryTag: 'Хит' },
+  { imageSrc: productImages.pendant, imageModifier: 'pendant' },
+  { imageSrc: productImages.bollard, imageModifier: 'contain' },
+  { imageSrc: productImages.lantern, imageModifier: 'contain' },
+];
+const subcategoryProducts = subcategoryProductVariants.map((product, index) => ({
+  ...productBase,
+  ...product,
+  ...(index < 12
+    ? { mobilePrimaryTag: 'Хит', mobileSecondaryTag: 'Новинка' }
+    : {}),
+  url: `#product-${index + 1}`,
+}));
+const subcategoryPagination = [
+  { label: '1', url: '#page-1', isCurrent: true },
+  { label: '2', url: '#page-2' },
+  { label: '3', url: '#page-3' },
+  { label: '4', url: '#page-4' },
+  { label: '5', url: '#page-5' },
+];
 const pages = Object.fromEntries(
   readdirSync(root)
     .filter((file) => file.endsWith('.html'))
@@ -29,11 +108,6 @@ const pageData: Record<string, Record<string, unknown>> = {
       { label: 'Гибкий неон', url: '#flexible-neon' },
       { label: 'Грунтовые', url: '#ground' },
     ],
-  },
-  '/about.html': {
-    title: 'О компании',
-    description: 'Информация о компании',
-    page: 'about',
   },
   '/catalog.html': {
     title: 'Каталог — РСК Групп',
@@ -262,6 +336,26 @@ const pageData: Record<string, Record<string, unknown>> = {
       ],
     },
   },
+  '/subcategory.html': {
+    title: 'Торшерные светильники — РСК Групп',
+    description: 'Торшерные светильники РСК Групп для парков, скверов и общественных пространств',
+    page: 'subcategory',
+    headerTheme: 'dark',
+    subcategoryTitle: 'Торшерные светильники',
+    subcategoryCount: 67,
+    subcategoryProducts,
+    subcategoryPagination,
+    subcategoryDescriptions: [
+      {
+        title: 'Где применяется',
+        text: 'Торшерные светильники используются для освещения парков, скверов, пешеходных зон, дворовых территорий, набережных и общественных пространств. Они формируют комфортную световую среду, повышают безопасность территории и становятся частью архитектурного облика объекта.',
+      },
+      {
+        title: 'Производство',
+        text: 'Все светильники производятся на собственном предприятии РСК Групп. Мы используем светодиодные источники света, качественные материалы и комплектующие, а также можем адаптировать оборудование под требования конкретного проекта.',
+      },
+    ],
+  },
   '/ui-kit.html': {
     title: 'UI-kit — RSK Group',
     description: 'Визуальные токены и переиспользуемые компоненты RSK Group',
@@ -272,6 +366,13 @@ const pageData: Record<string, Record<string, unknown>> = {
       { label: 'Акцентные', url: '#accent' },
       { label: 'Гибкий неон', url: '#flexible-neon' },
       { label: 'Грунтовые', url: '#ground' },
+    ],
+    paginationPages: [
+      { label: '1', url: '#page-1', isCurrent: true },
+      { label: '2', url: '#page-2' },
+      { label: '3', url: '#page-3' },
+      { label: '4', url: '#page-4' },
+      { label: '5', url: '#page-5' },
     ],
   },
 };
