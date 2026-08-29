@@ -1,3 +1,6 @@
+import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
 import '../styles/main.scss';
 import { CustomSelect } from './components/CustomSelect';
 import { SiteMenu } from './components/SiteMenu';
@@ -10,6 +13,22 @@ if (page) {
 
 CustomSelect.initAll();
 SiteMenu.initAll();
+
+document.querySelectorAll<HTMLElement>('[data-electronic-catalogs-slider]').forEach((section) => {
+  const swiperElement = section.querySelector<HTMLElement>('.swiper');
+  const prevEl = section.querySelector<HTMLButtonElement>('[data-swiper-button-prev]');
+  const nextEl = section.querySelector<HTMLButtonElement>('[data-swiper-button-next]');
+
+  if (!swiperElement || !prevEl || !nextEl) return;
+
+  new Swiper(swiperElement, {
+    modules: [Navigation],
+    slidesPerView: 'auto',
+    rewind: true,
+    watchOverflow: false,
+    navigation: { prevEl, nextEl },
+  });
+});
 
 document.querySelectorAll<HTMLElement>('.site-header').forEach((header) => {
   let frameId = 0;

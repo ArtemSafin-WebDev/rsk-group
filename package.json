@@ -14,5 +14,8 @@
     "typescript": "latest",
     "vite": "latest",
     "vite-plugin-handlebars": "latest"
+  },
+  "dependencies": {
+    "swiper": "^14.2.0"
   }
 }

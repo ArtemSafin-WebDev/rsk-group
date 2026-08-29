@@ -4,7 +4,6 @@
 
 .materials-section__header {
   display: grid;
-  height: 10.5rem;
   padding-top: 4rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   column-gap: 2rem;
@@ -30,6 +29,7 @@
   font-weight: var(--font-weight-p1-medium);
   line-height: 1.2;
   letter-spacing: -0.12rem;
+  margin-top: 2.4rem;
 }
 
 .materials-section__list {
@@ -46,7 +46,7 @@
 
   .materials-section__header {
     display: flex;
-    height: auto;
+
     padding-top: 1.5rem;
     gap: 2.5rem;
     flex-direction: column;
@@ -66,6 +66,7 @@
     font-weight: var(--font-weight-p3);
     line-height: var(--line-height-p3);
     letter-spacing: 0;
+    margin-top: 0;
   }
 
   .materials-section__list {
