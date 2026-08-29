@@ -17,6 +17,12 @@ html {
   overscroll-behavior-y: none;
 }
 
+@media (max-width: 576px) {
+  html {
+    font-size: 10px;
+  }
+}
+
 body {
   margin: 0;
 }
