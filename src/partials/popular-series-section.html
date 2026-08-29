@@ -1,0 +1,80 @@
+<section
+  class="popular-series"
+  aria-labelledby="popular-series-title"
+  data-popular-series-slider
+>
+  <div class="container">
+    <header class="popular-series__header">
+      <h2 class="popular-series__title" id="popular-series-title">
+        Популярные серии
+      </h2>
+
+      <div class="popular-series__navigation">
+        {{> slider-navigation
+          ariaLabel="Навигация по популярным сериям"
+          prevAriaLabel="Предыдущая популярная серия"
+          nextAriaLabel="Следующая популярная серия"
+        }}
+      </div>
+    </header>
+
+    <div class="popular-series__slider swiper">
+      <div class="swiper-wrapper">
+        <div class="popular-series__slide swiper-slide">
+          {{> series-card
+            title="PARK"
+            description="Современные опоры с консольными светильниками для парков, скверов"
+            descriptionTail="и общественных пространств"
+            count="138 единиц"
+            tag="Торшеры"
+            url="#park"
+            ariaLabel="Серия PARK, 138 единиц"
+            imageSrc="/images/series-card/park.webp"
+            imageWidth="556"
+            imageHeight="1814"
+          }}
+        </div>
+
+        <div class="popular-series__slide swiper-slide">
+          {{> series-card
+            className="series-card--globe series-card--mobile-title-small"
+            title="GLOBE"
+            description="Современные опоры с консольными светильниками для парков, скверов"
+            descriptionTail="и общественных пространств"
+            count="138 единиц"
+            tag="Осветительные комплексы"
+            url="#globe"
+            ariaLabel="Серия GLOBE, 138 единиц"
+            imageSrc="/images/series-card/globe.webp"
+            imageWidth="2000"
+            imageHeight="2000"
+          }}
+        </div>
+
+        <div class="popular-series__slide swiper-slide">
+          {{> series-card
+            className="series-card--mobile-title-small"
+            title="PARK"
+            description="Современные опоры с консольными светильниками для парков, скверов"
+            descriptionTail="и общественных пространств"
+            count="138 единиц"
+            tag="Торшеры"
+            url="#park"
+            ariaLabel="Серия PARK, 138 единиц"
+            imageSrc="/images/series-card/park.webp"
+            imageWidth="556"
+            imageHeight="1814"
+          }}
+        </div>
+      </div>
+    </div>
+
+    <div class="popular-series__more">
+      {{> button
+        label="Смотреть все"
+        icon="/icons/arrow-right.svg"
+        fullWidth=true
+      }}
+    </div>
+  </div>
+</section>

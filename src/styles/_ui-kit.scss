@@ -333,8 +333,13 @@
 }
 
 .direction-card-showcase,
-.solution-card-showcase {
+.solution-card-showcase,
+.series-card-showcase {
   width: min(100%, 91rem);
+}
+
+.series-card-showcase {
+  width: min(100%, 107rem);
 }
 
 .download-card-showcase {

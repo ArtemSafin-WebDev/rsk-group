@@ -24,7 +24,8 @@
               <a class="ui-kit-nav__link" href="#social-networks">06 Социальные сети</a>
               <a class="ui-kit-nav__link" href="#direction-card">07 Карточка направления</a>
               <a class="ui-kit-nav__link" href="#solution-card">08 Карточка решения</a>
-              <a class="ui-kit-nav__link" href="#download-card">09 Карточка скачивания</a>
+              <a class="ui-kit-nav__link" href="#series-card">09 Карточка серии</a>
+              <a class="ui-kit-nav__link" href="#download-card">10 Карточка скачивания</a>
             </nav>
           </aside>
 
@@ -287,9 +288,32 @@
               </div>
             </section>
 
-            <section class="ui-kit-section" id="download-card" data-ui-kit-section>
+            <section class="ui-kit-section" id="series-card" data-ui-kit-section>
               <div class="ui-kit-section__head">
                 <p class="ui-kit-section__number">09</p>
+                <div>
+                  <h2>Карточка популярной серии</h2>
+                  <p>Изображение и контент наложены через grid stack; пропорции медиа задают высоту всей карточки.</p>
+                </div>
+              </div>
+
+              <div class="series-card-showcase">
+                {{> series-card
+                  title="PARK"
+                  description="Современные опоры с консольными светильниками для парков, скверов"
+                  descriptionTail="и общественных пространств"
+                  count="138 единиц"
+                  tag="Торшеры"
+                  url="#park"
+                  ariaLabel="Серия PARK, 138 единиц"
+                  imageSrc="/images/series-card/park.png"
+                }}
+              </div>
+            </section>
+
+            <section class="ui-kit-section" id="download-card" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">10</p>
                 <div>
                   <h2>Карточка скачивания</h2>
                   <p>Компактный блок для скачивания каталога или другого файла.</p>

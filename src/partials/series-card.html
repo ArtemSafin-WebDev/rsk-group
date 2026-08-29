@@ -1,0 +1,34 @@
+<a
+  class="series-card{{#if className}} {{className}}{{/if}}"
+  href="{{url}}"
+  {{#if ariaLabel}}aria-label="{{ariaLabel}}"{{/if}}
+>
+  <span class="series-card__media" aria-hidden="true">
+    <span class="series-card__image-frame">
+      <img
+        class="series-card__image"
+        src="{{imageSrc}}"
+        width="{{#if imageWidth}}{{imageWidth}}{{else}}278{{/if}}"
+        height="{{#if imageHeight}}{{imageHeight}}{{else}}907{{/if}}"
+        alt=""
+      />
+    </span>
+  </span>
+
+  <div class="series-card__content">
+    <h3 class="series-card__title">{{title}}</h3>
+
+    <div class="series-card__copy">
+      <p class="series-card__description">
+        {{description}}{{#if descriptionTail}}<br class="series-card__mobile-break" /> {{descriptionTail}}{{/if}}
+      </p>
+      <p class="series-card__count">{{count}}</p>
+    </div>
+
+    <span class="series-card__tag">{{tag}}</span>
+  </div>
+
+  <span class="series-card__action" aria-hidden="true">
+    {{> arrow-button decorative=true}}
+  </span>
+</a>

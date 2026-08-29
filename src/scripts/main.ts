@@ -30,6 +30,35 @@ document.querySelectorAll<HTMLElement>('[data-electronic-catalogs-slider]').forE
   });
 });
 
+document.querySelectorAll<HTMLElement>('[data-popular-series-slider]').forEach((section) => {
+  const swiperElement = section.querySelector<HTMLElement>('.swiper');
+  const prevEl = section.querySelector<HTMLButtonElement>('[data-swiper-button-prev]');
+  const nextEl = section.querySelector<HTMLButtonElement>('[data-swiper-button-next]');
+
+  if (!swiperElement || !prevEl || !nextEl) return;
+
+  const desktopMedia = window.matchMedia('(min-width: 577px)');
+  let swiper: Swiper | null = null;
+
+  const syncSlider = () => {
+    if (desktopMedia.matches && !swiper) {
+      swiper = new Swiper(swiperElement, {
+        modules: [Navigation],
+        slidesPerView: 'auto',
+        rewind: true,
+        watchOverflow: false,
+        navigation: { prevEl, nextEl },
+      });
+    } else if (!desktopMedia.matches && swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
+    }
+  };
+
+  syncSlider();
+  desktopMedia.addEventListener('change', syncSlider);
+});
+
 document.querySelectorAll<HTMLElement>('.site-header').forEach((header) => {
   let frameId = 0;
 
