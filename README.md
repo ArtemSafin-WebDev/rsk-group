@@ -120,7 +120,7 @@ if (section) {
   title="Смарт-опоры"
   count="18"
   url="/catalog/smart-poles.html"
-  imageSrc="/images/category-card/smart-poles.png"
+  imageSrc="/images/category-card/smart-poles.webp"
   imageModifier="smart-poles"
   wide=true
 }}
@@ -135,7 +135,7 @@ if (section) {
   primaryTag="Хит"
   secondaryTag="Новинка"
   url="/catalog/rsc-comfort-24-1860.html"
-  imageSrc="/images/product-card/rsc-comfort-24-1860.png"
+  imageSrc="/images/product-card/rsc-comfort-24-1860.webp"
 }}
 ```
 
