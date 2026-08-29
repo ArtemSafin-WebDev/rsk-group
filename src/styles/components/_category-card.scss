@@ -86,71 +86,6 @@
   object-position: center bottom;
 }
 
-.category-card__image--landscape {
-  width: 42.44%;
-  height: auto;
-  margin-left: 29.28%;
-  align-self: start;
-  justify-self: start;
-  transform: translateY(5.4%);
-}
-
-.category-card__image--smart-poles {
-  width: 189.08%;
-  height: auto;
-  align-self: start;
-  justify-self: start;
-  transform: translate(-26.82%, -9.66%);
-}
-
-.category-card__image--catalog-linear,
-.category-card__image--catalog-floodlights,
-.category-card__image--catalog-accent,
-.category-card__image--catalog-flexible-neon,
-.category-card__image--catalog-ground {
-  position: absolute;
-  align-self: auto;
-  justify-self: auto;
-  object-fit: fill;
-}
-
-.category-card__image--catalog-linear {
-  top: -6.34%;
-  left: -22.08%;
-  width: 133.63%;
-  height: 189.29%;
-}
-
-.category-card__image--catalog-floodlights {
-  top: 18.44%;
-  left: 33.95%;
-  width: 32.1%;
-  height: 148.37%;
-  transform: scaleX(-1);
-}
-
-.category-card__image--catalog-accent {
-  top: -2.83%;
-  left: 6.38%;
-  width: 87.23%;
-  height: 123.57%;
-  transform: scaleX(-1);
-}
-
-.category-card__image--catalog-flexible-neon {
-  top: 0;
-  left: -5.07%;
-  width: 118.41%;
-  height: 100%;
-}
-
-.category-card__image--catalog-ground {
-  top: -8.42%;
-  left: -36.14%;
-  width: 172.29%;
-  height: 158.89%;
-}
-
 .category-card__content {
   z-index: 1;
   display: grid;
@@ -224,56 +159,17 @@
 
   .category-card__image-frame,
   .category-card--wide .category-card__image-frame {
-    width: 45.455%;
+    width: 15rem;
+    height: 12rem;
     margin-left: 0;
-    aspect-ratio: 150 / 120;
+    aspect-ratio: auto;
     align-self: end;
     justify-self: end;
   }
 
-  .category-card__image--smart-poles {
-    width: 264.71%;
-    height: auto;
-    align-self: start;
-    justify-self: start;
-    transform: translate(-34.37%, -9.07%);
-  }
-
-  .category-card__image--catalog-linear {
-    top: -14.02%;
-    left: -31.13%;
-    width: 154.47%;
-    height: 193.31%;
-  }
-
-  .category-card__image--catalog-floodlights {
-    top: -5%;
-    left: 48%;
-    width: 30%;
-    height: auto;
-    transform: scaleX(-1);
-  }
-
-  .category-card__image--catalog-accent {
-    top: 3%;
-    left: 35%;
-    width: 58%;
-    height: auto;
-    transform: scaleX(-1);
-  }
-
-  .category-card__image--catalog-flexible-neon {
-    top: -12%;
-    left: -10%;
-    width: 130%;
-    height: auto;
-  }
-
-  .category-card__image--catalog-ground {
-    top: -4%;
-    left: 0;
-    width: 100%;
-    height: auto;
+  .category-card__image {
+    min-width: 0;
+    min-height: 0;
   }
 
   .category-card__content {
