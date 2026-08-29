@@ -64,20 +64,11 @@
 }
 
 .series-card__image {
-  width: 33.72%;
+  width: 100%;
   height: auto;
   max-width: none;
-  margin-left: 32.68%;
   grid-area: 1 / 1;
   align-self: start;
-  transform: scaleX(-1);
-}
-
-.series-card--globe .series-card__image {
-  width: 116.22%;
-  margin-top: -14.16%;
-  margin-left: -8.79%;
-  transform: none;
 }
 
 .series-card__content {

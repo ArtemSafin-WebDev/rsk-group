@@ -342,6 +342,13 @@
   width: min(100%, 107rem);
 }
 
+.category-card-showcase {
+  display: grid;
+  width: min(100%, 92rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
 .download-card-showcase {
   width: min(100%, 46rem);
 }
@@ -355,6 +362,12 @@
     display: block;
     min-height: 0;
     padding-block: 4rem;
+  }
+
+  .category-card-showcase {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem;
   }
 
   .ui-kit__title {

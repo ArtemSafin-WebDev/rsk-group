@@ -25,7 +25,8 @@
               <a class="ui-kit-nav__link" href="#direction-card">07 Карточка направления</a>
               <a class="ui-kit-nav__link" href="#solution-card">08 Карточка решения</a>
               <a class="ui-kit-nav__link" href="#series-card">09 Карточка серии</a>
-              <a class="ui-kit-nav__link" href="#download-card">10 Карточка скачивания</a>
+              <a class="ui-kit-nav__link" href="#category-card">10 Карточка категории</a>
+              <a class="ui-kit-nav__link" href="#download-card">11 Карточка скачивания</a>
             </nav>
           </aside>
 
@@ -311,9 +312,42 @@
               </div>
             </section>
 
-            <section class="ui-kit-section" id="download-card" data-ui-kit-section>
+            <section class="ui-kit-section" id="category-card" data-ui-kit-section>
               <div class="ui-kit-section__head">
                 <p class="ui-kit-section__number">10</p>
+                <div>
+                  <h2>Карточка категории</h2>
+                  <p>Обычный и широкий варианты используют один grid stack; на мобильном оба складываются в формат 330 × 140.</p>
+                </div>
+              </div>
+
+              <div class="category-card-showcase">
+                {{> category-card
+                  title="Ландшафтные"
+                  count="67"
+                  url="#landscape"
+                  ariaLabel="Ландшафтные, 67 позиций"
+                  imageSrc="/images/category-card/landscape.png"
+                  imageWidth="278"
+                  imageHeight="907"
+                  imageModifier="landscape"
+                }}
+
+                {{> category-card
+                  title="Смарт-опоры"
+                  count="18"
+                  url="#smart-poles"
+                  ariaLabel="Смарт-опоры, 18 позиций"
+                  imageSrc="/images/category-card/smart-poles.png"
+                  imageModifier="smart-poles"
+                  wide=true
+                }}
+              </div>
+            </section>
+
+            <section class="ui-kit-section" id="download-card" data-ui-kit-section>
+              <div class="ui-kit-section__head">
+                <p class="ui-kit-section__number">11</p>
                 <div>
                   <h2>Карточка скачивания</h2>
                   <p>Компактный блок для скачивания каталога или другого файла.</p>

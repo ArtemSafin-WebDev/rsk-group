@@ -113,6 +113,19 @@ if (section) {
 }}
 ```
 
+Карточка категории собрана через grid stack. Модификатор `wide=true` растягивает её на две колонки родительского grid; на мобильном оба варианта получают одинаковую компоновку. `imageModifier` задаёт подготовленный crop конкретного изображения:
+
+```html
+{{> category-card
+  title="Смарт-опоры"
+  count="18"
+  url="/catalog/smart-poles.html"
+  imageSrc="/images/category-card/smart-poles.png"
+  imageModifier="smart-poles"
+  wide=true
+}}
+```
+
 Карточка скачивания принимает название файла или действия, размер и URL:
 
 ```html

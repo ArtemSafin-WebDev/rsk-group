@@ -1,0 +1,30 @@
+<a
+  class="category-card{{#if wide}} category-card--wide{{/if}}{{#if className}} {{className}}{{/if}}{{#if hovered}} category-card--hovered{{/if}}"
+  href="{{url}}"
+  {{#if ariaLabel}}aria-label="{{ariaLabel}}"{{/if}}
+>
+  <span class="category-card__media" aria-hidden="true">
+    <span class="category-card__image-frame">
+      <img
+        class="category-card__image{{#if imageModifier}} category-card__image--{{imageModifier}}{{/if}}"
+        src="{{imageSrc}}"
+        width="{{#if imageWidth}}{{imageWidth}}{{else}}1000{{/if}}"
+        height="{{#if imageHeight}}{{imageHeight}}{{else}}1000{{/if}}"
+        alt=""
+      />
+    </span>
+  </span>
+
+  <span class="category-card__content">
+    <span class="category-card__title">{{title}}</span>
+
+    <span class="category-card__count">
+      <span>{{count}}</span>
+      <span>{{#if countLabel}}{{countLabel}}{{else}}позиций{{/if}}</span>
+    </span>
+  </span>
+
+  <span class="category-card__action" aria-hidden="true">
+    {{> arrow-button decorative=true}}
+  </span>
+</a>
