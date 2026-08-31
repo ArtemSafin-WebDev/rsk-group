@@ -12,7 +12,11 @@ export class SmoothScroll {
     });
   }
 
-  static init(): SmoothScroll {
+  static init(): SmoothScroll | null {
+    if (window.matchMedia('(pointer: coarse)').matches) {
+      return null;
+    }
+
     return new SmoothScroll();
   }
 }

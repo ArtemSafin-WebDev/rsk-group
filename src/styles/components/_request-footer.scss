@@ -1,6 +1,9 @@
 .request-footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   color: var(--color-white);
-  background: var(--color-white);
+  background: var(--color-control-background);
 }
 
 .request-footer__background {
@@ -26,12 +29,8 @@
 }
 
 .project-request {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
   min-height: 79.6rem;
   padding-block: 4rem;
-  background: var(--color-control-background);
 }
 
 .project-request__layout {

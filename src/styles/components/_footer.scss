@@ -166,10 +166,10 @@
 }
 
 .site-footer__navigation {
-  display: grid;
   padding-top: 0.7rem;
   grid-column: 3 / span 2;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  columns: 2;
+  column-gap: 0;
 }
 
 .site-footer__mobile-navigation {
@@ -178,26 +178,18 @@
 
 .site-footer__nav-group {
   display: flex;
+  break-inside: avoid-column;
   flex-direction: column;
   align-items: flex-start;
   gap: 2.5rem;
   font-size: var(--font-size-p2-medium);
   font-weight: var(--font-weight-p2-medium);
   line-height: 1;
+  page-break-inside: avoid;
 }
 
-.site-footer__nav-group--catalog,
-.site-footer__nav-group--solutions {
-  grid-column: 1;
-}
-
-.site-footer__nav-group--solutions {
+.site-footer__nav-group + .site-footer__nav-group {
   margin-top: 6rem;
-}
-
-.site-footer__nav-group--company {
-  grid-column: 2;
-  grid-row: 1 / span 2;
 }
 
 .site-footer__nav-title {
@@ -326,7 +318,7 @@
   .site-footer__mobile-navigation {
     display: flex;
     width: 100%;
-    margin-top: 4rem;
+    margin-top: 6rem;
     order: 6;
     flex-direction: column;
     gap: 0;
@@ -373,7 +365,7 @@
 
   .site-footer__policies {
     width: 100%;
-    margin: 5.4rem 0 0;
+    margin: 3.2rem 0 0;
     order: 7;
     flex-direction: column;
     gap: 1.2rem;
