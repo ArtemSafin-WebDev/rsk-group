@@ -16,6 +16,7 @@
     "vite-plugin-handlebars": "latest"
   },
   "dependencies": {
+    "lenis": "^1.3.26",
     "swiper": "^14.2.0"
   }
 }

@@ -11,7 +11,7 @@
 
 .catalog-section__header {
   padding-top: 4rem;
-  border-top: 0.1rem solid var(--color-lines);
+  border-top: 1px solid var(--color-lines);
   align-items: start;
 }
 
@@ -75,7 +75,7 @@
   .catalog-section__title {
     order: 1;
     padding-top: 1.5rem;
-    border-top: 0.1rem solid var(--color-lines);
+    border-top: 1px solid var(--color-lines);
     font-size: var(--font-size-h5-medium);
     font-weight: var(--font-weight-h5-medium);
     line-height: var(--line-height-h5-medium);

@@ -14,12 +14,6 @@
   animation: header-in 700ms 180ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.site-header.is-hidden-on-production-stories {
-  animation: none;
-  pointer-events: none;
-  transform: translateY(-100%);
-}
-
 .site-header.is-menu-open {
   color: var(--color-black);
   background: var(--color-white);
@@ -117,7 +111,7 @@
 .site-header__menu-link {
   width: fit-content;
   text-decoration: underline;
-  text-decoration-thickness: 0.1rem;
+  text-decoration-thickness: 1px;
   text-underline-offset: 0.2rem;
 }
 
@@ -148,7 +142,7 @@
   width: 4.4rem;
   height: 4.4rem;
   padding: 1rem;
-  border: 0.1rem solid rgb(255 255 255 / 25%);
+  border: 1px solid rgb(255 255 255 / 25%);
   border-radius: 50%;
   flex: 0 0 4.4rem;
   align-items: center;
@@ -158,8 +152,7 @@
   cursor: pointer;
   transition:
     border-color 160ms ease,
-    background-color 160ms ease,
-    transform 160ms ease;
+    background-color 160ms ease;
 }
 
 .site-header__icon-button img {
@@ -193,9 +186,7 @@
   font-weight: var(--font-weight-button);
   line-height: var(--line-height-button);
   background: var(--color-white);
-  transition:
-    background-color 160ms ease,
-    transform 160ms ease;
+  transition: background-color 160ms ease;
 }
 
 .site-header.is-scrolled .site-header__contact-button,
@@ -259,7 +250,6 @@
   .site-header__icon-button:hover {
     border-color: rgb(255 255 255 / 55%);
     background: rgb(255 255 255 / 12%);
-    transform: translateY(-0.1rem);
   }
 
   .site-header.is-scrolled .site-header__icon-button:hover,
@@ -271,7 +261,6 @@
 
   .site-header__contact-button:hover {
     background: color-mix(in srgb, var(--color-white), var(--color-black) 6%);
-    transform: translateY(-0.1rem);
   }
 
   .site-header.is-scrolled .site-header__contact-button:hover,

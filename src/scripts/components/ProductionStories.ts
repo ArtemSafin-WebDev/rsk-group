@@ -33,7 +33,7 @@ export class ProductionStories {
 
     this.createSliders();
     this.bindEvents();
-    this.observeHeader();
+    this.observeVisibility();
 
     const initialId = this.select?.value || this.tabs[0]?.dataset.storiesTab || '';
     if (initialId) this.activate(initialId, false, false);
@@ -163,13 +163,10 @@ export class ProductionStories {
     });
   }
 
-  private observeHeader(): void {
-    const header = document.querySelector<HTMLElement>('.site-header');
-
+  private observeVisibility(): void {
     const observer = new IntersectionObserver(
       ([entry]) => {
         this.isSectionVisible = Boolean(entry?.isIntersecting && entry.intersectionRatio >= 0.15);
-        header?.classList.toggle('is-hidden-on-production-stories', this.isSectionVisible);
 
         if (this.reduceMotion) return;
 

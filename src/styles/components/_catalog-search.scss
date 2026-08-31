@@ -58,7 +58,7 @@
   z-index: 1;
   max-height: 49.5rem;
   overflow: hidden;
-  border: 0.1rem solid var(--color-lines);
+  border: 1px solid var(--color-lines);
   border-radius: 100rem;
   background: var(--color-white);
   inset: 0 0 auto;
@@ -82,7 +82,7 @@
 }
 
 .catalog-search__result:not(:last-child) {
-  border-bottom: 0.1rem solid var(--color-lines);
+  border-bottom: 1px solid var(--color-lines);
 }
 
 .catalog-search__result-link {

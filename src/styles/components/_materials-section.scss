@@ -7,7 +7,7 @@
   padding-top: 4rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   column-gap: 2rem;
-  border-top: 0.1rem solid var(--color-lines);
+  border-top: 1px solid var(--color-lines);
 }
 
 .materials-section__title,
@@ -32,11 +32,62 @@
   margin-top: 2.4rem;
 }
 
+.materials-section__tabs {
+  display: flex;
+  margin-top: 12rem;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.materials-section__tab {
+  display: inline-flex;
+  height: 4.4rem;
+  padding: 1rem 2rem;
+  border: 1px solid transparent;
+  border-radius: 100.5rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0 0 0 / 50%);
+  font: inherit;
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-button);
+  line-height: var(--line-height-button);
+  white-space: nowrap;
+  background: var(--color-grey-back);
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.materials-section__tab.is-active {
+  border-color: var(--color-black);
+  color: var(--color-black);
+  background: var(--color-white);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .materials-section__tab:not(.is-active):hover {
+    color: var(--color-black);
+    background: var(--color-grey-hover);
+  }
+}
+
+.materials-section__tab:focus-visible {
+  box-shadow: 0 0 0 0.2rem var(--color-focus);
+}
+
 .materials-section__list {
   display: grid;
-  margin-top: 12rem;
+  margin-top: 4rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2rem;
+}
+
+.materials-section__list[hidden] {
+  display: none;
 }
 
 @media (max-width: 576px) {
@@ -69,22 +120,32 @@
     margin-top: 0;
   }
 
+  .materials-section__tabs,
   .materials-section__list {
     display: flex;
     width: calc(
       100% + var(--container-padding-inline) + var(--container-padding-inline)
     );
-    margin: 4rem calc(0rem - var(--container-padding-inline)) 0;
+    margin-inline: calc(0rem - var(--container-padding-inline));
     padding-inline: var(--container-padding-inline);
-    gap: 0.5rem;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scroll-padding-inline: var(--container-padding-inline);
-    scroll-snap-type: inline mandatory;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }
 
+  .materials-section__tabs {
+    margin-top: 4rem;
+  }
+
+  .materials-section__list {
+    margin-top: 2rem;
+    gap: 0.5rem;
+    scroll-snap-type: inline mandatory;
+  }
+
+  .materials-section__tabs::-webkit-scrollbar,
   .materials-section__list::-webkit-scrollbar {
     display: none;
   }

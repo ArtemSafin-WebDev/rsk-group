@@ -1,16 +1,9 @@
 <footer class="site-footer">
-  <div class="site-footer__grid">
+  <div class="site-footer__top">
     <div class="site-footer__column site-footer__column--brand">
       <div class="site-footer__brand">
         <p class="site-footer__slogan">Несем свет<br />людям <sup>©</sup></p>
         <p class="site-footer__about">Производитель светодиодного освещения и малых архитектурных форм для благоустройства</p>
-        <img
-          class="site-footer__logo"
-          src="/images/footer/rsk-group-logo.webp"
-          width="276"
-          height="50"
-          alt="РСК Групп — светотехническая компания"
-        />
       </div>
     </div>
 
@@ -18,13 +11,8 @@
       <address class="site-footer__contacts">
         <a href="tel:+79600796853">+7 960 079-68-53</a>
         <a href="mailto:mail@rsc-groupp.ru">mail@rsc-groupp.ru</a>
-        <p>Казань, ул. Теплично-Комбинатская, 5В<br />420036, РТ</p>
+        <p>Казань, ул.Теплично-Комбинатская, 5В<br />420036, РТ</p>
       </address>
-
-      <nav class="site-footer__nav" aria-label="Меню в подвале">
-        <p class="site-footer__nav-title">Меню</p>
-        <a href="{{catalogUrl}}">Каталог</a>
-      </nav>
     </div>
 
     <div class="site-footer__column site-footer__column--details">
@@ -34,6 +22,143 @@
         <p>ОГРН 1161690093608</p>
       </div>
     </div>
+  </div>
+
+  <div class="site-footer__divider" aria-hidden="true"></div>
+
+  <div class="site-footer__middle">
+    <img
+      class="site-footer__logo"
+      src="/images/footer/rsk-group-logo.webp"
+      width="276"
+      height="50"
+      alt="РСК Групп — светотехническая компания"
+    />
+
+    <nav class="site-footer__navigation" aria-label="Меню в подвале">
+      <div class="site-footer__nav-group site-footer__nav-group--catalog">
+        <p class="site-footer__nav-title">Каталог</p>
+        <div class="site-footer__nav-links">
+          <a href="#light-installations">Световые инсталляции</a>
+          <a href="#outdoor-lighting">Наружное освещение</a>
+          <a href="#architectural-lighting">Архитектурное освещение</a>
+          <a href="#metal-constructions">Металлоконструкции</a>
+        </div>
+      </div>
+
+      <div class="site-footer__nav-group site-footer__nav-group--solutions">
+        <p class="site-footer__nav-title">Решения</p>
+        <div class="site-footer__nav-links">
+          <a href="#parks">Парки и скверы</a>
+          <a href="#residential">Жилые комплексы</a>
+          <a href="#public-spaces">Общественные пространства</a>
+          <a href="#sports">Спортивные площадки</a>
+          <a href="#streets">Улицы</a>
+          <a href="#facades">Фасады</a>
+        </div>
+      </div>
+
+      <div class="site-footer__nav-group site-footer__nav-group--company">
+        <p class="site-footer__nav-title">О компании</p>
+        <div class="site-footer__nav-links">
+          <a href="#cooperation">Сотрудничество</a>
+          <a href="#partners">Партнеры</a>
+          <a href="#news">Новости</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#vacancies">Вакансии</a>
+          <a href="#delivery">Доставка</a>
+          <a href="#warranty">Гарантии</a>
+          <a href="#projects">Проекты</a>
+          <a href="#production">Производство</a>
+          <a href="#materials">Материалы</a>
+          <a href="#contacts">Контакты</a>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="site-footer__mobile-navigation" aria-label="Основные разделы">
+      <section class="site-footer__mobile-nav-group" data-footer-accordion>
+        <button
+          class="site-footer__mobile-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-footer-catalog"
+        >
+          <span>Каталог</span>
+          <svg class="site-footer__mobile-nav-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" aria-hidden="true">
+            <path d="M11.0605 1.06055L5.53027 6.59082L0 1.06055L1.06055 0L5.53027 4.46973L10 0L11.0605 1.06055Z" />
+          </svg>
+        </button>
+        <div class="site-footer__mobile-nav-body" id="site-footer-catalog">
+          <div class="site-footer__mobile-nav-body-inner">
+            <ul class="site-footer__mobile-nav-links">
+              <li><a href="#lighting-installations">Световые инсталляции</a></li>
+              <li><a href="#outdoor-lighting">Наружное освещение</a></li>
+              <li><a href="#architectural-lighting">Архитектурное освещение</a></li>
+              <li><a href="#metal-constructions">Металлоконструкции</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-footer__mobile-nav-group" data-footer-accordion>
+        <button
+          class="site-footer__mobile-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-footer-solutions"
+        >
+          <span>Решения</span>
+          <svg class="site-footer__mobile-nav-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" aria-hidden="true">
+            <path d="M11.0605 1.06055L5.53027 6.59082L0 1.06055L1.06055 0L5.53027 4.46973L10 0L11.0605 1.06055Z" />
+          </svg>
+        </button>
+        <div class="site-footer__mobile-nav-body" id="site-footer-solutions">
+          <div class="site-footer__mobile-nav-body-inner">
+            <ul class="site-footer__mobile-nav-links">
+              <li><a href="#parks-and-squares">Парки и скверы</a></li>
+              <li><a href="#residential-complexes">Жилые комплексы</a></li>
+              <li><a href="#public-spaces">Общественные пространства</a></li>
+              <li><a href="#sports-grounds">Спортивные площадки</a></li>
+              <li><a href="#streets-and-roads">Улицы</a></li>
+              <li><a href="#facades">Фасады</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-footer__mobile-nav-group" data-footer-accordion>
+        <button
+          class="site-footer__mobile-nav-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-footer-company"
+        >
+          <span>О компании</span>
+          <svg class="site-footer__mobile-nav-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" aria-hidden="true">
+            <path d="M11.0605 1.06055L5.53027 6.59082L0 1.06055L1.06055 0L5.53027 4.46973L10 0L11.0605 1.06055Z" />
+          </svg>
+        </button>
+        <div class="site-footer__mobile-nav-body" id="site-footer-company">
+          <div class="site-footer__mobile-nav-body-inner">
+            <ul class="site-footer__mobile-nav-links">
+              <li><a href="#cooperation">Сотрудничество</a></li>
+              <li><a href="#partners">Партнеры</a></li>
+              <li><a href="#news">Новости</a></li>
+              <li><a href="#reviews">Отзывы</a></li>
+              <li><a href="#vacancies">Вакансии</a></li>
+              <li><a href="#delivery">Доставка</a></li>
+              <li><a href="#warranty">Гарантии</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <a class="site-footer__mobile-nav-link" href="#projects">Проекты</a>
+      <a class="site-footer__mobile-nav-link" href="#production">Производство</a>
+      <a class="site-footer__mobile-nav-link" href="#materials">Материалы</a>
+      <a class="site-footer__mobile-nav-link" href="#contacts">Контакты</a>
+    </nav>
   </div>
 
   <div class="site-footer__bottom">

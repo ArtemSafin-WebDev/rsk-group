@@ -1,6 +1,6 @@
 <div class="request-footer">
   <section class="project-request" id="project-request" aria-labelledby="project-request-title">
-    <picture class="project-request__background" aria-hidden="true">
+    <picture class="request-footer__background" aria-hidden="true">
       <source media="(max-width: 576px)" srcset="/images/request-footer/background-mobile.webp" />
       <img src="/images/request-footer/background.webp" alt="" />
     </picture>
@@ -61,7 +61,7 @@
                   ariaLabel="Сообщение"
                 }}
               </div>
-              <div class="project-request__field">
+              <div class="project-request__field project-request__field--attachment">
                 {{> file-upload name="attachment"}}
               </div>
             </div>
@@ -79,7 +79,7 @@
                 variant="white"
                 type="submit"
                 label="Связаться"
-                icon="/icons/chat-4-line.svg"
+                icon="/icons/arrow-right.svg"
                 fullWidth=true
               }}
             </div>

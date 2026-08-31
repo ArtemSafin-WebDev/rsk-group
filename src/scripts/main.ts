@@ -1,11 +1,15 @@
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
+import 'lenis/dist/lenis.css';
 import 'swiper/css';
 import '../styles/main.scss';
 import { CustomSelect } from './components/CustomSelect';
+import { FooterAccordions } from './components/FooterAccordions';
 import { HeroVideo } from './components/HeroVideo';
+import { MaterialsTabs } from './components/MaterialsTabs';
 import { ProductionStories } from './components/ProductionStories';
 import { SiteMenu } from './components/SiteMenu';
+import { SmoothScroll } from './components/SmoothScroll';
 
 const page = document.body.dataset.page;
 
@@ -14,7 +18,10 @@ if (page) {
 }
 
 CustomSelect.initAll();
+FooterAccordions.initAll();
+SmoothScroll.init();
 HeroVideo.initAll();
+MaterialsTabs.initAll();
 ProductionStories.initAll();
 SiteMenu.initAll();
 
@@ -62,10 +69,15 @@ document.querySelectorAll<HTMLElement>('[data-popular-series-slider]').forEach((
 });
 
 document.querySelectorAll<HTMLElement>('.site-header').forEach((header) => {
+  const homeIntro = document.querySelector<HTMLElement>('.home-intro');
   let frameId = 0;
 
   const updateHeader = () => {
-    header.classList.toggle('is-scrolled', window.scrollY > 0);
+    const isOverHomeIntro = Boolean(
+      homeIntro && homeIntro.getBoundingClientRect().bottom > header.offsetHeight,
+    );
+
+    header.classList.toggle('is-scrolled', window.scrollY > 0 && !isOverHomeIntro);
     frameId = 0;
   };
 

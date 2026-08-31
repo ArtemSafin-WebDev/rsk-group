@@ -169,9 +169,9 @@
   font-weight: var(--font-weight-p2-medium);
   line-height: var(--line-height-p2-medium);
   text-decoration-line: underline;
-  text-decoration-thickness: 0.1rem;
+  text-decoration-thickness: 1px;
   text-decoration-skip-ink: none;
-  text-underline-offset: 0.1rem;
+  text-underline-offset: 1px;
 
   &:focus-visible {
     outline: 0.2rem solid var(--color-focus) !important;

@@ -8,11 +8,45 @@
       {{> header}}
 
       <main class="main main--home">
-      {{> hero-section}}
+      <div class="home-intro" data-hero-video>
+        <div class="home-intro__media" aria-hidden="true">
+          <picture class="home-intro__picture">
+            <source
+              media="(max-width: 576px)"
+              srcset="/images/hero/background-mobile.webp"
+              type="image/webp"
+              width="720"
+              height="1440"
+            />
+            <img
+              class="home-intro__background"
+              src="/images/hero/background-video-poster.webp"
+              width="1920"
+              height="1080"
+              alt=""
+            />
+          </picture>
 
-      {{> company-intro-section}}
+          <video
+            class="home-intro__video"
+            muted
+            playsinline
+            preload="auto"
+            tabindex="-1"
+            data-hero-video-element
+          >
+            <source src="/videos/hero/day-night-scrub.mp4" type="video/mp4" />
+          </video>
+        </div>
 
-      {{> advantages-section}}
+        <div class="home-intro__content">
+          {{> hero-section}}
+
+          {{> company-intro-section}}
+
+          {{> advantages-section}}
+        </div>
+      </div>
 
       <section class="solutions-section" aria-labelledby="solutions-title">
         <div class="container">
@@ -25,7 +59,7 @@
 
           <div class="solutions-section__cards">
             {{> solution-card
-              className="solutions-section__card solutions-section__card--parks"
+              className="solutions-section__card solution-card--parks"
               title="Парки и скверы"
               url="#parks-and-squares"
               imageSrc="/images/solution-card/parks.webp"
@@ -37,13 +71,13 @@
               imageSrc="/images/solution-card/streets-and-roads.webp"
             }}
             {{> solution-card
-              className="solutions-section__card solutions-section__card--facades"
+              className="solutions-section__card solution-card--facades"
               title="Фасады"
               url="#facades"
               imageSrc="/images/solution-card/facades.webp"
             }}
             {{> solution-card
-              className="solutions-section__card solutions-section__card--sports"
+              className="solutions-section__card solution-card--sports"
               title="Спортивные"
               titleSecondLine="площадки"
               url="#sports-grounds"
@@ -97,7 +131,7 @@
               titleSecondLine="освещение"
               url="#outdoor-lighting"
               defaultImageSrc="/images/direction-card/outdoor-lighting.webp"
-              hoverImageSrc="/images/direction-card/outdoor-lighting.webp"
+              hoverImageSrc="/images/direction-card/outdoor-lighting-hover.webp"
               subcategories=catalogSubcategories
               subcategoriesAriaLabel="Категории наружного освещения"
             }}
@@ -115,7 +149,7 @@
               titleSecondLine="инсталляции"
               url="#lighting-installations"
               defaultImageSrc="/images/direction-card/lighting-installations.webp"
-              hoverImageSrc="/images/direction-card/lighting-installations.webp"
+              hoverImageSrc="/images/direction-card/lighting-installations-hover.webp"
               subcategories=catalogSubcategories
               subcategoriesAriaLabel="Категории световых инсталляций"
             }}
@@ -124,7 +158,7 @@
               titleSecondLine="конструкции"
               url="#metal-constructions"
               defaultImageSrc="/images/direction-card/metal-constructions.webp"
-              hoverImageSrc="/images/direction-card/metal-constructions.webp"
+              hoverImageSrc="/images/direction-card/metal-constructions-hover.webp"
               subcategories=catalogSubcategories
               subcategoriesAriaLabel="Категории металлоконструкций"
             }}
@@ -140,46 +174,90 @@
 
       {{> production-stories}}
 
-      <section class="materials-section" id="materials" aria-labelledby="materials-title">
+      <section
+        class="materials-section"
+        id="materials"
+        aria-labelledby="materials-title"
+        data-materials-tabs
+      >
         <div class="container">
           <div class="materials-section__header">
             <h2 class="materials-section__title" id="materials-title">Материалы</h2>
             <p class="materials-section__description">Для проектировщиков<br />и&nbsp;заказчиков</p>
           </div>
 
-          <div class="materials-section__list">
-            {{> material-card
-              title="Каталог"
-              imageSrc="/images/material-card/catalog.webp"
-              imageAlt="Обложка каталога РСК Групп 2026"
-              downloadUrl="/files/catalog.pdf"
-              fileType="PDF"
-              fileSize="2,2 Мб"
-            }}
-            {{> material-card
-              title="DWG-чертежи светильников"
-              imageSrc="/images/material-card/dwg-drawings.webp"
-              imageAlt="Обложка DWG-чертежей светильников РСК Групп"
-              downloadUrl="/files/dwg-drawings.pdf"
-              fileType="PDF"
-              fileSize="2,2 Мб"
-            }}
-            {{> material-card
-              title="3Д модели светильников"
-              imageSrc="/images/material-card/3d-models.webp"
-              imageAlt="Обложка материала «3Д модели светильников»"
-              downloadUrl="/files/3d-models.pdf"
-              fileType="PDF"
-              fileSize="2,2 Мб"
-            }}
-            {{> material-card
-              title="Фотометрические данные"
-              imageSrc="/images/material-card/photometric-data.webp"
-              imageAlt="Обложка фотометрических данных РСК Групп"
-              downloadUrl="/files/photometric-data.pdf"
-              fileType="PDF"
-              fileSize="2,2 Мб"
-            }}
+          <div class="materials-section__tabs" role="tablist" aria-label="Категории материалов">
+            <button
+              class="materials-section__tab is-active"
+              id="materials-tab-catalogs"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="materials-panel-catalogs"
+              tabindex="0"
+              data-materials-tab
+            >
+              Каталоги
+            </button>
+            <button
+              class="materials-section__tab"
+              id="materials-tab-technical"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="materials-panel-technical"
+              tabindex="-1"
+              data-materials-tab
+            >
+              Технические документы
+            </button>
+            <button
+              class="materials-section__tab"
+              id="materials-tab-financial"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="materials-panel-financial"
+              tabindex="-1"
+              data-materials-tab
+            >
+              Финансовые документы
+            </button>
+          </div>
+
+          <div
+            class="materials-section__list"
+            id="materials-panel-catalogs"
+            role="tabpanel"
+            aria-labelledby="materials-tab-catalogs"
+            tabindex="0"
+            data-materials-panel
+          >
+            {{> materials-list}}
+          </div>
+
+          <div
+            class="materials-section__list"
+            id="materials-panel-technical"
+            role="tabpanel"
+            aria-labelledby="materials-tab-technical"
+            tabindex="0"
+            data-materials-panel
+            hidden
+          >
+            {{> materials-list}}
+          </div>
+
+          <div
+            class="materials-section__list"
+            id="materials-panel-financial"
+            role="tabpanel"
+            aria-labelledby="materials-tab-financial"
+            tabindex="0"
+            data-materials-panel
+            hidden
+          >
+            {{> materials-list}}
           </div>
         </div>
       </section>

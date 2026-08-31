@@ -33,7 +33,7 @@
   display: grid;
   width: 2rem;
   height: 2rem;
-  border: 0.1rem solid currentcolor;
+  border: 1px solid currentcolor;
   place-items: center;
   background: transparent;
   pointer-events: none;
@@ -47,7 +47,7 @@
   height: 2rem;
   fill: var(--checkbox-icon-color);
   opacity: 0;
-  transform: translate(-0.05rem, -0.1rem) scale(0.75);
+  transform: translate(-0.05rem, -1px) scale(0.75);
   transition:
     opacity 120ms ease,
     transform 120ms ease;
@@ -65,7 +65,7 @@
 
 .checkbox__input:checked + .checkbox__control .checkbox__icon {
   opacity: 1;
-  transform: translate(-0.05rem, -0.1rem) scale(1);
+  transform: translate(-0.05rem, -1px) scale(1);
 }
 
 .checkbox__input:focus-visible + .checkbox__control {
