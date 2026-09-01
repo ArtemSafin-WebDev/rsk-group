@@ -1,3 +1,5 @@
+import heroVideoUrl from '../../videos/hero/day-night-scrub.mp4?url';
+
 const FRAME_DURATION = 1 / 24;
 const FOLLOW_DELAY = 70;
 
@@ -11,6 +13,8 @@ export class HeroVideo {
   private animationFrame = 0;
   private previousFrameTime = 0;
   private isActive = false;
+  private loadPromise: Promise<void> | null = null;
+  private blobUrl = '';
 
   constructor(root: HTMLElement) {
     const video = root.querySelector<HTMLVideoElement>('[data-hero-video-element]');
@@ -53,16 +57,7 @@ export class HeroVideo {
     });
 
     this.video.preload = 'auto';
-
-    if (this.video.readyState >= HTMLMediaElement.HAVE_METADATA) {
-      this.handleMetadata();
-    } else {
-      this.video.load();
-    }
-
-    if (this.video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-      this.handleFrameReady();
-    }
+    this.loadVideo();
   }
 
   private deactivate(): void {
@@ -128,6 +123,37 @@ export class HeroVideo {
     this.root.classList.remove('is-video-ready');
     this.root.classList.add('is-video-unavailable');
   };
+
+  private loadVideo(): void {
+    if (this.blobUrl) {
+      this.attachVideo();
+      return;
+    }
+
+    if (this.loadPromise) return;
+
+    // Native media loading uses byte ranges and starts new requests for every seek.
+    // Buffer the small scrub video once so scrolling never depends on the network.
+    this.loadPromise = fetch(heroVideoUrl, { cache: 'force-cache' })
+      .then((response) => {
+        if (!response.ok) throw new Error(`Failed to load hero video: ${response.status}`);
+
+        return response.blob();
+      })
+      .then((blob) => {
+        this.blobUrl = URL.createObjectURL(blob);
+
+        if (this.isActive) this.attachVideo();
+      })
+      .catch(this.handleError);
+  }
+
+  private attachVideo(): void {
+    if (this.video.src === this.blobUrl) return;
+
+    this.video.src = this.blobUrl;
+    this.video.load();
+  }
 
   private handleViewportChange = (): void => {
     this.updateProgress();
