@@ -7,6 +7,7 @@ import { CustomSelect } from './components/CustomSelect';
 import { FooterAccordions } from './components/FooterAccordions';
 import { HeroVideo } from './components/HeroVideo';
 import { MaterialsTabs } from './components/MaterialsTabs';
+import { PageMotion } from './components/PageMotion';
 import { PagePreloader } from './components/PagePreloader';
 import { ProductionStories } from './components/ProductionStories';
 import { SiteMenu } from './components/SiteMenu';
@@ -20,8 +21,9 @@ if (page) {
 
 CustomSelect.initAll();
 FooterAccordions.initAll();
-SmoothScroll.init();
+const smoothScroll = SmoothScroll.init();
 PagePreloader.initAll();
+PageMotion.init(smoothScroll?.lenis ?? null);
 HeroVideo.initAll();
 MaterialsTabs.initAll();
 ProductionStories.initAll();

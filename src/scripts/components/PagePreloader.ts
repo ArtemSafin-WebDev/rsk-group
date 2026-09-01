@@ -89,6 +89,7 @@ export class PagePreloader {
     window.clearTimeout(this.timeout);
     window.cancelAnimationFrame(this.settleFrame);
     this.root.classList.add('is-hiding');
+    document.dispatchEvent(new CustomEvent('page-preloader:hiding'));
 
     window.setTimeout(() => {
       this.root.hidden = true;
