@@ -22,6 +22,9 @@ export class HeroVideo {
 
     this.reducedMotionMedia.addEventListener('change', this.sync);
     this.video.addEventListener('loadedmetadata', this.handleMetadata);
+    this.video.addEventListener('loadeddata', this.handleFrameReady);
+    this.video.addEventListener('canplay', this.handleFrameReady);
+    this.video.addEventListener('progress', this.handleProgress);
     this.video.addEventListener('seeked', this.handleSeeked);
     this.video.addEventListener('error', this.handleError);
 
@@ -40,6 +43,8 @@ export class HeroVideo {
     if (this.isActive) return;
 
     this.isActive = true;
+    this.root.classList.add('is-video-loading');
+    this.root.classList.remove('is-video-unavailable');
     window.addEventListener('scroll', this.handleViewportChange, { passive: true });
     window.addEventListener('resize', this.handleViewportChange, { passive: true });
     document.addEventListener('touchstart', this.unlockMobileVideo, {
@@ -54,6 +59,10 @@ export class HeroVideo {
     } else {
       this.video.load();
     }
+
+    if (this.video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      this.handleFrameReady();
+    }
   }
 
   private deactivate(): void {
@@ -63,6 +72,7 @@ export class HeroVideo {
     window.removeEventListener('scroll', this.handleViewportChange);
     window.removeEventListener('resize', this.handleViewportChange);
     document.removeEventListener('touchstart', this.unlockMobileVideo);
+    this.root.classList.remove('is-video-loading');
     this.root.classList.remove('is-video-ready');
     this.video.pause();
     window.cancelAnimationFrame(this.animationFrame);
@@ -81,15 +91,42 @@ export class HeroVideo {
   private handleSeeked = (): void => {
     if (!this.isActive) return;
 
-    this.root.classList.add('is-video-ready');
+    this.handleFrameReady();
 
     if (Math.abs(this.targetProgress - this.renderedProgress) > 0.0005) {
       this.requestRender();
     }
   };
 
+  private handleFrameReady = (): void => {
+    if (
+      !this.isActive ||
+      this.video.seeking ||
+      this.video.readyState < HTMLMediaElement.HAVE_CURRENT_DATA
+    ) {
+      return;
+    }
+
+    this.root.classList.remove('is-video-loading');
+    this.root.classList.add('is-video-ready');
+  };
+
+  private handleProgress = (): void => {
+    if (
+      !this.isActive ||
+      this.video.seeking ||
+      Math.abs(this.targetProgress - this.renderedProgress) <= 0.0005
+    ) {
+      return;
+    }
+
+    this.requestRender();
+  };
+
   private handleError = (): void => {
+    this.root.classList.remove('is-video-loading');
     this.root.classList.remove('is-video-ready');
+    this.root.classList.add('is-video-unavailable');
   };
 
   private handleViewportChange = (): void => {
@@ -166,9 +203,7 @@ export class HeroVideo {
     const nextTime = this.duration * this.renderedProgress;
 
     if (Math.abs(this.video.currentTime - nextTime) < FRAME_DURATION / 2) {
-      if (this.video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-        this.root.classList.add('is-video-ready');
-      }
+      this.handleFrameReady();
       return;
     }
 

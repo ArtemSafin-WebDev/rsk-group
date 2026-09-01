@@ -31,6 +31,7 @@
   font-weight: var(--font-weight-p1-medium);
   line-height: var(--line-height-p1-medium);
   letter-spacing: var(--letter-spacing-p1-medium);
+  text-wrap: balance;
 }
 
 .catalog-section__catalog-button {
@@ -68,10 +69,6 @@
     display: contents;
   }
 
-  .catalog-section__title,
-  .catalog-section__description {
-  }
-
   .catalog-section__title {
     order: 1;
     padding-top: 1.5rem;
@@ -83,7 +80,7 @@
   }
 
   .catalog-section__description {
-    width: 24rem;
+    max-width: 24rem;
     margin-top: 2.6rem;
     order: 2;
     font-size: var(--font-size-p3);

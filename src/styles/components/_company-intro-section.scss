@@ -10,13 +10,14 @@
 }
 
 .company-intro-section__title {
-  max-width: 92rem;
+  max-width: 110.3rem;
   margin: 0;
-  grid-column: 1 / span 2;
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-h2);
-  line-height: var(--line-height-h2);
-  letter-spacing: var(--letter-spacing-h2);
+  grid-column: 1 / span 3;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-h3);
+  line-height: var(--line-height-h3);
+  letter-spacing: var(--letter-spacing-h3);
+  text-wrap: balance;
 }
 
 .company-intro-section__certification {

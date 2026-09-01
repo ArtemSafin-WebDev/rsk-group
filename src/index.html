@@ -1,40 +1,26 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    {{> head}}
-  </head>
-  <body data-page="{{page}}">
-    <div class="page">
-      {{> header}}
 
-      <main class="main main--home">
+<head>
+  {{> head}}
+</head>
+
+<body data-page="{{page}}">
+  <div class="page">
+    {{> header}}
+
+    <main class="main main--home">
       <div class="home-intro" data-hero-video>
         <div class="home-intro__media" aria-hidden="true">
           <picture class="home-intro__picture">
-            <source
-              media="(max-width: 576px)"
-              srcset="/images/hero/background-mobile.webp"
-              type="image/webp"
-              width="720"
-              height="1440"
-            />
-            <img
-              class="home-intro__background"
-              src="/images/hero/background-video-poster.webp"
-              width="1920"
-              height="1080"
-              alt=""
-            />
+            <source media="(max-width: 576px)" srcset="/images/hero/background-mobile.webp" type="image/webp"
+              width="720" height="1440" />
+            <img class="home-intro__background" src="/images/hero/background-video-poster.webp" width="1920"
+              height="1080" alt="" />
           </picture>
 
-          <video
-            class="home-intro__video"
-            muted
-            playsinline
-            preload="auto"
-            tabindex="-1"
-            data-hero-video-element
-          >
+          <video class="home-intro__video" muted playsinline preload="auto"
+            poster="/images/hero/background-video-poster.webp" tabindex="-1" data-hero-video-element>
             <source src="/videos/hero/day-night-scrub.mp4" type="video/mp4" />
           </video>
         </div>
@@ -59,51 +45,51 @@
 
           <div class="solutions-section__cards">
             {{> solution-card
-              className="solutions-section__card solution-card--parks"
-              title="Парки и скверы"
-              url="#parks-and-squares"
-              imageSrc="/images/solution-card/parks.webp"
+            className="solutions-section__card solution-card--parks"
+            title="Парки и скверы"
+            url="#parks-and-squares"
+            imageSrc="/images/solution-card/parks.webp"
             }}
             {{> solution-card
-              className="solutions-section__card"
-              title="Улицы и дороги"
-              url="#streets-and-roads"
-              imageSrc="/images/solution-card/streets-and-roads.webp"
+            className="solutions-section__card"
+            title="Улицы и дороги"
+            url="#streets-and-roads"
+            imageSrc="/images/solution-card/streets-and-roads.webp"
             }}
             {{> solution-card
-              className="solutions-section__card solution-card--facades"
-              title="Фасады"
-              url="#facades"
-              imageSrc="/images/solution-card/facades.webp"
+            className="solutions-section__card solution-card--facades"
+            title="Фасады"
+            url="#facades"
+            imageSrc="/images/solution-card/facades.webp"
             }}
             {{> solution-card
-              className="solutions-section__card solution-card--sports"
-              title="Спортивные"
-              titleSecondLine="площадки"
-              url="#sports-grounds"
-              imageSrc="/images/solution-card/sports.webp"
+            className="solutions-section__card solution-card--sports"
+            title="Спортивные"
+            titleSecondLine="площадки"
+            url="#sports-grounds"
+            imageSrc="/images/solution-card/sports.webp"
             }}
             {{> solution-card
-              className="solutions-section__card solutions-section__card--public-spaces"
-              title="Общественные"
-              titleSecondLine="пространства"
-              url="#public-spaces"
-              imageSrc="/images/solution-card/public-spaces.webp"
+            className="solutions-section__card solutions-section__card--public-spaces"
+            title="Общественные"
+            titleSecondLine="пространства"
+            url="#public-spaces"
+            imageSrc="/images/solution-card/public-spaces.webp"
             }}
             {{> solution-card
-              className="solutions-section__card solutions-section__card--residential"
-              title="Жилые комплексы"
-              url="#residential-complexes"
-              imageSrc="/images/solution-card/residential.webp"
+            className="solutions-section__card solutions-section__card--residential"
+            title="Жилые комплексы"
+            url="#residential-complexes"
+            imageSrc="/images/solution-card/residential.webp"
             }}
           </div>
 
           <div class="solutions-section__more">
             {{> arrow-button ariaLabel="Показать больше решений"}}
             {{> button
-              label="Смотреть все"
-              icon="/icons/arrow-right.svg"
-              fullWidth=true
+            label="Смотреть все"
+            icon="/icons/arrow-right.svg"
+            fullWidth=true
             }}
           </div>
         </div>
@@ -114,53 +100,52 @@
           <header class="catalog-section__header">
             <h2 class="catalog-section__title" id="catalog-title">Каталог</h2>
             <p class="catalog-section__description">
-              C учётом объекта, проекта,<br />
-              городской среды
+              Стандартные изделия с&nbsp;возможностью комплексного подбора комплектующих под проект
             </p>
             <div class="catalog-section__catalog-button">
               {{> button
-                label="Перейти в каталог"
-                icon="/icons/arrow-right.svg"
+              label="Перейти в каталог"
+              icon="/icons/arrow-right.svg"
               }}
             </div>
           </header>
 
           <div class="catalog-section__cards">
             {{> direction-card
-              title="Наружное"
-              titleSecondLine="освещение"
-              url="#outdoor-lighting"
-              defaultImageSrc="/images/direction-card/outdoor-lighting.webp"
-              hoverImageSrc="/images/direction-card/outdoor-lighting-hover.webp"
-              subcategories=catalogSubcategories
-              subcategoriesAriaLabel="Категории наружного освещения"
+            title="Наружное"
+            titleSecondLine="освещение"
+            url="#outdoor-lighting"
+            defaultImageSrc="/images/direction-card/outdoor-lighting.webp"
+            hoverImageSrc="/images/direction-card/outdoor-lighting-hover.webp"
+            subcategories=catalogSubcategories
+            subcategoriesAriaLabel="Категории наружного освещения"
             }}
             {{> direction-card
-              title="Архитектурное"
-              titleSecondLine="освещение"
-              url="#architectural-lighting"
-              defaultImageSrc="/images/direction-card/architectural-lighting-default.webp"
-              hoverImageSrc="/images/direction-card/architectural-lighting-hover.webp"
-              subcategories=catalogSubcategories
-              subcategoriesAriaLabel="Категории архитектурного освещения"
+            title="Архитектурное"
+            titleSecondLine="освещение"
+            url="#architectural-lighting"
+            defaultImageSrc="/images/direction-card/architectural-lighting-default.webp"
+            hoverImageSrc="/images/direction-card/architectural-lighting-hover.webp"
+            subcategories=catalogSubcategories
+            subcategoriesAriaLabel="Категории архитектурного освещения"
             }}
             {{> direction-card
-              title="Световые"
-              titleSecondLine="инсталляции"
-              url="#lighting-installations"
-              defaultImageSrc="/images/direction-card/lighting-installations.webp"
-              hoverImageSrc="/images/direction-card/lighting-installations-hover.webp"
-              subcategories=catalogSubcategories
-              subcategoriesAriaLabel="Категории световых инсталляций"
+            title="Световые"
+            titleSecondLine="инсталляции"
+            url="#lighting-installations"
+            defaultImageSrc="/images/direction-card/lighting-installations.webp"
+            hoverImageSrc="/images/direction-card/lighting-installations-hover.webp"
+            subcategories=catalogSubcategories
+            subcategoriesAriaLabel="Категории световых инсталляций"
             }}
             {{> direction-card
-              title="Металло-"
-              titleSecondLine="конструкции"
-              url="#metal-constructions"
-              defaultImageSrc="/images/direction-card/metal-constructions.webp"
-              hoverImageSrc="/images/direction-card/metal-constructions-hover.webp"
-              subcategories=catalogSubcategories
-              subcategoriesAriaLabel="Категории металлоконструкций"
+            title="Металло-"
+            titleSecondLine="конструкции"
+            url="#metal-constructions"
+            defaultImageSrc="/images/direction-card/metal-constructions.webp"
+            hoverImageSrc="/images/direction-card/metal-constructions-hover.webp"
+            subcategories=catalogSubcategories
+            subcategoriesAriaLabel="Категории металлоконструкций"
             }}
           </div>
 
@@ -174,12 +159,7 @@
 
       {{> production-stories}}
 
-      <section
-        class="materials-section"
-        id="materials"
-        aria-labelledby="materials-title"
-        data-materials-tabs
-      >
+      <section class="materials-section" id="materials" aria-labelledby="materials-title" data-materials-tabs>
         <div class="container">
           <div class="materials-section__header">
             <h2 class="materials-section__title" id="materials-title">Материалы</h2>
@@ -187,85 +167,42 @@
           </div>
 
           <div class="materials-section__tabs" role="tablist" aria-label="Категории материалов">
-            <button
-              class="materials-section__tab is-active"
-              id="materials-tab-catalogs"
-              type="button"
-              role="tab"
-              aria-selected="true"
-              aria-controls="materials-panel-catalogs"
-              tabindex="0"
-              data-materials-tab
-            >
+            <button class="materials-section__tab is-active" id="materials-tab-catalogs" type="button" role="tab"
+              aria-selected="true" aria-controls="materials-panel-catalogs" tabindex="0" data-materials-tab>
               Каталоги
             </button>
-            <button
-              class="materials-section__tab"
-              id="materials-tab-technical"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              aria-controls="materials-panel-technical"
-              tabindex="-1"
-              data-materials-tab
-            >
+            <button class="materials-section__tab" id="materials-tab-technical" type="button" role="tab"
+              aria-selected="false" aria-controls="materials-panel-technical" tabindex="-1" data-materials-tab>
               Технические документы
             </button>
-            <button
-              class="materials-section__tab"
-              id="materials-tab-financial"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              aria-controls="materials-panel-financial"
-              tabindex="-1"
-              data-materials-tab
-            >
+            <button class="materials-section__tab" id="materials-tab-financial" type="button" role="tab"
+              aria-selected="false" aria-controls="materials-panel-financial" tabindex="-1" data-materials-tab>
               Финансовые документы
             </button>
           </div>
 
-          <div
-            class="materials-section__list"
-            id="materials-panel-catalogs"
-            role="tabpanel"
-            aria-labelledby="materials-tab-catalogs"
-            tabindex="0"
-            data-materials-panel
-          >
+          <div class="materials-section__list" id="materials-panel-catalogs" role="tabpanel"
+            aria-labelledby="materials-tab-catalogs" tabindex="0" data-materials-panel>
             {{> materials-list}}
           </div>
 
-          <div
-            class="materials-section__list"
-            id="materials-panel-technical"
-            role="tabpanel"
-            aria-labelledby="materials-tab-technical"
-            tabindex="0"
-            data-materials-panel
-            hidden
-          >
+          <div class="materials-section__list" id="materials-panel-technical" role="tabpanel"
+            aria-labelledby="materials-tab-technical" tabindex="0" data-materials-panel hidden>
             {{> materials-list}}
           </div>
 
-          <div
-            class="materials-section__list"
-            id="materials-panel-financial"
-            role="tabpanel"
-            aria-labelledby="materials-tab-financial"
-            tabindex="0"
-            data-materials-panel
-            hidden
-          >
+          <div class="materials-section__list" id="materials-panel-financial" role="tabpanel"
+            aria-labelledby="materials-tab-financial" tabindex="0" data-materials-panel hidden>
             {{> materials-list}}
           </div>
         </div>
       </section>
-      </main>
+    </main>
 
-      {{> request-footer}}
-    </div>
+    {{> request-footer}}
+  </div>
 
-    <script type="module" src="/scripts/main.ts"></script>
-  </body>
+  <script type="module" src="/scripts/main.ts"></script>
+</body>
+
 </html>

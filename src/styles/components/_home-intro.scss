@@ -96,8 +96,8 @@
 
 .home-intro .advantages-section {
   box-sizing: border-box;
-  min-height: 37svh;
   margin: 0;
+  padding-bottom: 8rem;
 }
 
 .home-intro .advantages-section__list {
@@ -163,7 +163,6 @@
   }
 
   .home-intro .advantages-section {
-    min-height: 0;
     padding-bottom: 4rem;
   }
 
