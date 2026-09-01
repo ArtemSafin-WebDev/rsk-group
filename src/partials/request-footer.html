@@ -4,86 +4,92 @@
     <img src="/images/request-footer/background.webp" alt="" />
   </picture>
 
-  <section class="project-request" id="project-request" aria-labelledby="project-request-title">
-    <div class="container">
-      <div class="project-request__layout">
-        <div class="project-request__intro">
-          <p class="project-request__eyebrow">Заявка</p>
-          <p class="project-request__description">
-            Оставьте контакт и кратко опишите объект — специалист РСК Групп поможет с подбором оборудования и&nbsp;светорасчётом
-          </p>
+  <section class="project-request-scene" id="project-request" aria-labelledby="project-request-title">
+    <div class="container project-request__canvas">
+      <div class="project-request">
+        <div class="project-request__layout">
+          <div class="project-request__intro">
+            <p class="project-request__eyebrow">Заявка</p>
+            <p class="project-request__description">
+              Оставьте контакт и кратко опишите объект — специалист РСК Групп поможет с подбором оборудования и&nbsp;светорасчётом
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div class="project-request__content">
-          <h2 class="project-request__title" id="project-request-title">Подберём решение<br />под ваш проект</h2>
+      <div class="project-request__content-layer">
+        <div class="project-request__layout">
+          <div class="project-request__content">
+            <h2 class="project-request__title" id="project-request-title">Подберём решение<br />под ваш проект</h2>
 
-          <form class="project-request__form" method="post">
-            <div class="project-request__fields">
-              {{> text-input
-                id="project-request-name"
-                name="name"
-                placeholder="Имя*"
-                autocomplete="name"
-                required=true
-                ariaLabel="Имя"
-              }}
-              {{> text-input
-                id="project-request-phone"
-                name="phone"
-                type="tel"
-                inputmode="tel"
-                placeholder="Телефон*"
-                autocomplete="tel"
-                required=true
-                ariaLabel="Телефон"
-              }}
-              {{> text-input
-                id="project-request-email"
-                name="email"
-                type="email"
-                placeholder="Email"
-                autocomplete="email"
-                ariaLabel="Электронная почта"
-              }}
-              {{> custom-select
-                id="project-request-subject"
-                name="subject"
-                placeholder="Выберите тему заявки"
-                ariaLabel="Тема заявки"
-                options=requestSubjects
-              }}
-              <div class="project-request__field project-request__field--wide">
+            <form class="project-request__form" method="post">
+              <div class="project-request__fields">
                 {{> text-input
-                  multiline=true
-                  id="project-request-message"
-                  name="message"
-                  placeholder="Сообщение"
-                  ariaLabel="Сообщение"
+                  id="project-request-name"
+                  name="name"
+                  placeholder="Имя*"
+                  autocomplete="name"
+                  required=true
+                  ariaLabel="Имя"
+                }}
+                {{> text-input
+                  id="project-request-phone"
+                  name="phone"
+                  type="tel"
+                  inputmode="tel"
+                  placeholder="Телефон*"
+                  autocomplete="tel"
+                  required=true
+                  ariaLabel="Телефон"
+                }}
+                {{> text-input
+                  id="project-request-email"
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  autocomplete="email"
+                  ariaLabel="Электронная почта"
+                }}
+                {{> custom-select
+                  id="project-request-subject"
+                  name="subject"
+                  placeholder="Выберите тему заявки"
+                  ariaLabel="Тема заявки"
+                  options=requestSubjects
+                }}
+                <div class="project-request__field project-request__field--wide">
+                  {{> text-input
+                    multiline=true
+                    id="project-request-message"
+                    name="message"
+                    placeholder="Сообщение"
+                    ariaLabel="Сообщение"
+                  }}
+                </div>
+                <div class="project-request__field project-request__field--attachment">
+                  {{> file-upload name="attachment"}}
+                </div>
+              </div>
+
+              <div class="project-request__actions">
+                {{> checkbox
+                  id="project-request-privacy"
+                  name="privacy"
+                  value="accepted"
+                  inverse=true
+                  required=true
+                  label="Я даю Согласие на обработку персональных данных в соответствии с Политикой обработки персональных данных"
+                }}
+                {{> button
+                  variant="white"
+                  type="submit"
+                  label="Связаться"
+                  icon="/icons/arrow-right.svg"
+                  fullWidth=true
                 }}
               </div>
-              <div class="project-request__field project-request__field--attachment">
-                {{> file-upload name="attachment"}}
-              </div>
-            </div>
-
-            <div class="project-request__actions">
-              {{> checkbox
-                id="project-request-privacy"
-                name="privacy"
-                value="accepted"
-                inverse=true
-                required=true
-                label="Я даю Согласие на обработку персональных данных в соответствии с Политикой обработки персональных данных"
-              }}
-              {{> button
-                variant="white"
-                type="submit"
-                label="Связаться"
-                icon="/icons/arrow-right.svg"
-                fullWidth=true
-              }}
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>

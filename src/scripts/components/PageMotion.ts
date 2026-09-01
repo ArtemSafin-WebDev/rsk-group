@@ -29,7 +29,6 @@ const HEADER_GROUP_SELECTORS = [
 const SPLIT_REVEAL_SELECTORS = [
   '.company-intro-section__title',
   '.production-stories__title',
-  '.project-request__title',
 ];
 
 export class PageMotion {
@@ -130,7 +129,7 @@ export class PageMotion {
 
     gsap.set(
       document.querySelectorAll<HTMLElement>(
-        '.company-intro-section__certification, .project-request__intro, .project-request__form',
+        '.company-intro-section__certification',
       ),
       { autoAlpha: 0, yPercent: 15 },
     );
@@ -272,7 +271,7 @@ export class PageMotion {
 
   private createSupportingReveals(): void {
     const items = document.querySelectorAll<HTMLElement>(
-      '.company-intro-section__certification, .project-request__intro, .project-request__form',
+      '.company-intro-section__certification',
     );
 
     items.forEach((item) => {
@@ -291,26 +290,6 @@ export class PageMotion {
   }
 
   private createParallax(): void {
-    const requestBackground = document.querySelector<HTMLElement>('.request-footer__background img');
-
-    if (requestBackground) {
-      gsap.fromTo(
-        requestBackground,
-        { scale: 1.12, yPercent: -4 },
-        {
-          ease: 'none',
-          scale: 1.12,
-          yPercent: 4,
-          scrollTrigger: {
-            trigger: '.request-footer',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 0.7,
-          },
-        },
-      );
-    }
-
     const catalogBackground = document.querySelector<HTMLElement>('.catalog-hero__background img');
 
     if (catalogBackground) {
