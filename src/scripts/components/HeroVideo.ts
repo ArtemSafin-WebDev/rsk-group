@@ -15,6 +15,7 @@ export class HeroVideo {
   private isActive = false;
   private loadPromise: Promise<void> | null = null;
   private blobUrl = '';
+  private hasReportedResult = false;
 
   constructor(root: HTMLElement) {
     const video = root.querySelector<HTMLVideoElement>('[data-hero-video-element]');
@@ -104,6 +105,7 @@ export class HeroVideo {
 
     this.root.classList.remove('is-video-loading');
     this.root.classList.add('is-video-ready');
+    this.reportResult('hero-video:ready');
   };
 
   private handleProgress = (): void => {
@@ -122,7 +124,15 @@ export class HeroVideo {
     this.root.classList.remove('is-video-loading');
     this.root.classList.remove('is-video-ready');
     this.root.classList.add('is-video-unavailable');
+    this.reportResult('hero-video:unavailable');
   };
+
+  private reportResult(eventName: 'hero-video:ready' | 'hero-video:unavailable'): void {
+    if (this.hasReportedResult) return;
+
+    this.hasReportedResult = true;
+    document.dispatchEvent(new CustomEvent(eventName));
+  }
 
   private loadVideo(): void {
     if (this.blobUrl) {

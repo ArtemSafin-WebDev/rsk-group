@@ -1,0 +1,66 @@
+.page-preloader {
+  position: fixed;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  color: var(--color-black);
+  background: var(--color-grey-back);
+  clip-path: inset(0 0 0 0);
+  pointer-events: auto;
+  transition: clip-path 700ms cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: clip-path;
+  inset: 0;
+}
+
+.page-preloader.is-hiding {
+  clip-path: inset(0 0 100% 0);
+  pointer-events: none;
+}
+
+.page-preloader__content {
+  display: flex;
+  width: min(27.6rem, calc(100vw - 6.4rem));
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-preloader__logo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-preloader__track {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin-top: 3.2rem;
+  overflow: hidden;
+  background: var(--color-lines);
+}
+
+.page-preloader__indicator {
+  position: absolute;
+  width: 42%;
+  height: 100%;
+  background: var(--color-black);
+  animation: page-preloader-progress 1200ms cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  inset: 0 auto 0 0;
+}
+
+@keyframes page-preloader-progress {
+  from {
+    transform: translateX(-110%);
+  }
+
+  to {
+    transform: translateX(350%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-preloader__indicator {
+    width: 100%;
+    animation: none;
+  }
+}

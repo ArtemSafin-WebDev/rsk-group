@@ -29,7 +29,6 @@
   grid-row: 1;
   flex-direction: column;
   align-items: flex-start;
-  animation: hero-content-in 800ms 120ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .hero-section__title {
@@ -49,7 +48,6 @@
 .hero-section__copyright {
   margin: 0;
   grid-row: 2;
-  animation: hero-content-in 700ms 280ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .hero-section__description {
@@ -74,26 +72,6 @@
 
 .hero-section__description-mobile-break {
   display: none;
-}
-
-@keyframes hero-content-in {
-  from {
-    opacity: 0;
-    transform: translateY(2rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-section__lead,
-  .hero-section__description,
-  .hero-section__copyright {
-    animation: none;
-  }
 }
 
 @media (max-width: 576px) {
