@@ -41,7 +41,7 @@
 }
 
 .hero-section__lead .button {
-  margin-top: 8rem;
+  margin-top: 6rem;
 }
 
 .hero-section__description,
@@ -53,10 +53,10 @@
 .hero-section__description {
   max-width: 43.9rem;
   grid-column: 1;
-  font-size: var(--font-size-p1-semibold);
-  font-weight: var(--font-weight-p1-semibold);
-  line-height: var(--line-height-p1-semibold);
-  letter-spacing: var(--letter-spacing-p1-semibold);
+  font-size: var(--font-size-p1-medium);
+  font-weight: var(--font-weight-p1-medium);
+  line-height: var(--line-height-p1-medium);
+  letter-spacing: var(--letter-spacing-p1-medium);
 }
 
 .hero-section__copyright {

@@ -10,13 +10,13 @@
 }
 
 .company-intro-section__title {
-  max-width: 110.3rem;
+  max-width: 85rem;
   margin: 0;
   grid-column: 1 / span 3;
-  font-size: var(--font-size-h3);
-  font-weight: var(--font-weight-h3);
-  line-height: var(--line-height-h3);
-  letter-spacing: var(--letter-spacing-h3);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-h4);
+  line-height: var(--line-height-h4);
+  letter-spacing: var(--letter-spacing-h4);
   text-wrap: balance;
 }
 

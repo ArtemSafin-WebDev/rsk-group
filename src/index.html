@@ -15,8 +15,8 @@
       <div class="home-intro" data-hero-video>
         <div class="home-intro__media" aria-hidden="true">
           <picture class="home-intro__picture">
-            <source media="(max-width: 576px)" srcset="/images/hero/background-mobile.webp" type="image/webp"
-              width="720" height="1440" />
+            <source media="(max-width: 576px)" srcset="/images/hero/background-video-poster.webp" type="image/webp"
+              width="1672" height="941" />
             <img class="home-intro__background" src="/images/hero/background-video-poster.webp" width="1920"
               height="1080" alt="" />
           </picture>
@@ -100,7 +100,12 @@
           <header class="catalog-section__header">
             <h2 class="catalog-section__title" id="catalog-title">Каталог</h2>
             <p class="catalog-section__description">
-              Стандартные изделия с&nbsp;возможностью комплексного подбора комплектующих под проект
+              <span class="catalog-section__description-text catalog-section__description-text--desktop">
+                Стандартные изделия с&nbsp;возможностью комплексного подбора комплектующих под проект
+              </span>
+              <span class="catalog-section__description-text catalog-section__description-text--mobile">
+                С&nbsp;учётом объекта, проекта, городской среды
+              </span>
             </p>
             <div class="catalog-section__catalog-button">
               {{> button
@@ -159,40 +164,31 @@
 
       {{> production-stories}}
 
-      <section class="materials-section" id="materials" aria-labelledby="materials-title" data-materials-tabs>
+      <section class="materials-section" id="files" aria-labelledby="files-title" data-materials-tabs>
         <div class="container">
           <div class="materials-section__header">
-            <h2 class="materials-section__title" id="materials-title">Материалы</h2>
-            <p class="materials-section__description">Для проектировщиков<br />и&nbsp;заказчиков</p>
+            <h2 class="materials-section__title" id="files-title">Файлы</h2>
           </div>
 
-          <div class="materials-section__tabs" role="tablist" aria-label="Категории материалов">
-            <button class="materials-section__tab is-active" id="materials-tab-catalogs" type="button" role="tab"
-              aria-selected="true" aria-controls="materials-panel-catalogs" tabindex="0" data-materials-tab>
+          <div class="materials-section__tabs" role="tablist" aria-label="Категории файлов">
+            <button class="materials-section__tab is-active" id="files-tab-catalogs" type="button" role="tab"
+              aria-selected="true" aria-controls="files-panel-catalogs" tabindex="0" data-materials-tab>
               Каталоги
             </button>
-            <button class="materials-section__tab" id="materials-tab-technical" type="button" role="tab"
-              aria-selected="false" aria-controls="materials-panel-technical" tabindex="-1" data-materials-tab>
-              Технические документы
-            </button>
-            <button class="materials-section__tab" id="materials-tab-financial" type="button" role="tab"
-              aria-selected="false" aria-controls="materials-panel-financial" tabindex="-1" data-materials-tab>
-              Финансовые документы
+            <button class="materials-section__tab" id="files-tab-presentation" type="button" role="tab"
+              aria-selected="false" aria-controls="files-panel-presentation" tabindex="-1" data-materials-tab>
+              <span class="materials-section__tab-label materials-section__tab-label--desktop">Презентация компании</span>
+              <span class="materials-section__tab-label materials-section__tab-label--mobile">Презентация</span>
             </button>
           </div>
 
-          <div class="materials-section__list" id="materials-panel-catalogs" role="tabpanel"
-            aria-labelledby="materials-tab-catalogs" tabindex="0" data-materials-panel>
+          <div class="materials-section__list" id="files-panel-catalogs" role="tabpanel"
+            aria-labelledby="files-tab-catalogs" tabindex="0" data-materials-panel>
             {{> materials-list}}
           </div>
 
-          <div class="materials-section__list" id="materials-panel-technical" role="tabpanel"
-            aria-labelledby="materials-tab-technical" tabindex="0" data-materials-panel hidden>
-            {{> materials-list}}
-          </div>
-
-          <div class="materials-section__list" id="materials-panel-financial" role="tabpanel"
-            aria-labelledby="materials-tab-financial" tabindex="0" data-materials-panel hidden>
+          <div class="materials-section__list" id="files-panel-presentation" role="tabpanel"
+            aria-labelledby="files-tab-presentation" tabindex="0" data-materials-panel hidden>
             {{> materials-list}}
           </div>
         </div>

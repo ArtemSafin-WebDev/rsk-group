@@ -100,6 +100,7 @@
 }
 
 .production-stories__description {
+  display: none;
   grid-column: 2;
   max-width: 46rem;
   margin-top: 1rem;
@@ -123,7 +124,7 @@
   grid-column: 2;
 }
 
-[data-stories-panel="production"] .production-stories__metric {
+[data-stories-panel="design"] .production-stories__metric {
   grid-column: 3;
 }
 
@@ -322,6 +323,7 @@
   }
 
   .production-stories__description {
+    display: block;
     max-width: 24.6rem;
     margin-top: 0;
     font-size: 1.4rem;

@@ -41,8 +41,7 @@
 
 .materials-section__tab {
   display: inline-flex;
-  height: 4.4rem;
-  padding: 1rem 2rem;
+  padding: 1.14rem 2rem;
   border: 1px solid transparent;
   border-radius: 100.5rem;
   flex: 0 0 auto;
@@ -60,6 +59,10 @@
     color 180ms ease,
     border-color 180ms ease,
     background-color 180ms ease;
+}
+
+.materials-section__tab-label--mobile {
+  display: none;
 }
 
 .materials-section__tab.is-active {
@@ -81,9 +84,12 @@
 
 .materials-section__list {
   display: grid;
+  min-height: 58.7rem;
   margin-top: 4rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 2rem;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  column-gap: 2rem;
+  row-gap: 0;
 }
 
 .materials-section__list[hidden] {
@@ -120,9 +126,16 @@
     margin-top: 0;
   }
 
+  .materials-section__tab-label--desktop {
+    display: none;
+  }
+
+  .materials-section__tab-label--mobile {
+    display: inline;
+  }
+
   .materials-section__tabs,
   .materials-section__list {
-    display: flex;
     width: calc(
       100% + var(--container-padding-inline) + var(--container-padding-inline)
     );
@@ -136,12 +149,19 @@
   }
 
   .materials-section__tabs {
+    display: flex;
     margin-top: 4rem;
   }
 
   .materials-section__list {
+    display: grid;
+    min-height: 39rem;
     margin-top: 2rem;
-    gap: 0.5rem;
+    grid-template-columns: none;
+    grid-auto-columns: 28rem;
+    grid-auto-flow: column;
+    column-gap: 0.5rem;
+    row-gap: 0;
     scroll-snap-type: inline mandatory;
   }
 
@@ -151,7 +171,6 @@
   }
 
   .materials-section__list > .material-card {
-    flex: 0 0 28rem;
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
