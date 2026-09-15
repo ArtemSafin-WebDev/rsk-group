@@ -10,7 +10,11 @@ const requestSubjects = [
   { label: 'Заказать проект', value: 'project' },
   { label: 'Другое', value: 'other' },
 ];
-const headerNavigationItems = [{ label: 'Каталог', url: '#catalog' }];
+const headerNavigationItems = [
+  { label: 'Каталог', url: '#catalog' },
+  { label: 'Проекты' },
+  { label: 'Производство' },
+];
 const productBase = {
   title: 'Светодиодный светильник',
   titleTail: 'RSC COMFORT 24-1860',
