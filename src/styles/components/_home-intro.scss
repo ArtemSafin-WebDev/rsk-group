@@ -6,6 +6,18 @@
   isolation: isolate;
 }
 
+.home-intro::after {
+  position: absolute;
+  z-index: 0;
+  top: 58.1rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, transparent 0%, rgb(0 0 0 / 70%) 100%);
+  content: "";
+  pointer-events: none;
+}
+
 .home-intro__media {
   position: sticky;
   z-index: 0;
@@ -108,8 +120,16 @@
 }
 
 .home-intro .advantages-section__icon {
-  color: var(--color-black);
-  background: var(--color-grey-back);
+  border-color: rgb(246 246 246 / 40%);
+  background: transparent;
+}
+
+.home-intro .advantages-section__icon-image {
+  filter: invert(1);
+}
+
+.home-intro .advantages-section__text {
+  color: rgb(255 255 255 / 50%);
 }
 
 @media (prefers-reduced-motion: reduce) {

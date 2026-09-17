@@ -22,41 +22,51 @@
           <div class="project-request__content">
             <h2 class="project-request__title" id="project-request-title">Подберём решение<br />под ваш проект</h2>
 
-            <form class="project-request__form" method="post">
+            <form class="project-request__form" method="post" data-project-request-form novalidate>
               <div class="project-request__fields">
-                {{> text-input
-                  id="project-request-name"
-                  name="name"
-                  placeholder="Имя*"
-                  autocomplete="name"
-                  required=true
-                  ariaLabel="Имя"
-                }}
-                {{> text-input
-                  id="project-request-phone"
-                  name="phone"
-                  type="tel"
-                  inputmode="tel"
-                  placeholder="Телефон*"
-                  autocomplete="tel"
-                  required=true
-                  ariaLabel="Телефон"
-                }}
-                {{> text-input
-                  id="project-request-email"
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                  autocomplete="email"
-                  ariaLabel="Электронная почта"
-                }}
-                {{> custom-select
-                  id="project-request-subject"
-                  name="subject"
-                  placeholder="Выберите тему заявки"
-                  ariaLabel="Тема заявки"
-                  options=requestSubjects
-                }}
+                <div class="project-request__field" data-project-request-field="name">
+                  {{> text-input
+                    id="project-request-name"
+                    name="name"
+                    placeholder="Имя*"
+                    autocomplete="name"
+                    required=true
+                    ariaLabel="Имя"
+                  }}
+                  <p class="project-request__error" id="project-request-name-error" data-project-request-error aria-live="polite" hidden></p>
+                </div>
+                <div class="project-request__field" data-project-request-field="phone">
+                  {{> text-input
+                    id="project-request-phone"
+                    name="phone"
+                    inputmode="tel"
+                    placeholder="Телефон*"
+                    autocomplete="tel"
+                    required=true
+                    ariaLabel="Телефон"
+                  }}
+                  <p class="project-request__error" id="project-request-phone-error" data-project-request-error aria-live="polite" hidden></p>
+                </div>
+                <div class="project-request__field" data-project-request-field="email">
+                  {{> text-input
+                    id="project-request-email"
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    autocomplete="email"
+                    ariaLabel="Электронная почта"
+                  }}
+                  <p class="project-request__error" id="project-request-email-error" data-project-request-error aria-live="polite" hidden></p>
+                </div>
+                <div class="project-request__field">
+                  {{> custom-select
+                    id="project-request-subject"
+                    name="subject"
+                    placeholder="Выберите тему заявки"
+                    ariaLabel="Тема заявки"
+                    options=requestSubjects
+                  }}
+                </div>
                 <div class="project-request__field project-request__field--wide">
                   {{> text-input
                     multiline=true
@@ -72,14 +82,17 @@
               </div>
 
               <div class="project-request__actions">
-                {{> checkbox
-                  id="project-request-privacy"
-                  name="privacy"
-                  value="accepted"
-                  inverse=true
-                  required=true
-                  label="Я даю Согласие на обработку персональных данных в соответствии с Политикой обработки персональных данных"
-                }}
+                <div class="project-request__consent" data-project-request-field="privacy">
+                  {{> checkbox
+                    id="project-request-privacy"
+                    name="privacy"
+                    value="accepted"
+                    inverse=true
+                    required=true
+                    label="Я даю Согласие на обработку персональных данных в соответствии с Политикой обработки персональных данных"
+                  }}
+                  <p class="project-request__error" id="project-request-privacy-error" data-project-request-error aria-live="polite" hidden></p>
+                </div>
                 {{> button
                   variant="white"
                   type="submit"

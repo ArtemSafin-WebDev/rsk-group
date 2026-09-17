@@ -10,6 +10,7 @@ import { MaterialsTabs } from './components/MaterialsTabs';
 import { PageMotion } from './components/PageMotion';
 import { PagePreloader } from './components/PagePreloader';
 import { ProductionStories } from './components/ProductionStories';
+import { ProjectRequestForm } from './components/ProjectRequestForm';
 import { SiteMenu } from './components/SiteMenu';
 import { SmoothScroll } from './components/SmoothScroll';
 
@@ -27,6 +28,7 @@ PageMotion.init(smoothScroll?.lenis ?? null);
 HeroVideo.initAll();
 MaterialsTabs.initAll();
 ProductionStories.initAll();
+ProjectRequestForm.initAll();
 SiteMenu.initAll();
 
 document.querySelectorAll<HTMLElement>('[data-electronic-catalogs-slider]').forEach((section) => {

@@ -309,23 +309,6 @@ export class PageMotion {
         },
       );
     }
-
-    document.querySelectorAll<HTMLElement>('.production-stories__panel picture img').forEach((image) => {
-      gsap.fromTo(
-        image,
-        { scale: 1.06 },
-        {
-          ease: 'none',
-          scale: 1,
-          scrollTrigger: {
-            trigger: '.production-stories',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 0.8,
-          },
-        },
-      );
-    });
   }
 
   static init(lenis: Lenis | null = null): PageMotion | null {
