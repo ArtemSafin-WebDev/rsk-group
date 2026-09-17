@@ -17,6 +17,7 @@ export class ProjectRequestForm {
   private readonly form: HTMLFormElement;
   private readonly fields: Record<FieldName, ValidatedField>;
   private readonly phoneMask;
+  private hasSubmitAttempt = false;
 
   static initAll(scope: ParentNode = document): ProjectRequestForm[] {
     return [...scope.querySelectorAll<HTMLFormElement>('[data-project-request-form]')].map(
@@ -67,19 +68,21 @@ export class ProjectRequestForm {
     const { name, phone, email, privacy } = this.fields;
 
     [name, email].forEach((field) => {
-      field.control.addEventListener('blur', () => this.validateField(field));
+      field.control.addEventListener('blur', () => this.validateAfterSubmit(field));
       field.control.addEventListener('input', () => this.revalidateInvalidField(field));
     });
 
-    phone.control.addEventListener('blur', () => this.validateField(phone));
+    phone.control.addEventListener('blur', () => this.validateAfterSubmit(phone));
     this.phoneMask.on('accept', () => this.revalidateInvalidField(phone));
 
-    privacy.control.addEventListener('change', () => this.validateField(privacy));
+    privacy.control.addEventListener('change', () => this.validateAfterSubmit(privacy));
     this.form.addEventListener('submit', this.handleSubmit);
     this.form.addEventListener('reset', this.handleReset);
   }
 
   private handleSubmit = (event: SubmitEvent): void => {
+    this.hasSubmitAttempt = true;
+
     const isValid = (Object.keys(this.fields) as FieldName[])
       .map((name) => this.validateField(this.fields[name]))
       .every(Boolean);
@@ -95,14 +98,25 @@ export class ProjectRequestForm {
   };
 
   private handleReset = (): void => {
+    this.hasSubmitAttempt = false;
+
     window.requestAnimationFrame(() => {
       this.phoneMask.value = this.fields.phone.control.value;
-      Object.values(this.fields).forEach((field) => this.renderError(field, ''));
+      Object.values(this.fields).forEach((field) => {
+        field.control.setCustomValidity('');
+        this.renderError(field, '');
+      });
     });
   };
 
+  private validateAfterSubmit(field: ValidatedField): void {
+    if (this.hasSubmitAttempt) this.validateField(field);
+  }
+
   private revalidateInvalidField(field: ValidatedField): void {
-    if (field.container.classList.contains('is-invalid')) this.validateField(field);
+    if (this.hasSubmitAttempt && field.container.classList.contains('is-invalid')) {
+      this.validateField(field);
+    }
   }
 
   private validateField(field: ValidatedField): boolean {

@@ -145,46 +145,12 @@
 }
 
 @media (min-width: 961px) {
-  .request-footer__background img {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-  }
-
   .project-request-scene {
-    height: calc(200vh - 12.4rem);
-  }
-
-  .project-request__canvas {
-    position: relative;
-    height: 100%;
-  }
-
-  .project-request {
-    position: sticky;
-    top: 0;
-    min-height: 100vh;
-    padding-top: 12.4rem;
-  }
-
-  .project-request__content-layer {
-    position: absolute;
-    top: 100vh;
-    right: var(--container-padding-inline);
-    left: var(--container-padding-inline);
-  }
-}
-
-@media (min-width: 961px) and (prefers-reduced-motion: reduce) {
-  .project-request-scene {
-    height: auto;
-    padding-block: 12.4rem 4rem;
+    padding-block: 12.4rem 8rem;
   }
 
   .project-request__canvas {
     display: grid;
-    height: auto;
     grid-template-columns: var(--layout-grid-columns);
   }
 

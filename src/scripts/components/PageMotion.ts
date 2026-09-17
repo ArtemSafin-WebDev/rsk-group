@@ -290,6 +290,27 @@ export class PageMotion {
   }
 
   private createParallax(): void {
+    const requestContent = document.querySelector<HTMLElement>('.project-request__content');
+
+    if (requestContent) {
+      gsap.matchMedia().add('(min-width: 961px)', () => {
+        gsap.fromTo(
+          requestContent,
+          { y: '8rem' },
+          {
+            ease: 'none',
+            y: 0,
+            scrollTrigger: {
+              trigger: '.project-request-scene',
+              start: 'top bottom',
+              end: 'top 30%',
+              scrub: 0.7,
+            },
+          },
+        );
+      });
+    }
+
     const catalogBackground = document.querySelector<HTMLElement>('.catalog-hero__background img');
 
     if (catalogBackground) {
