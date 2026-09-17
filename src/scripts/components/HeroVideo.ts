@@ -2,12 +2,19 @@ import heroVideoUrl from '../../videos/hero/day-night-scrub.mp4?url';
 
 const FRAME_DURATION = 1 / 24;
 const FOLLOW_DELAY = 70;
+const INTRO_DURATION = 1500;
+const INTRO_END_TIME = 3;
+const PROGRESS_EPSILON = 0.0005;
 
 export class HeroVideo {
   private readonly root: HTMLElement;
   private readonly video: HTMLVideoElement;
   private readonly reducedMotionMedia = window.matchMedia('(prefers-reduced-motion: reduce)');
   private duration = 0;
+  private scrollProgress = 0;
+  private introProgress = 0;
+  private introStartedAt: number | null = null;
+  private isPageRevealed = false;
   private targetProgress = 0;
   private renderedProgress = 0;
   private animationFrame = 0;
@@ -32,6 +39,11 @@ export class HeroVideo {
     this.video.addEventListener('progress', this.handleProgress);
     this.video.addEventListener('seeked', this.handleSeeked);
     this.video.addEventListener('error', this.handleError);
+
+    const preloader = document.querySelector<HTMLElement>('[data-page-preloader]');
+    this.isPageRevealed =
+      !preloader || Boolean(preloader.hidden) || preloader.classList.contains('is-hiding');
+    document.addEventListener('page-preloader:hiding', this.handlePageReveal, { once: true });
 
     this.sync();
   }
@@ -59,6 +71,11 @@ export class HeroVideo {
 
     this.video.preload = 'auto';
     this.loadVideo();
+
+    if (this.video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      this.handleMetadata();
+      this.handleFrameReady();
+    }
   }
 
   private deactivate(): void {
@@ -74,6 +91,7 @@ export class HeroVideo {
     window.cancelAnimationFrame(this.animationFrame);
     this.animationFrame = 0;
     this.previousFrameTime = 0;
+    this.introStartedAt = null;
   }
 
   private handleMetadata = (): void => {
@@ -89,7 +107,7 @@ export class HeroVideo {
 
     this.handleFrameReady();
 
-    if (Math.abs(this.targetProgress - this.renderedProgress) > 0.0005) {
+    if (this.needsRender()) {
       this.requestRender();
     }
   };
@@ -106,14 +124,31 @@ export class HeroVideo {
     this.root.classList.remove('is-video-loading');
     this.root.classList.add('is-video-ready');
     this.reportResult('hero-video:ready');
+    this.startIntro();
   };
 
-  private handleProgress = (): void => {
+  private handlePageReveal = (): void => {
+    this.isPageRevealed = true;
+    this.startIntro();
+  };
+
+  private startIntro(): void {
     if (
       !this.isActive ||
-      this.video.seeking ||
-      Math.abs(this.targetProgress - this.renderedProgress) <= 0.0005
+      !this.isPageRevealed ||
+      !this.root.classList.contains('is-video-ready') ||
+      this.introStartedAt !== null ||
+      this.introProgress === 1
     ) {
+      return;
+    }
+
+    this.introStartedAt = performance.now() - this.introProgress * INTRO_DURATION;
+    this.requestRender();
+  }
+
+  private handleProgress = (): void => {
+    if (!this.isActive || this.video.seeking || !this.needsRender()) {
       return;
     }
 
@@ -121,6 +156,7 @@ export class HeroVideo {
   };
 
   private handleError = (): void => {
+    this.deactivate();
     this.root.classList.remove('is-video-loading');
     this.root.classList.remove('is-video-ready');
     this.root.classList.add('is-video-unavailable');
@@ -174,9 +210,10 @@ export class HeroVideo {
     const scrollDistance = Math.max(this.root.offsetHeight - window.innerHeight, 1);
     const progress = -bounds.top / scrollDistance;
 
-    this.targetProgress = Math.min(Math.max(progress, 0), 1);
-    this.root.style.setProperty('--home-intro-progress', this.targetProgress.toFixed(4));
-    const heroExit = Math.min(this.targetProgress / 0.35, 1);
+    this.scrollProgress = Math.min(Math.max(progress, 0), 1);
+    this.updateTargetProgress();
+    this.root.style.setProperty('--home-intro-progress', this.scrollProgress.toFixed(4));
+    const heroExit = Math.min(this.scrollProgress / 0.35, 1);
 
     this.root.style.setProperty('--home-intro-hero-exit', heroExit.toFixed(4));
     this.root.style.setProperty('--home-intro-hero-offset', `${(-3 * heroExit).toFixed(3)}rem`);
@@ -192,17 +229,31 @@ export class HeroVideo {
   private unlockMobileVideo = (): void => {
     if (!this.isActive || this.video.readyState < HTMLMediaElement.HAVE_METADATA) return;
 
-    void this.video
-      .play()
-      .then(() => {
-        this.video.pause();
-        this.updateProgress(true);
-        this.seekToRenderedProgress();
-      })
-      .catch(() => {
-        // The poster remains visible if a browser blocks media activation.
-      });
+    // Unlock media in the gesture without letting native playback compete with scrubbing.
+    const playPromise = this.video.play();
+    this.video.pause();
+    void playPromise.catch(() => {
+      // An immediate pause can reject play(); frame seeking still works.
+    });
+    this.requestRender();
   };
+
+  private updateTargetProgress(): void {
+    const introEnd = this.duration > 0 ? Math.min(INTRO_END_TIME / this.duration, 1) : 0;
+    const easedIntro = this.introProgress * this.introProgress * (3 - 2 * this.introProgress);
+    const baseProgress = introEnd * easedIntro;
+
+    // One continuous target for both inputs: early scrolling adds to the intro,
+    // and scrolling back after the intro returns to the already illuminated scene.
+    this.targetProgress = baseProgress + (1 - baseProgress) * this.scrollProgress;
+  }
+
+  private needsRender(): boolean {
+    return (
+      (this.introStartedAt !== null && this.introProgress < 1) ||
+      Math.abs(this.targetProgress - this.renderedProgress) > PROGRESS_EPSILON
+    );
+  }
 
   private requestRender(): void {
     if (this.animationFrame) return;
@@ -215,23 +266,29 @@ export class HeroVideo {
 
     if (!this.isActive || this.duration === 0) return;
 
+    if (this.introStartedAt !== null) {
+      this.introProgress = Math.min(Math.max((time - this.introStartedAt) / INTRO_DURATION, 0), 1);
+      this.updateTargetProgress();
+    }
+
     const elapsed = this.previousFrameTime ? Math.min(time - this.previousFrameTime, 64) : 16;
     const follow = 1 - Math.exp(-elapsed / FOLLOW_DELAY);
 
     this.previousFrameTime = time;
     this.renderedProgress += (this.targetProgress - this.renderedProgress) * follow;
 
-    if (Math.abs(this.targetProgress - this.renderedProgress) < 0.0005) {
+    if (Math.abs(this.targetProgress - this.renderedProgress) < PROGRESS_EPSILON) {
       this.renderedProgress = this.targetProgress;
-      this.previousFrameTime = 0;
     }
 
     if (this.video.seeking) return;
 
     this.seekToRenderedProgress();
 
-    if (this.renderedProgress !== this.targetProgress && !this.video.seeking) {
+    if (this.needsRender() && !this.video.seeking) {
       this.requestRender();
+    } else if (!this.needsRender()) {
+      this.previousFrameTime = 0;
     }
   };
 
