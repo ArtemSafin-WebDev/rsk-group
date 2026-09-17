@@ -9,7 +9,7 @@
 .home-intro::after {
   position: absolute;
   z-index: 0;
-  top: 58.1rem;
+  top: 100svh;
   right: 0;
   bottom: 0;
   left: 0;
@@ -156,8 +156,9 @@
     object-position: 72% center;
   }
 
-  .home-intro .hero-section {
-    min-height: min(100svh, 72rem);
+  .home-intro .hero-section__grid {
+    transform: none;
+    will-change: auto;
   }
 
   .home-intro .company-intro-section {

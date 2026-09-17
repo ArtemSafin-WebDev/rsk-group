@@ -1,9 +1,9 @@
-import heroVideoUrl from '../../videos/hero/day-night-scrub.mp4?url';
+import heroVideoUrl from '../../videos/hero/waterfront-scrub.mp4?url';
 
 const FRAME_DURATION = 1 / 24;
 const FOLLOW_DELAY = 70;
 const INTRO_DURATION = 1500;
-const INTRO_END_TIME = 3;
+const INTRO_END_TIME = 3.75;
 const PROGRESS_EPSILON = 0.0005;
 
 export class HeroVideo {
@@ -180,7 +180,10 @@ export class HeroVideo {
 
     // Native media loading uses byte ranges and starts new requests for every seek.
     // Buffer the small scrub video once so scrolling never depends on the network.
-    this.loadPromise = fetch(heroVideoUrl, { cache: 'force-cache' })
+    // Vite keeps asset URLs stable in development; revalidate replaced videos there.
+    this.loadPromise = fetch(heroVideoUrl, {
+      cache: import.meta.env.DEV ? 'no-cache' : 'force-cache',
+    })
       .then((response) => {
         if (!response.ok) throw new Error(`Failed to load hero video: ${response.status}`);
 

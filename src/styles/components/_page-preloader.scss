@@ -58,6 +58,12 @@
   }
 }
 
+@media (max-width: 576px) {
+  .page-preloader__content {
+    width: 20rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page-preloader__indicator {
     width: 100%;
