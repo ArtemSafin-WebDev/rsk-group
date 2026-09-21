@@ -234,9 +234,33 @@
 }
 
 .site-header__menu-link,
-.site-header__phone,
 .site-header__logo {
   transition: opacity 160ms ease;
+}
+
+@media (min-width: 577px) {
+  .site-header__menu,
+  .site-header__phone {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      visibility 0s,
+      opacity 160ms ease,
+      transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .site-header.is-menu-open .site-header__menu,
+  .site-header.is-menu-open .site-header__phone {
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-0.8rem);
+    transition:
+      visibility 0s linear 160ms,
+      opacity 160ms ease,
+      transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -316,5 +340,12 @@
     height: 3.2rem;
     padding: 0;
     flex-basis: 3.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header__menu,
+  .site-header__phone {
+    transition: none;
   }
 }

@@ -179,6 +179,57 @@
   display: none;
 }
 
+@media (min-width: 577px) {
+  .site-menu__navigation > .site-menu__group,
+  .site-menu__primary-links,
+  .site-menu__footer > * {
+    opacity: 0;
+    transform: translateY(2.4rem);
+    transition:
+      opacity 320ms ease,
+      transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .site-menu.is-open .site-menu__navigation > .site-menu__group,
+  .site-menu.is-open .site-menu__primary-links,
+  .site-menu.is-open .site-menu__footer > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .site-menu.is-open .site-menu__navigation > .site-menu__group:nth-child(1) {
+    transition-delay: 80ms;
+  }
+
+  .site-menu.is-open .site-menu__navigation > .site-menu__group:nth-child(2) {
+    transition-delay: 120ms;
+  }
+
+  .site-menu.is-open .site-menu__navigation > .site-menu__group:nth-child(3) {
+    transition-delay: 160ms;
+  }
+
+  .site-menu.is-open .site-menu__primary-links {
+    transition-delay: 200ms;
+  }
+
+  .site-menu.is-open .site-menu__footer > :nth-child(1) {
+    transition-delay: 240ms;
+  }
+
+  .site-menu.is-open .site-menu__footer > :nth-child(2) {
+    transition-delay: 280ms;
+  }
+
+  .site-menu.is-open .site-menu__footer > :nth-child(3) {
+    transition-delay: 320ms;
+  }
+
+  .site-menu.is-open .site-menu__footer > :nth-child(4) {
+    transition-delay: 360ms;
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .site-menu__links a:hover,
   .site-menu__footer a:hover {
@@ -367,6 +418,9 @@ html.is-menu-open body {
 @media (prefers-reduced-motion: reduce) {
   .site-menu,
   .site-menu__panel,
+  .site-menu__navigation > .site-menu__group,
+  .site-menu__primary-links,
+  .site-menu__footer > *,
   .site-menu__group-body,
   .site-menu__chevron {
     transition: none;
