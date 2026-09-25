@@ -81,12 +81,15 @@
 .site-footer__slogan {
   width: 43.4rem;
   max-width: none;
-  margin-left: 4rem;
-  grid-column: 1;
   font-size: var(--font-size-h3);
   font-weight: var(--font-weight-h3);
   line-height: var(--line-height-h3);
   letter-spacing: var(--letter-spacing-h3);
+}
+
+.site-footer__identity {
+  margin-left: 4rem;
+  grid-column: 1;
 }
 
 .site-footer__slogan sup {
@@ -100,7 +103,7 @@
 
 .site-footer__about {
   max-width: 34.2rem;
-  margin-top: 4.6rem;
+  margin-top: 2.4rem;
   font-size: var(--font-size-p2-medium);
   font-weight: var(--font-weight-p2-medium);
   line-height: var(--line-height-p2-medium);
@@ -272,6 +275,7 @@
   }
 
   .site-footer__brand,
+  .site-footer__identity,
   .site-footer__contacts,
   .site-footer__mobile-navigation,
   .site-footer__requisites,
@@ -289,8 +293,7 @@
 
   .site-footer__slogan {
     width: 29.2rem;
-    margin: 6rem 0 0;
-    order: 5;
+    margin: 0;
     font-size: 4.2rem;
     line-height: 0.9;
     letter-spacing: -0.21rem;
@@ -309,6 +312,11 @@
     margin-top: 2.5rem;
     font-size: 1.4rem;
     line-height: 1.2;
+  }
+
+  .site-footer__identity {
+    margin: 6rem 0 0;
+    order: 5;
   }
 
   .site-footer__logo {
