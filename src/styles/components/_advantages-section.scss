@@ -110,6 +110,17 @@
   transition: opacity 180ms ease;
 }
 
+.advantages-section__link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+.advantages-section__link:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
 .advantages-section__item:focus-visible::before {
   transform: scaleX(1);
 }
@@ -120,6 +131,11 @@
 }
 
 .advantages-section__item:has(.advantages-section__trigger:focus-visible)
+  .advantages-section__text {
+  opacity: 1;
+}
+
+.advantages-section__item:has(.advantages-section__link:focus-visible)
   .advantages-section__text {
   opacity: 1;
 }
@@ -221,6 +237,11 @@
   .advantages-section__item:has(.advantages-section__trigger:focus-visible)
     .advantages-section__icon {
     opacity: 1;
+  }
+
+  .advantages-section__item:has(.advantages-section__link:focus-visible)
+    .advantages-section__icon {
+    opacity: 0;
   }
 
   .advantages-section__item.is-open::before {

@@ -54,6 +54,8 @@ export class SiteMenu {
     this.lastFocusedElement = trigger;
     this.syncAccordions();
 
+    this.header.classList.remove('is-hidden');
+    this.header.inert = false;
     document.body.style.top = `-${this.scrollPosition}px`;
     document.documentElement.classList.add('is-menu-open');
     this.menu.classList.add('is-open');
@@ -81,6 +83,7 @@ export class SiteMenu {
     document.documentElement.classList.remove('is-menu-open');
     document.body.style.top = '';
     window.scrollTo({ top: this.scrollPosition, behavior: 'instant' });
+    window.dispatchEvent(new Event('site-menu:closed'));
 
     if (restoreFocus) this.lastFocusedElement?.focus();
   }

@@ -10,7 +10,12 @@
   transition:
     color 220ms ease,
     background-color 220ms ease,
-    transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+    translate 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header.is-hidden {
+  translate: 0 -100%;
+  pointer-events: none;
 }
 
 .site-header.is-menu-open {
@@ -344,6 +349,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .site-header,
   .site-header__menu,
   .site-header__phone {
     transition: none;

@@ -105,12 +105,37 @@ const pageData: Record<string, Record<string, unknown>> = {
     title: 'Главная',
     description: 'Главная страница проекта',
     page: 'home',
-    catalogSubcategories: [
+    outdoorSubcategories: [
+      { label: 'Осветительные комплексы', url: '#lighting-complexes' },
+      { label: 'Консольные', url: '#cantilever-lighting' },
+      { label: 'Торшерные', url: '#park-lighting' },
+      { label: 'Прожекторы', url: '#outdoor-floodlights' },
+      { label: 'Подвесные', url: '#pendant-lighting' },
+      { label: 'Ландшафтные', url: '#landscape-lighting' },
+      { label: 'Смарт-опоры', url: '#smart-poles' },
+      { label: 'Опоры контрастного освещения', url: '#contrast-lighting-poles' },
+      { label: 'Грунтовые', url: '#outdoor-ground' },
+      { label: 'Встраиваемые', url: '#recessed-lighting' },
+    ],
+    architecturalSubcategories: [
       { label: 'Линейные', url: '#linear' },
       { label: 'Прожекторы', url: '#floodlights' },
       { label: 'Акцентные', url: '#accent' },
       { label: 'Гибкий неон', url: '#flexible-neon' },
       { label: 'Грунтовые', url: '#ground' },
+    ],
+    metalSubcategories: [
+      { label: 'Опоры', url: '#poles' },
+      { label: 'Опоры контрастного освещения', url: '#metal-contrast-lighting-poles' },
+      { label: 'Кронштейны', url: '#brackets' },
+      { label: 'Смарт-опоры', url: '#metal-smart-poles' },
+      { label: 'Закладные детали', url: '#foundation-parts' },
+      { label: 'Посты питания', url: '#power-posts' },
+      { label: 'Крышки закладных деталей', url: '#foundation-covers' },
+    ],
+    installationSubcategories: [
+      { label: 'Одуванчики', url: '#dandelions' },
+      { label: 'Арт-объекты', url: '#art-objects' },
     ],
   },
   '/catalog.html': {

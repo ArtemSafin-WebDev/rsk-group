@@ -124,7 +124,7 @@
             url="#outdoor-lighting"
             defaultImageSrc="/images/direction-card/outdoor-lighting.webp"
             hoverImageSrc="/images/direction-card/outdoor-lighting-hover.webp"
-            subcategories=catalogSubcategories
+            subcategories=outdoorSubcategories
             subcategoriesAriaLabel="Категории наружного освещения"
             }}
             {{> direction-card
@@ -133,17 +133,8 @@
             url="#architectural-lighting"
             defaultImageSrc="/images/direction-card/architectural-lighting-default.webp"
             hoverImageSrc="/images/direction-card/architectural-lighting-hover.webp"
-            subcategories=catalogSubcategories
+            subcategories=architecturalSubcategories
             subcategoriesAriaLabel="Категории архитектурного освещения"
-            }}
-            {{> direction-card
-            title="Световые"
-            titleSecondLine="инсталляции"
-            url="#lighting-installations"
-            defaultImageSrc="/images/direction-card/lighting-installations.webp"
-            hoverImageSrc="/images/direction-card/lighting-installations-hover.webp"
-            subcategories=catalogSubcategories
-            subcategoriesAriaLabel="Категории световых инсталляций"
             }}
             {{> direction-card
             title="Металло-"
@@ -151,8 +142,17 @@
             url="#metal-constructions"
             defaultImageSrc="/images/direction-card/metal-constructions.webp"
             hoverImageSrc="/images/direction-card/metal-constructions-hover.webp"
-            subcategories=catalogSubcategories
+            subcategories=metalSubcategories
             subcategoriesAriaLabel="Категории металлоконструкций"
+            }}
+            {{> direction-card
+            title="Световые"
+            titleSecondLine="инсталляции"
+            url="#lighting-installations"
+            defaultImageSrc="/images/direction-card/lighting-installations.webp"
+            hoverImageSrc="/images/direction-card/lighting-installations-hover.webp"
+            subcategories=installationSubcategories
+            subcategoriesAriaLabel="Категории световых инсталляций"
             }}
           </div>
 

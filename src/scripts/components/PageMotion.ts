@@ -68,7 +68,8 @@ export class PageMotion {
       '.home-intro__picture, .home-intro__video',
     );
 
-    gsap.set('.site-header', { autoAlpha: 0, yPercent: -35 });
+    gsap.set('.site-header', { autoAlpha: 0 });
+    gsap.set('.site-header__container', { yPercent: -35 });
 
     if (this.entranceTitle) {
       gsap.set(this.entranceTitle, { autoAlpha: 1 });
@@ -166,7 +167,8 @@ export class PageMotion {
     );
     const timeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-    timeline.to('.site-header', { autoAlpha: 1, duration: 0.7, yPercent: 0 });
+    timeline.to('.site-header', { autoAlpha: 1, duration: 0.7 });
+    timeline.to('.site-header__container', { duration: 0.7, yPercent: 0 }, 0);
 
     if (heroMedia.length) {
       timeline.to(heroMedia, { duration: 1.6, ease: 'power2.out', scale: 1 }, 0);

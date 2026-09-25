@@ -77,14 +77,34 @@ document.querySelectorAll<HTMLElement>('[data-popular-series-slider]').forEach((
 document.querySelectorAll<HTMLElement>('.site-header').forEach((header) => {
   const homeIntro = document.querySelector<HTMLElement>('.home-intro');
   let frameId = 0;
+  let lastScrollY = window.scrollY;
+
+  const setHeaderHidden = (isHidden: boolean) => {
+    header.classList.toggle('is-hidden', isHidden);
+    header.inert = isHidden;
+  };
 
   const updateHeader = () => {
+    frameId = 0;
+
+    if (document.documentElement.classList.contains('is-menu-open')) return;
+
+    const scrollY = window.scrollY;
     const isOverHomeIntro = Boolean(
       homeIntro && homeIntro.getBoundingClientRect().bottom > header.offsetHeight,
     );
+    const isScrolled = scrollY > 0 && !isOverHomeIntro;
+    const scrollDelta = scrollY - lastScrollY;
 
-    header.classList.toggle('is-scrolled', window.scrollY > 0 && !isOverHomeIntro);
-    frameId = 0;
+    header.classList.toggle('is-scrolled', isScrolled);
+
+    if (!isScrolled || scrollY <= header.offsetHeight) {
+      setHeaderHidden(false);
+    } else if (Math.abs(scrollDelta) >= 6) {
+      setHeaderHidden(scrollDelta > 0);
+    }
+
+    if (Math.abs(scrollDelta) >= 6 || !isScrolled) lastScrollY = scrollY;
   };
 
   const requestHeaderUpdate = () => {
@@ -95,6 +115,10 @@ document.querySelectorAll<HTMLElement>('.site-header').forEach((header) => {
 
   updateHeader();
   window.addEventListener('scroll', requestHeaderUpdate, { passive: true });
+  window.addEventListener('site-menu:closed', () => {
+    lastScrollY = window.scrollY;
+    updateHeader();
+  });
 });
 
 if (page === 'ui-kit') {
@@ -182,6 +206,14 @@ document.querySelectorAll<HTMLElement>('.advantages-section').forEach((section) 
         item.classList.add('is-open');
         trigger.setAttribute('aria-expanded', 'true');
       }
+    });
+
+    item.addEventListener('focusin', (event) => {
+      if (!mobileMedia.matches || !(event.target instanceof HTMLAnchorElement)) return;
+
+      closeAllItems();
+      item.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
     });
   });
 
