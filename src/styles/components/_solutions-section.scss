@@ -1,5 +1,6 @@
 .solutions-section {
-  margin-bottom: 24rem;
+  position: relative;
+  margin-bottom: 16rem;
 }
 
 .solutions-section__header,
@@ -47,12 +48,12 @@
 }
 
 .solutions-section__more {
-  display: flex;
-  margin-top: 12rem;
-  justify-content: center;
+  position: absolute;
+  top: 4rem;
+  right: var(--container-padding-inline);
 }
 
-.solutions-section__more > .button {
+.solutions-section__more > .arrow-button {
   display: none;
 }
 
@@ -98,14 +99,10 @@
   }
 
   .solutions-section__more {
+    position: static;
+    display: flex;
     margin-top: 2rem;
+    justify-content: center;
   }
 
-  .solutions-section__more > .arrow-button {
-    display: none;
-  }
-
-  .solutions-section__more > .button {
-    display: inline-flex;
-  }
 }
