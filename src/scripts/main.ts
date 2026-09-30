@@ -75,7 +75,6 @@ document.querySelectorAll<HTMLElement>('[data-popular-series-slider]').forEach((
 });
 
 document.querySelectorAll<HTMLElement>('.site-header').forEach((header) => {
-  const homeIntro = document.querySelector<HTMLElement>('.home-intro');
   let frameId = 0;
   let lastScrollY = window.scrollY;
 
@@ -90,10 +89,7 @@ document.querySelectorAll<HTMLElement>('.site-header').forEach((header) => {
     if (document.documentElement.classList.contains('is-menu-open')) return;
 
     const scrollY = window.scrollY;
-    const isOverHomeIntro = Boolean(
-      homeIntro && homeIntro.getBoundingClientRect().bottom > header.offsetHeight,
-    );
-    const isScrolled = scrollY > 0 && !isOverHomeIntro;
+    const isScrolled = scrollY > 0;
     const scrollDelta = scrollY - lastScrollY;
 
     header.classList.toggle('is-scrolled', isScrolled);
