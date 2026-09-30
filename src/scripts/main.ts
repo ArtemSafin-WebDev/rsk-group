@@ -75,6 +75,7 @@ document.querySelectorAll<HTMLElement>('[data-popular-series-slider]').forEach((
 });
 
 document.querySelectorAll<HTMLElement>('.site-header').forEach((header) => {
+  const homeIntro = document.querySelector<HTMLElement>('.home-intro');
   let frameId = 0;
   let lastScrollY = window.scrollY;
 
@@ -89,18 +90,23 @@ document.querySelectorAll<HTMLElement>('.site-header').forEach((header) => {
     if (document.documentElement.classList.contains('is-menu-open')) return;
 
     const scrollY = window.scrollY;
-    const isScrolled = scrollY > 0;
+    const hasScrolled = scrollY > 0;
+    const isOverHomeIntro = Boolean(homeIntro && homeIntro.getBoundingClientRect().bottom > 0);
     const scrollDelta = scrollY - lastScrollY;
 
-    header.classList.toggle('is-scrolled', isScrolled);
-
-    if (!isScrolled || scrollY <= header.offsetHeight) {
+    if (!hasScrolled || (!isOverHomeIntro && scrollY <= header.offsetHeight)) {
       setHeaderHidden(false);
     } else if (Math.abs(scrollDelta) >= 6) {
       setHeaderHidden(scrollDelta > 0);
     }
 
-    if (Math.abs(scrollDelta) >= 6 || !isScrolled) lastScrollY = scrollY;
+    const isTransparentOverHomeIntro = isOverHomeIntro && (
+      header.classList.contains('is-hidden') || scrollDelta > 0
+    );
+    const isScrolled = hasScrolled && !isTransparentOverHomeIntro;
+    header.classList.toggle('is-scrolled', isScrolled);
+
+    if (Math.abs(scrollDelta) >= 6 || !hasScrolled) lastScrollY = scrollY;
   };
 
   const requestHeaderUpdate = () => {
