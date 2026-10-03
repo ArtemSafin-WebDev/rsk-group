@@ -142,6 +142,55 @@ const pageData: Record<string, Record<string, unknown>> = {
     title: 'Каталог — РСК Групп',
     description: 'Каталог решений РСК Групп для освещения, благоустройства и городской среды',
     page: 'catalog',
+    headerTheme: 'dark',
+    headerNavigationItems: [{ label: 'Каталог', url: '#catalog' }],
+    catalogNewProducts: [
+      { imageSrc: productImages.pendant, imageModifier: 'pendant', primaryTag: 'Новинка', className: 'product-card--new' },
+      { imageSrc: productImages.pole, primaryTag: 'Хит', secondaryTag: 'Новинка' },
+      { imageSrc: productImages.bollard, imageModifier: 'contain', primaryTag: 'Новинка', className: 'product-card--new' },
+      { imageSrc: productImages.lantern, imageModifier: 'contain', primaryTag: 'Новинка', className: 'product-card--new' },
+      { imageSrc: productImages.lantern, imageModifier: 'contain' },
+    ].map((product) => ({ ...productBase, ...product, url: '/subcategory.html' })),
+    catalogProducts: [...subcategoryProducts.slice(0, 12), ...subcategoryProducts.slice(8, 12)].map((product, index) => ({
+      ...product,
+      ...(index === 0 ? { imageSrc: productImages.pendant, imageModifier: 'pendant', mobileImageSrc: productImages.pole, mobileImageModifier: undefined, primaryTag: 'Новинка', secondaryTag: undefined, className: 'product-card--new' } : {}),
+      ...(index === 1 ? { imageSrc: productImages.pole, imageModifier: undefined, primaryTag: 'Хит', secondaryTag: 'Новинка' } : {}),
+      url: '/subcategory.html',
+    })),
+    catalogFilters: [
+      { id: 'category', label: 'Категория', options: [
+        { label: 'Наружное освещение', value: 'outdoor' },
+        { label: 'Архитектурное освещение', value: 'architectural' },
+        { label: 'Металлоконструкции', value: 'metal' },
+        { label: 'Световые инсталляции', value: 'installations' },
+      ] },
+      { id: 'product_type', label: 'Тип продукции', options: [
+        { label: 'Светильники', value: 'luminaires' },
+        { label: 'Опоры', value: 'poles' },
+        { label: 'Комплектующие', value: 'accessories' },
+      ] },
+      { id: 'series', label: 'Серия', options: [
+        { label: 'RSC COMFORT', value: 'comfort' },
+        { label: 'RSC URBAN', value: 'urban' },
+        { label: 'RSC PARK', value: 'park' },
+      ] },
+      { id: 'type', label: 'Тип', options: [
+        { label: 'Подвесные', value: 'pendant' },
+        { label: 'Торшерные', value: 'floor' },
+        { label: 'Консольные', value: 'cantilever' },
+      ] },
+      { id: 'kind', label: 'Вид', options: [
+        { label: 'Светодиодные', value: 'led' },
+        { label: 'Архитектурные', value: 'architectural' },
+        { label: 'Декоративные', value: 'decorative' },
+      ] },
+    ].map((filter) => ({ ...filter, options: filter.options.map((option) => ({ ...option, id: `filter-${filter.id}-${option.value}`, name: `${filter.id}[]` })) })),
+    catalogFiles: [
+      { title: 'Реализованные проекты', imageSrc: '/images/material-card/realized-projects.webp', downloadUrl: '/files/realized-projects.pdf' },
+      { title: 'Производство', titleTail: 'осветительного оборудования', imageSrc: '/images/material-card/production-presentation.webp', downloadUrl: '/files/production-presentation.pdf' },
+      { title: 'Каталог', imageSrc: '/images/material-card/catalog-2025.webp', downloadUrl: '/files/catalog.pdf' },
+      { title: 'Сертификат', imageSrc: '/images/material-card/certificate.webp', downloadUrl: '/files/certificate.pdf' },
+    ],
     catalogOutdoorSection: {
       id: 'outdoor-lighting',
       title: 'Наружное освещение',

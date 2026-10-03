@@ -1,0 +1,118 @@
+<div
+  class="catalog-filters-panel"
+  id="catalog-filters-panel"
+  aria-labelledby="catalog-filters-title"
+  data-filters-panel
+>
+  <header class="catalog-filters-panel__header">
+    <h2 id="catalog-filters-title">Фильтры</h2>
+    <button type="button" data-filters-close aria-label="Закрыть фильтры">
+      <img src="/icons/catalog/close.svg" width="20" height="20" alt="" />
+    </button>
+  </header>
+  <form
+    class="catalog-filters"
+    action="/catalog.html#all-products"
+    method="get"
+    data-catalog-filters
+  >
+    <div class="catalog-filters__fields" data-lenis-prevent>
+      <fieldset class="catalog-power">
+        <legend>Мощность</legend>
+        <div class="catalog-power__values">
+          <label
+            ><span>от</span
+            ><input
+              type="number"
+              name="power_min"
+              min="300"
+              max="5000"
+              step="1"
+              value="300"
+              aria-label="Минимальная мощность"
+            /><span>Вт</span></label
+          >
+          <label
+            ><span>до</span
+            ><input
+              type="number"
+              name="power_max"
+              min="300"
+              max="5000"
+              step="1"
+              value="5000"
+              aria-label="Максимальная мощность"
+            /><span>Вт</span></label
+          >
+        </div>
+        <div class="catalog-power__range">
+          <input
+            type="range"
+            min="300"
+            max="5000"
+            value="300"
+            step="1"
+            aria-label="Минимальная мощность, ползунок"
+            data-power-min
+          />
+          <input
+            type="range"
+            min="300"
+            max="5000"
+            value="5000"
+            step="1"
+            aria-label="Максимальная мощность, ползунок"
+            data-power-max
+          />
+        </div>
+      </fieldset>
+      {{#each catalogFilters}}
+      <div class="catalog-filter" data-filter="{{id}}">
+        <button
+          class="catalog-filter__toggle"
+          id="filter-{{id}}-label"
+          type="button"
+          aria-expanded="false"
+          aria-controls="filter-{{id}}-options"
+        >
+          <span>{{label}}</span>
+          <img
+            src="/icons/catalog/chevron-down.svg"
+            width="20"
+            height="20"
+            alt=""
+          />
+        </button>
+        <div class="catalog-filter__collapse" id="filter-{{id}}-options" inert>
+          <div class="catalog-filter__overflow">
+            <div
+              class="catalog-filter__options"
+              role="group"
+              aria-labelledby="filter-{{id}}-label"
+            >
+              {{#each options}} {{> checkbox id=id name=name value=value
+              label=label}} {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    <div class="catalog-filters__actions">
+      <button
+        class="button button--dark button--small catalog-filters__submit"
+        type="submit"
+      >
+        Показать
+      </button>
+      <button class="catalog-filters__reset" type="reset">
+        Сбросить<img
+          src="/icons/catalog/close.svg"
+          width="20"
+          height="20"
+          alt=""
+        />
+      </button>
+    </div>
+  </form>
+</div>

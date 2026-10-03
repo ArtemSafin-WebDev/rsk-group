@@ -1,0 +1,30 @@
+<section
+  class="electronic-catalogs catalog-files"
+  id="files"
+  aria-labelledby="catalog-files-title"
+  data-electronic-catalogs-slider
+>
+  <div class="container">
+    <header class="electronic-catalogs__header">
+      <h2 class="electronic-catalogs__title" id="catalog-files-title">Файлы</h2>
+      <div class="electronic-catalogs__navigation">
+        {{> slider-navigation ariaLabel="Навигация по файлам"
+        prevAriaLabel="Предыдущие файлы" nextAriaLabel="Следующие файлы"}}
+      </div>
+    </header>
+    <div class="electronic-catalogs__slider swiper">
+      <div class="swiper-wrapper">
+        {{#each catalogFiles}}
+        <div class="electronic-catalogs__slide swiper-slide">
+          {{> material-card imageAlt=title fileType="PDF" fileSize="2,2 Мб"}}
+        </div>
+        {{/each}}
+        {{#each catalogFiles}}
+        <div class="electronic-catalogs__slide swiper-slide">
+          {{> material-card imageAlt=title fileType="PDF" fileSize="2,2 Мб"}}
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

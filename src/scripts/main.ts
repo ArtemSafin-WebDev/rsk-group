@@ -3,6 +3,7 @@ import { Navigation } from 'swiper/modules';
 import 'lenis/dist/lenis.css';
 import 'swiper/css';
 import '../styles/main.scss';
+import { CatalogPage } from './components/CatalogPage';
 import { CustomSelect } from './components/CustomSelect';
 import { FooterAccordions } from './components/FooterAccordions';
 import { HeroVideo } from './components/HeroVideo';
@@ -30,6 +31,7 @@ MaterialsTabs.initAll();
 ProductionStories.initAll();
 ProjectRequestForm.initAll();
 SiteMenu.initAll();
+CatalogPage.init(smoothScroll?.lenis ?? null);
 
 document.querySelectorAll<HTMLElement>('[data-electronic-catalogs-slider]').forEach((section) => {
   const swiperElement = section.querySelector<HTMLElement>('.swiper');
@@ -41,7 +43,7 @@ document.querySelectorAll<HTMLElement>('[data-electronic-catalogs-slider]').forE
   new Swiper(swiperElement, {
     modules: [Navigation],
     slidesPerView: 'auto',
-    watchOverflow: false,
+    watchOverflow: true,
     navigation: { prevEl, nextEl },
   });
 });
@@ -80,8 +82,11 @@ document.querySelectorAll<HTMLElement>('.site-header').forEach((header) => {
   let lastScrollY = window.scrollY;
 
   const setHeaderHidden = (isHidden: boolean) => {
-    header.classList.toggle('is-hidden', isHidden);
-    header.inert = isHidden;
+    const catalogDesktop = page === 'catalog' && window.innerWidth > 576;
+    const catalogNavigationVisible = page === 'catalog' && document.body.classList.contains('has-catalog-navigation');
+    const hidden = !catalogDesktop && (isHidden || catalogNavigationVisible);
+    header.classList.toggle('is-hidden', hidden);
+    header.inert = hidden;
   };
 
   const updateHeader = () => {

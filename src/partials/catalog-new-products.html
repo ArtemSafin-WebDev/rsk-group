@@ -1,0 +1,23 @@
+<section
+  class="catalog-new-products container"
+  aria-labelledby="catalog-new-title"
+  data-catalog-new-slider
+>
+  <header class="catalog-new-products__header">
+    <h2 id="catalog-new-title">Новинки</h2>
+    <div class="catalog-new-products__navigation">
+      {{> slider-navigation ariaLabel="Навигация по новинкам"
+      prevAriaLabel="Предыдущие новинки" nextAriaLabel="Следующие новинки"}}
+    </div>
+  </header>
+  <div class="catalog-new-products__slider swiper">
+    <div class="swiper-wrapper">
+      {{#each catalogNewProducts}}
+      <div class="catalog-new-products__slide swiper-slide">
+        {{> product-card}}
+      </div>
+      {{/each}}
+    </div>
+    <div class="catalog-new-products__scrollbar swiper-scrollbar"></div>
+  </div>
+</section>

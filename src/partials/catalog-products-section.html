@@ -1,0 +1,34 @@
+<section
+  class="catalog-products container"
+  id="all-products"
+  aria-labelledby="catalog-products-title"
+>
+  <h2 class="catalog-products__title" id="catalog-products-title">
+    Все товары
+  </h2>
+  <button
+    class="catalog-filters-open"
+    type="button"
+    data-filters-open
+    aria-haspopup="dialog"
+    aria-controls="catalog-filters-panel"
+  >
+    Фильтры
+    <img src="/icons/catalog/chevron-down.svg" width="20" height="20" alt="" />
+  </button>
+  {{> catalog-filters}}
+  <div class="catalog-products__grid">
+    {{#each catalogProducts}}{{> product-card}}{{/each}}
+  </div>
+  <div class="catalog-products__controls">
+    <a class="button button--grey" href="/catalog.html?view=all#all-products">
+      <img
+        class="button__icon"
+        src="/icons/arrow-right.svg"
+        width="24"
+        height="24"
+        alt=""
+      /><span>Смотреть все</span>
+    </a>
+  </div>
+</section>

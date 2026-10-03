@@ -2,9 +2,9 @@
   class="material-card{{#if hovered}} material-card--hovered{{/if}}"
   href="{{downloadUrl}}"
   download
-  aria-label="Скачать {{title}}, формат {{fileType}}, размер {{fileSize}}"
+  aria-label="Скачать {{title}}{{#if titleTail}} {{titleTail}}{{/if}}, формат {{fileType}}, размер {{fileSize}}"
 >
-  <h3 class="material-card__title">{{title}}</h3>
+  <h3 class="material-card__title">{{title}}{{#if titleTail}}<br />{{titleTail}}{{/if}}</h3>
 
   <div class="material-card__media">
     <img

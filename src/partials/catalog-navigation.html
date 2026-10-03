@@ -1,0 +1,39 @@
+<nav
+  class="catalog-navigation"
+  aria-label="Разделы каталога"
+  data-catalog-navigation
+  inert
+>
+  <div class="container catalog-navigation__container">
+    <button
+      class="catalog-navigation__toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="catalog-navigation-links"
+    >
+      <span data-catalog-current-section>Наружное освещение</span>
+      <img
+        src="/icons/catalog/chevron-down.svg"
+        width="20"
+        height="20"
+        alt=""
+      />
+    </button>
+    <div class="catalog-navigation__collapse" id="catalog-navigation-links">
+      <div class="catalog-navigation__overflow">
+        <div class="catalog-navigation__links">
+          <a href="#outdoor-lighting" aria-current="location"
+            >Наружное освещение</a
+          >
+          <a href="#architectural-lighting">Архитектурное освещение</a>
+          <a href="#metal-constructions">Металлоконструкции</a>
+          <a href="#light-installations">Световые инсталляции</a>
+        </div>
+      </div>
+    </div>
+    <a class="catalog-navigation__download" href="/files/catalog.pdf" download>
+      <img src="/icons/download.svg" width="20" height="20" alt="" />Скачать
+      каталог в PDF
+    </a>
+  </div>
+</nav>
